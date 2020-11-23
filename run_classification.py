@@ -4,6 +4,7 @@ import argparse
 import os
 import sys
 import numpy as np
+import random
 import json
 import torch
 from packaging import version
@@ -64,7 +65,7 @@ class PlausibleDataset(Dataset):
         split_event = event.strip().split('</s>')
         if len(split_event)==4:
             # input from hellaswag negative datapoint randomly choose one negative answer
-            hypo = random.choice(range(3),1)[0]
+            hypo = np.random.choice(range(3),1)[0]
             event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
             target = 0
         encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
@@ -197,7 +198,7 @@ def get_predictions(model, data_loader, output_dir, split):
     predictions = []
     prediction_probs = []
     real_values = []
-    
+    correct_predictions = 0   
     # with open(output_dir+'/'+split+'_tokens.txt', 'w') as f:
     with torch.no_grad():
         for d in data_loader:
@@ -209,16 +210,18 @@ def get_predictions(model, data_loader, output_dir, split):
             outputs = model(input_ids=input_ids, attention_mask=attention_mask)
             outputs = outputs[0]
             _, preds = torch.max(outputs, dim=1) #logits in first position of outputs
-
+            correct_predictions += torch.sum(preds == targets)
             probs = F.softmax(outputs, dim=1)
             event_descriptions.extend(texts)
             predictions.extend(preds)
             prediction_probs.extend(probs)
             real_values.extend(targets)
+
     predictions = torch.stack(predictions).cpu()
     prediction_probs = torch.stack(prediction_probs).cpu()
     real_values = torch.stack(real_values).cpu()
     f1score = f1_score(real_values, predictions, average='weighted') # only for positive classs
+    print(correct_predictions.double()/len(predictions))
     with open(output_dir+'/'+split+'_predictions.txt', 'w') as f:
         for pred in predictions:
             f.write("{}\n".format(pred))

@@ -4,6 +4,7 @@ import argparse
 import os
 import sys
 import numpy as np
+import random
 import json
 import torch
 from packaging import version
@@ -21,8 +22,8 @@ import torch.nn.functional as F
 from sklearn.metrics import f1_score
 
 
-from transformers import AutoTokenizer, AutoModel, BertModel,BertTokenizer, RobertaTokenizer, RobertaModel, RobertaPreTrainedModel, BertForSequenceClassification, RobertaForSequenceClassification, AutoModelForSequenceClassification, BertConfig
-# from transformers.modeling_utils import PreTrainedModel
+from transformers import AutoTokenizer, AutoModel, BertModel,BertTokenizer, RobertaTokenizer, RobertaModel,  BertForSequenceClassification, AutoModelForSequenceClassification, BertConfig
+from transformers.modeling_roberta import RobertaPreTrainedModel, RobertaClassificationHead
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
 
@@ -33,10 +34,6 @@ torch.manual_seed(100)
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
 logger = logging.getLogger(__name__)
-
-
-MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
-                 "roberta": (RobertaForSequenceClassification, RobertaTokenizer)}
 
 if torch.cuda.is_available():
     device = torch.device('cuda:0')
@@ -118,6 +115,9 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
             attentions=outputs.attentions,
         )
 
+MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
+                 "roberta": (RobertaForSequenceClassification, RobertaTokenizer)}
+
 
 class PlausibleDataset(Dataset):
     
@@ -143,8 +143,8 @@ class PlausibleDataset(Dataset):
             dataset_type = 'relative'
         if len(split_event)==5:
             # input from hellaswag negative datapoint randomly choose one negative answer
-            hypo = random.choice([i for i in range(4) if i!=target],1)[0]
-            label = random.choice([0,1], 1)[0]
+            hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
+            label = np.random.choice([0,1], 1)[0]
             if label==0:
                 event = split_event[0].strip() +  ' </s> ' + split_event[target+1].strip() + ' </s> ' + split_event[1+hypo].strip()
                 target = 0
@@ -285,7 +285,7 @@ def get_predictions(model, data_loader, output_dir, split):
     predictions = []
     prediction_probs = []
     real_values = []
-    
+    correct_predictions = 0 
     # with open(output_dir+'/'+split+'_tokens.txt', 'w') as f:
     with torch.no_grad():
         for d in data_loader:
@@ -298,7 +298,7 @@ def get_predictions(model, data_loader, output_dir, split):
             outputs = model(input_ids=input_ids, attention_mask=attention_mask, dataset_type=dataset_type)
             outputs = outputs[0]
             _, preds = torch.max(outputs, dim=1) #logits in first position of outputs
-
+            correct_predictions += torch.sum(preds == targets)
             probs = F.softmax(outputs, dim=1)
             event_descriptions.extend(texts)
             predictions.extend(preds)
@@ -308,6 +308,7 @@ def get_predictions(model, data_loader, output_dir, split):
     prediction_probs = torch.stack(prediction_probs).cpu()
     real_values = torch.stack(real_values).cpu()
     f1score = f1_score(real_values, predictions, average='weighted') # only for positive classs
+    print("accuracy", correct_predictions.double()/len(predictions))
     with open(output_dir+'/'+split+'_predictions.txt', 'w') as f:
         for pred in predictions:
             f.write("{}\n".format(pred))
