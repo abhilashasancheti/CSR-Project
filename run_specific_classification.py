@@ -67,7 +67,7 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
         output_attentions=None,
         output_hidden_states=None,
         return_dict=None,
-        dataset_type='absolute',
+        dataset_type=None,
     ):
         r"""
         labels (:obj:`torch.LongTensor` of shape :obj:`(batch_size,)`, `optional`):
@@ -89,20 +89,13 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
             return_dict=return_dict,
         )
         sequence_output = outputs[0]
-        if dataset_type=='absolute':
+        if dataset_type[0] =='absolute':
             logits = self.classifier(sequence_output)
         else:
             logits = self.specific_classifier(sequence_output)
 
         loss = None
-        if labels is not None:
-            if self.num_labels == 1:
-                #  We are doing regression
-                loss_fct = MSELoss()
-                loss = loss_fct(logits.view(-1), labels.view(-1))
-            else:
-                loss_fct = CrossEntropyLoss()
-                loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
+
 
         if not return_dict:
             output = (logits,) + outputs[2:]

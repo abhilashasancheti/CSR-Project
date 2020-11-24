@@ -143,6 +143,7 @@ def train_epoch(
         targets = d["targets"].to(device)
 #         print(input_ids, attention_mask, targets, d['event_description'])
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+        # loss = outputs[0]
         outputs = outputs[0]
         #print(outputs.shape)
         _, preds = torch.max(outputs, dim=1)
