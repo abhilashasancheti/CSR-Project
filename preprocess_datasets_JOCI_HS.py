@@ -114,13 +114,13 @@ def convert_Defeasible(list_files, mtl_common_path, mtl_specific_path, lm_p_path
 						continue
 					l = dict(zip(row_head, row))
 					if 'Input_premise' in l.keys():
-						premise = l['Input_premise']
-						hypothesis = l['Input_hypothesis']
+						premise = l['Input_premise'].strip().lower()
+						hypothesis = l['Input_hypothesis'].strip().lower()
 					else:
-						premise = l['Input_situation']
-						hypothesis = l['Input_rot']
-					weakener = l['Answer_Attenuator_modifier']
-					strengthener = l['Answer_Intensifier_modifier']
+						premise = l['Input_situation'].strip().lower()
+						hypothesis = l['Input_rot'].strip().lower()
+					weakener = l['Answer_Attenuator_modifier'].strip().lower()
+					strengthener = l['Answer_Intensifier_modifier'].strip().lower()
 					if weakener:
 						lm2.write("[BOS] {} {} [SEP] {} [EOS]\n".format(premise, weakener, hypothesis))
 					if strengthener:
@@ -176,9 +176,9 @@ def split_anli(in_path, lab_path, ratio=0.99):
 # convert_aNLI(test_f, test_lab, './aNLI/mtl_common_anli_test.txt', './aNLI/mtl_specific_anli_test.txt', './aNLI/lm_p_anli_test.txt', './aNLI/lm_n_anli_test.txt')
 
 
-# convert_Defeasible(["./defeasible/defeasible-snli/train.csv","./defeasible/defeasible-atomic/train.csv","./defeasible/defeasible-social/train.csv"], './defeasible/mtl_common_defeasible_train.txt', './defeasible/mtl_specific_defeasible_train.txt', './defeasible/lm_p_defeasible_train.txt', './defeasible/lm_n_defeasible_train.txt')
-# convert_Defeasible(["./defeasible/defeasible-snli/dev.csv","./defeasible/defeasible-atomic/dev.csv","./defeasible/defeasible-social/dev.csv"], './defeasible/mtl_common_defeasible_val.txt', './defeasible/mtl_specific_defeasible_val.txt', './defeasible/lm_p_defeasible_val.txt', './defeasible/lm_n_defeasible_val.txt')
-# convert_Defeasible(["./defeasible/defeasible-snli/test.csv","./defeasible/defeasible-atomic/test.csv","./defeasible/defeasible-social/test.csv"], './defeasible/mtl_common_defeasible_test.txt', './defeasible/mtl_specific_defeasible_test.txt', './defeasible/lm_p_defeasible_test.txt', './defeasible/lm_n_defeasible_test.txt')
+convert_Defeasible(["./defeasible/defeasible-snli/train.csv","./defeasible/defeasible-atomic/train.csv","./defeasible/defeasible-social/train.csv"], './defeasible/mtl_common_defeasible_train.txt', './defeasible/mtl_specific_defeasible_train.txt', './defeasible/lm_p_defeasible_train.txt', './defeasible/lm_n_defeasible_train.txt')
+convert_Defeasible(["./defeasible/defeasible-snli/dev.csv","./defeasible/defeasible-atomic/dev.csv","./defeasible/defeasible-social/dev.csv"], './defeasible/mtl_common_defeasible_val.txt', './defeasible/mtl_specific_defeasible_val.txt', './defeasible/lm_p_defeasible_val.txt', './defeasible/lm_n_defeasible_val.txt')
+convert_Defeasible(["./defeasible/defeasible-snli/test.csv","./defeasible/defeasible-atomic/test.csv","./defeasible/defeasible-social/test.csv"], './defeasible/mtl_common_defeasible_test.txt', './defeasible/mtl_specific_defeasible_test.txt', './defeasible/lm_p_defeasible_test.txt', './defeasible/lm_n_defeasible_test.txt')
 convert_Defeasible(["./defeasible/defeasible-snli/train.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_train.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_train.txt', './defeasible/defeasible-snli/lm_p_defeasible_train.txt', './defeasible/defeasible-snli/lm_n_defeasible_train.txt')
 convert_Defeasible(["./defeasible/defeasible-snli/dev.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_val.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_val.txt', './defeasible/defeasible-snli/lm_p_defeasible_val.txt', './defeasible/defeasible-snli/lm_n_defeasible_val.txt')
 convert_Defeasible(["./defeasible/defeasible-snli/test.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_test.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_test.txt', './defeasible/defeasible-snli/lm_p_defeasible_test.txt', './defeasible/defeasible-snli/lm_n_defeasible_test.txt')
