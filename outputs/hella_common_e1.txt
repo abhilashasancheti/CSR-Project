@@ -1,0 +1,3 @@
+Training starts ....
+Epoch 1/1
+----------
