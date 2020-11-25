@@ -60,10 +60,10 @@ def convert_aNLI(inp_f, lab_f, mtl_common_path, mtl_specific_path, lm_p_path, lm
 		# lab_f = lab_f.readlines()
 		for i, line in enumerate(inp_f):
 			row = json.loads(line.strip())
-			obs1 = row['obs1'].encode('utf-8').strip().lower()
-			obs2 = row['obs2'].encode('utf-8').strip().lower()
-			hyp1 = row['hyp1'].encode('utf-8').strip().lower()
-			hyp2 = row['hyp2'].encode('utf-8').strip().lower()
+			obs1 = row['obs1'].encode('utf-8').strip().lower().replace('\n', ' ')
+			obs2 = row['obs2'].encode('utf-8').strip().lower().replace('\n', ' ')
+			hyp1 = row['hyp1'].encode('utf-8').strip().lower().replace('\n', ' ')
+			hyp2 = row['hyp2'].encode('utf-8').strip().lower().replace('\n', ' ')
 			label = lab_f[i].strip()
 			if label=="1":
 				lm1.write("[BOS] {} {} [SEP] {} [EOS]\n".format(obs1, obs2, hyp1))
@@ -84,9 +84,9 @@ def convert_Copa(in_path, mtl_common_path, mtl_specific_path, lm_p_path, lm_n_pa
 		root = ET.parse(in_path).getroot()
 		for child in root:
 			label = child.get('most-plausible-alternative')
-			obs = child[0].text.encode('utf-8').strip().lower()
-			hyp1 = child[1].text.encode('utf-8').strip().lower()
-			hyp2 = child[2].text.encode('utf-8').strip().lower()
+			obs = child[0].text.encode('utf-8').strip().lower().replace('\n', ' ')
+			hyp1 = child[1].text.encode('utf-8').strip().lower().replace('\n', ' ')
+			hyp2 = child[2].text.encode('utf-8').strip().lower().replace('\n', ' ')
 			if label == "1":
 				lm1.write("[BOS] {} [SEP] {} [EOS]\n".format(obs, hyp1))
 				lm2.write("[BOS] {} [SEP] {} [EOS]\n".format(obs, hyp2))
@@ -114,13 +114,13 @@ def convert_Defeasible(list_files, mtl_common_path, mtl_specific_path, lm_p_path
 						continue
 					l = dict(zip(row_head, row))
 					if 'Input_premise' in l.keys():
-						premise = l['Input_premise'].strip().lower()
-						hypothesis = l['Input_hypothesis'].strip().lower()
+						premise = l['Input_premise'].strip().lower().replace('\n', ' ')
+						hypothesis = l['Input_hypothesis'].strip().lower().replace('\n', ' ')
 					else:
-						premise = l['Input_situation'].strip().lower()
-						hypothesis = l['Input_rot'].strip().lower()
-					weakener = l['Answer_Attenuator_modifier'].strip().lower()
-					strengthener = l['Answer_Intensifier_modifier'].strip().lower()
+						premise = l['Input_situation'].strip().lower().replace('\n', ' ')
+						hypothesis = l['Input_rot'].strip().lower().replace('\n', ' ')
+					weakener = l['Answer_Attenuator_modifier'].strip().lower().replace('\n', ' ')
+					strengthener = l['Answer_Intensifier_modifier'].strip().lower().replace('\n', ' ')
 					if weakener:
 						lm2.write("[BOS] {} {} [SEP] {} [EOS]\n".format(premise, weakener, hypothesis))
 					if strengthener:
