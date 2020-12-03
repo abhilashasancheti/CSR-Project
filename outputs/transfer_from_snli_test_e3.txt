@@ -1,0 +1,70 @@
+tensor(0.7236, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.70      0.79      0.74      1532
+           1       0.76      0.66      0.70      1532
+
+    accuracy                           0.72      3064
+   macro avg       0.73      0.72      0.72      3064
+weighted avg       0.73      0.72      0.72      3064
+
+[[1212  320]
+ [ 527 1005]]
+tensor(0.6894, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.93      0.63      0.75     30126
+           1       0.44      0.86      0.58     10042
+
+    accuracy                           0.69     40168
+   macro avg       0.68      0.75      0.67     40168
+weighted avg       0.81      0.69      0.71     40168
+
+[[19083 11043]
+ [ 1434  8608]]
+tensor(0.7963, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.84      0.70      0.76      1769
+           1       0.77      0.88      0.82      2040
+
+    accuracy                           0.80      3809
+   macro avg       0.80      0.79      0.79      3809
+weighted avg       0.80      0.80      0.79      3809
+
+[[1235  534]
+ [ 242 1798]]
+tensor(0.8271, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.84      0.80      0.82      2047
+           1       0.81      0.85      0.83      2047
+
+    accuracy                           0.83      4094
+   macro avg       0.83      0.83      0.83      4094
+weighted avg       0.83      0.83      0.83      4094
+
+[[1647  400]
+ [ 308 1739]]
+tensor(0.9012, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.91      0.89      0.90      4567
+           1       0.89      0.91      0.90      4567
+
+    accuracy                           0.90      9134
+   macro avg       0.90      0.90      0.90      9134
+weighted avg       0.90      0.90      0.90      9134
+
+[[4058  509]
+ [ 393 4174]]

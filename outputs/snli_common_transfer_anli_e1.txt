@@ -1,0 +1,6 @@
+Training starts ....
+Epoch 1/1
+----------
+Train loss 0.451381520206698 accuracy 0.7909380329732802 f1score 0.789850848619921 lr 0.0
+Val   loss 0.334595902143298 accuracy 0.85527809307605 f1score 0.8573027420257415
+time taken to train 1:06:19.296980

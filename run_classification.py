@@ -63,11 +63,24 @@ class PlausibleDataset(Dataset):
         
 
         split_event = event.strip().split('</s>')
+        # for absolute 
         if len(split_event)==4:
             # input from hellaswag negative datapoint randomly choose one negative answer
             hypo = np.random.choice(range(3),1)[0]
             event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
             target = 0
+        elif len(split_event)==5:
+            # for relative
+            # input from hellaswag negative datapoint randomly choose one negative answer
+            hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
+            label = np.random.choice([0,1], 1)[0]
+            if label==0:
+                event = split_event[0].strip() +  ' </s> ' + split_event[target+1].strip() + ' </s> ' + split_event[1+hypo].strip()
+                target = 0
+            else:
+                event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
+                target = 1
+                
         encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
@@ -237,6 +250,7 @@ if __name__=="__main__":
     parser.add_argument('-train_data_path', '--train_data_path', required=True, help="path to train data file")
     parser.add_argument('-test_data_path', '--test_data_path', required=True, help="path to test data file")
     parser.add_argument('-val_data_path', '--val_data_path', required=True, help="path to val data file")
+    parser.add_argument('-filename', '--filename', default="test", help="name of the prediction file")
     parser.add_argument('-model_path_or_name', '--model_path', required=True, help="path to model")
     parser.add_argument('-tokenizer', '--tokenizer', default="roberta-large", help="path to tokenizer")
     parser.add_argument('-model_type', '--model_type', required=True, help="type of model")
@@ -248,8 +262,11 @@ if __name__=="__main__":
     parser.add_argument('--do_eval', action='store_true', help="to evaluate")
     parser.add_argument('--do_test', action='store_true', help="to test")
     parser.add_argument('--do_train',action='store_true', help="to train")
+    parser.add_argument('--freeze', action='store_true', help="to train only last layer")
     parser.add_argument('-output_dir','--output_dir', type=str, default='./', help="output directory")
     parser.add_argument('--load', action='store_true', help="to load from trained-checkpoint")
+    parser.add_argument('-load_dir','--load_dir', type=str, default='./', help="output directory")
+
 
     parser.add_argument('-dropout', '--dropout', type=float, default=0.1, help="dropout rate")
     parser.add_argument('-learning_rate', '--learning_rate', type=float, default=2e-5, help="learning rate")
@@ -275,6 +292,9 @@ if __name__=="__main__":
     do_eval = args.do_eval
     adam_epsilon = 1e-8
     warmup_steps = args.warm_up
+    filename = args.filename
+    load_dir = args.load_dir
+    freeze = args.freeze
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir,exist_ok=True)
@@ -297,11 +317,16 @@ if __name__=="__main__":
     model.config.hidden_dropout_prob = 0.1
     model.attention_probs_dropout_prob = dropout
     model.resize_token_embeddings(len(tokenizer))
+
+    # only train classification layer
+    if freeze:
+        for param in model.roberta.parameters():
+            param.requires_grad = False
     
     if do_test:
         model.load_state_dict(torch.load(output_dir+'/best_model_state.bin'))
     elif load_pretrained:
-        model.load_state_dict(torch.load(output_dir+'/best_model_state_old.bin'))
+        model.load_state_dict(torch.load(load_dir+'/best_model_state.bin'))
         
 
      
@@ -348,7 +373,7 @@ if __name__=="__main__":
         # start training
         print("Training starts ....")
         history = defaultdict(list)
-        best_score = 0
+        best_score = -1
 
         model.zero_grad()
         model = model.train()
@@ -380,14 +405,14 @@ if __name__=="__main__":
         # load data
         test_data_loader = create_data_loader_test(test_events, test_targets, tokenizer, max_length, batch_size)
 
-        test_event_texts, test_pred, test_pred_probs, test_test = get_predictions(model, test_data_loader, output_dir, 'test')
+        test_event_texts, test_pred, test_pred_probs, test_test = get_predictions(model, test_data_loader, output_dir, filename)
 
         
         # with open(output_dir +'/test_events.txt', 'w') as f:
         #     for t in test_event_texts:
         #         f.write("{}\n".format(t.strip()))
         print('--------------')
-        print(test_event_texts[0:5])
+        #print(test_event_texts[0:5])
         print('-----test report------')
         print(classification_report(test_test,test_pred))
         print(confusion_matrix(test_test, test_pred))

@@ -316,6 +316,8 @@ if __name__=="__main__":
     parser.add_argument('-train_data_path', '--train_data_path', required=True, help="path to train data file")
     parser.add_argument('-test_data_path', '--test_data_path', required=True, help="path to test data file")
     parser.add_argument('-val_data_path', '--val_data_path', required=True, help="path to val data file")
+    parser.add_argument('-filename', '--filename', default="test", help="name of the prediction file")
+
     parser.add_argument('-model_path_or_name', '--model_path', required=True, help="path to model")
     parser.add_argument('-tokenizer', '--tokenizer', default="roberta-large", help="path to tokenizer")
     parser.add_argument('-model_type', '--model_type', required=True, help="type of model")
@@ -427,7 +429,7 @@ if __name__=="__main__":
         # start training
         print("Training starts ....")
         history = defaultdict(list)
-        best_score = 0
+        best_score = -1
 
         model.zero_grad()
         model = model.train()
@@ -459,14 +461,14 @@ if __name__=="__main__":
         # load data
         test_data_loader = create_data_loader_test(test_events, test_targets, tokenizer, max_length, batch_size)
 
-        test_event_texts, test_pred, test_pred_probs, test_test = get_predictions(model, test_data_loader, output_dir, 'test')
+        test_event_texts, test_pred, test_pred_probs, test_test = get_predictions(model, test_data_loader, output_dir, filename)
 
         
         # with open(output_dir +'/test_events.txt', 'w') as f:
         #     for t in test_event_texts:
         #         f.write("{}\n".format(t.strip()))
         print('--------------')
-        print(test_event_texts[0:5])
+        # print(test_event_texts[0:5])
         print('-----test report------')
         print(classification_report(test_test,test_pred))
         print(confusion_matrix(test_test, test_pred))

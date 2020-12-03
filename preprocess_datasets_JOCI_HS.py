@@ -6,7 +6,10 @@ import csv
 import json
 import xml.etree.ElementTree as ET
 import random
+import numpy as np
+
 random.seed(42)
+np.random.seed(42)
 
 def convert_JOCI(in_path, mtl_common_path, mtl_specific_path, lm_p_path, lm_both_path):
 	with open(in_path) as f, open(mtl_common_path, 'w') as m1, open(mtl_specific_path, 'w') as m2, open(lm_p_path, 'w') as lm1, open(lm_both_path, 'w') as lm2 :
@@ -52,6 +55,36 @@ def convert_HellaSwag(f, mtl_common_path, mtl_specific_path, lm_p_path, lm_both_
 			for i in range(len(hypotheses)):
 				if i != label:
 					lm2.write("[BOS] {} [SEP] {} [EOS]\n".format(premise, hypotheses[i]))
+
+def convert_HellaSwag_test(f, mtl_common_path, mtl_specific_path, lm_p_path, lm_both_path):
+	with open(mtl_common_path, 'w') as m1, open(mtl_specific_path, 'w') as m2, open(lm_p_path, 'w') as lm1, open(lm_both_path, 'w') as lm2 :
+		for line in f:
+			row = json.loads(line.strip())
+			premise = row["ctx_a"].encode('utf-8').strip().lower()
+			incomplete = row["ctx_b"].encode('utf-8')
+			if incomplete:
+				incomplete = incomplete.strip().lower()
+				hypotheses = [incomplete + ' '+ ending.encode('utf-8').strip().lower() for ending in row["endings"]]
+			else:
+				hypotheses = [ending.encode('utf-8').strip().lower() for ending in row["endings"]]
+			label = row["label"]
+			m1.write("{} </s> {} {}\n".format(premise, hypotheses[label], 1))
+			neg_hypotheses = [hypotheses[i] for i in range(len(hypotheses)) if i != label]
+			m1.write("{} </s> {} {}\n".format(premise, neg_hypotheses[0], 0))
+			m1.write("{} </s> {} {}\n".format(premise, neg_hypotheses[1], 0))
+			m1.write("{} </s> {} {}\n".format(premise, neg_hypotheses[2], 0))
+			
+			lm1.write("[BOS] {} [SEP] {} [EOS]\n".format(premise, hypotheses[label]))
+			for i in range(len(hypotheses)):
+				if i != label:
+					lm2.write("[BOS] {} [SEP] {} [EOS]\n".format(premise, hypotheses[i]))
+					target = np.random.choice([0,1],1)[0]
+					if target==0:
+						m2.write("{} </s> {} </s> {} {}\n".format(premise, hypotheses[label], hypotheses[i], target))
+					else:
+						m2.write("{} </s> {} </s> {} {}\n".format(premise, hypotheses[i], hypotheses[label], target))
+	
+
 
 
 def convert_aNLI(inp_f, lab_f, mtl_common_path, mtl_specific_path, lm_p_path, lm_n_path):
@@ -160,11 +193,11 @@ def split_anli(in_path, lab_path, ratio=0.99):
 # train_f, val_f = split_hella('./HellaSwag/hellaswag_train.jsonl')
 # convert_HellaSwag( train_f, './HellaSwag/mtl_common_hellaswag_train.txt', './HellaSwag/mtl_specific_hellaswag_train.txt', './HellaSwag/lm_p_hellaswag_train.txt', './HellaSwag/lm_n_hellaswag_train.txt')
 # convert_HellaSwag( val_f, './HellaSwag/mtl_common_hellaswag_val.txt', './HellaSwag/mtl_specific_hellaswag_val.txt', './HellaSwag/lm_p_hellaswag_val.txt', './HellaSwag/lm_n_hellaswag_val.txt')
-# test_f, val_f = split_hella('./HellaSwag/hellaswag_val.jsonl', ratio=1.0)
-# convert_HellaSwag( test_f, './HellaSwag/mtl_common_hellaswag_test.txt', './HellaSwag/mtl_specific_hellaswag_test.txt', './HellaSwag/lm_p_hellaswag_test.txt', './HellaSwag/lm_n_hellaswag_test.txt')
+test_f, val_f = split_hella('./HellaSwag/hellaswag_val.jsonl', ratio=1.0)
+convert_HellaSwag_test( test_f, './HellaSwag/mtl_common_hellaswag_test.txt', './HellaSwag/mtl_specific_hellaswag_test.txt', './HellaSwag/lm_p_hellaswag_test.txt', './HellaSwag/lm_n_hellaswag_test.txt')
 
-convert_Copa('./COPA/datasets/copa-dev.xml', './COPA/mtl_common_copa_val.txt', './COPA/mtl_specific_copa_val.txt', './COPA/lm_p_copa_val.txt', './COPA/lm_n_copa_val.txt')
-convert_Copa('./COPA/datasets/copa-test.xml', './COPA/mtl_common_copa_test.txt', './COPA/mtl_specific_copa_test.txt', './COPA/lm_p_copa_test.txt', './COPA/lm_n_copa_test.txt')
+# convert_Copa('./COPA/datasets/copa-dev.xml', './COPA/mtl_common_copa_val.txt', './COPA/mtl_specific_copa_val.txt', './COPA/lm_p_copa_val.txt', './COPA/lm_n_copa_val.txt')
+# convert_Copa('./COPA/datasets/copa-test.xml', './COPA/mtl_common_copa_test.txt', './COPA/mtl_specific_copa_test.txt', './COPA/lm_p_copa_test.txt', './COPA/lm_n_copa_test.txt')
 
 # train_f, train_lab, val_f, val_lab = split_anli('./aNLI/train.jsonl', './aNLI/train-labels.lst', ratio=0.99)
 # print(len(train_f))
@@ -179,15 +212,15 @@ convert_Copa('./COPA/datasets/copa-test.xml', './COPA/mtl_common_copa_test.txt',
 # convert_Defeasible(["./defeasible/defeasible-snli/train.csv","./defeasible/defeasible-atomic/train.csv","./defeasible/defeasible-social/train.csv"], './defeasible/mtl_common_defeasible_train.txt', './defeasible/mtl_specific_defeasible_train.txt', './defeasible/lm_p_defeasible_train.txt', './defeasible/lm_n_defeasible_train.txt')
 # convert_Defeasible(["./defeasible/defeasible-snli/dev.csv","./defeasible/defeasible-atomic/dev.csv","./defeasible/defeasible-social/dev.csv"], './defeasible/mtl_common_defeasible_val.txt', './defeasible/mtl_specific_defeasible_val.txt', './defeasible/lm_p_defeasible_val.txt', './defeasible/lm_n_defeasible_val.txt')
 # convert_Defeasible(["./defeasible/defeasible-snli/test.csv","./defeasible/defeasible-atomic/test.csv","./defeasible/defeasible-social/test.csv"], './defeasible/mtl_common_defeasible_test.txt', './defeasible/mtl_specific_defeasible_test.txt', './defeasible/lm_p_defeasible_test.txt', './defeasible/lm_n_defeasible_test.txt')
-# convert_Defeasible(["./defeasible/defeasible-snli/train.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_train.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_train.txt', './defeasible/defeasible-snli/lm_p_defeasible_train.txt', './defeasible/defeasible-snli/lm_n_defeasible_train.txt')
-# convert_Defeasible(["./defeasible/defeasible-snli/dev.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_val.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_val.txt', './defeasible/defeasible-snli/lm_p_defeasible_val.txt', './defeasible/defeasible-snli/lm_n_defeasible_val.txt')
-# convert_Defeasible(["./defeasible/defeasible-snli/test.csv"], './defeasible/defeasible-snli/mtl_common_defeasible_test.txt', './defeasible/defeasible-snli/mtl_specific_defeasible_test.txt', './defeasible/defeasible-snli/lm_p_defeasible_test.txt', './defeasible/defeasible-snli/lm_n_defeasible_test.txt')
-# convert_Defeasible(["./defeasible/defeasible-atomic/train.csv"], './defeasible/defeasible-atomic/mtl_common_defeasible_train.txt', './defeasible/defeasible-atomic/mtl_specific_defeasible_train.txt', './defeasible/defeasible-atomic/lm_p_defeasible_train.txt', './defeasible/defeasible-atomic/lm_n_defeasible_train.txt')
-# convert_Defeasible(["./defeasible/defeasible-atomic/dev.csv"], './defeasible/defeasible-atomic/mtl_common_defeasible_val.txt', './defeasible/defeasible-atomic/mtl_specific_defeasible_val.txt', './defeasible/defeasible-atomic/lm_p_defeasible_val.txt', './defeasible/defeasible-atomic/lm_n_defeasible_val.txt')
-# convert_Defeasible(["./defeasible/defeasible-atomic/test.csv"], './defeasible/defeasible-atomic/mtl_common_defeasible_test.txt', './defeasible/defeasible-atomic/mtl_specific_defeasible_test.txt', './defeasible/defeasible-atomic/lm_p_defeasible_test.txt', './defeasible/defeasible-atomic/lm_n_defeasible_test.txt')
-# convert_Defeasible(["./defeasible/defeasible-social/train.csv"], './defeasible/defeasible-social/mtl_common_defeasible_train.txt', './defeasible/defeasible-social/mtl_specific_defeasible_train.txt', './defeasible/defeasible-social/lm_p_defeasible_train.txt', './defeasible/defeasible-social/lm_n_defeasible_train.txt')
-# convert_Defeasible(["./defeasible/defeasible-social/dev.csv"], './defeasible/defeasible-social/mtl_common_defeasible_val.txt', './defeasible/defeasible-social/mtl_specific_defeasible_val.txt', './defeasible/defeasible-social/lm_p_defeasible_val.txt', './defeasible/defeasible-social/lm_n_defeasible_val.txt')
-# convert_Defeasible(["./defeasible/defeasible-social/test.csv"], './defeasible/defeasible-social/mtl_common_defeasible_test.txt', './defeasible/defeasible-social/mtl_specific_defeasible_test.txt', './defeasible/defeasible-social/lm_p_defeasible_test.txt', './defeasible/defeasible-social/lm_n_defeasible_test.txt')
+# convert_Defeasible(["./defeasible/defeasible-snli/train.csv"], './defeasible/defeasible-snli/mtl_common_snli_train.txt', './defeasible/defeasible-snli/mtl_specific_snli_train.txt', './defeasible/defeasible-snli/lm_p_snlii_train.txt', './defeasible/defeasible-snli/lm_n_snli_train.txt')
+# convert_Defeasible(["./defeasible/defeasible-snli/dev.csv"], './defeasible/defeasible-snli/mtl_common_snli_val.txt', './defeasible/defeasible-snli/mtl_specific_snli_val.txt', './defeasible/defeasible-snli/lm_p_snli_val.txt', './defeasible/defeasible-snli/lm_n_snli_val.txt')
+# convert_Defeasible(["./defeasible/defeasible-snli/test.csv"], './defeasible/defeasible-snli/mtl_common_snli_test.txt', './defeasible/defeasible-snli/mtl_specific_snli_test.txt', './defeasible/defeasible-snli/lm_p_snli_test.txt', './defeasible/defeasible-snli/lm_n_snli_test.txt')
+# convert_Defeasible(["./defeasible/defeasible-atomic/train.csv"], './defeasible/defeasible-atomic/mtl_common_atomic_train.txt', './defeasible/defeasible-atomic/mtl_specific_atomic_train.txt', './defeasible/defeasible-atomic/lm_p_atomic_train.txt', './defeasible/defeasible-atomic/lm_n_atomic_train.txt')
+# convert_Defeasible(["./defeasible/defeasible-atomic/dev.csv"], './defeasible/defeasible-atomic/mtl_common_atomic_val.txt', './defeasible/defeasible-atomic/mtl_specific_atomic_val.txt', './defeasible/defeasible-atomic/lm_p_atomic_val.txt', './defeasible/defeasible-atomic/lm_n_atomic_val.txt')
+# convert_Defeasible(["./defeasible/defeasible-atomic/test.csv"], './defeasible/defeasible-atomic/mtl_common_atomic_test.txt', './defeasible/defeasible-atomic/mtl_specific_atomic_test.txt', './defeasible/defeasible-atomic/lm_p_atomic_test.txt', './defeasible/defeasible-atomic/lm_n_atomic_test.txt')
+# convert_Defeasible(["./defeasible/defeasible-social/train.csv"], './defeasible/defeasible-social/mtl_common_social_train.txt', './defeasible/defeasible-social/mtl_specific_social_train.txt', './defeasible/defeasible-social/lm_p_social_train.txt', './defeasible/defeasible-social/lm_n_social_train.txt')
+# convert_Defeasible(["./defeasible/defeasible-social/dev.csv"], './defeasible/defeasible-social/mtl_common_social_val.txt', './defeasible/defeasible-social/mtl_specific_social_val.txt', './defeasible/defeasible-social/lm_p_social_val.txt', './defeasible/defeasible-social/lm_n_social_val.txt')
+# convert_Defeasible(["./defeasible/defeasible-social/test.csv"], './defeasible/defeasible-social/mtl_common_social_test.txt', './defeasible/defeasible-social/mtl_specific_social_test.txt', './defeasible/defeasible-social/lm_p_social_test.txt', './defeasible/defeasible-social/lm_n_social_test.txt')
 
 
 
