@@ -1,0 +1,1000 @@
+[COPA] the item was packaged in bubble wrap. </s> it was fragile. 1
+[COPA] the item was packaged in bubble wrap. </s> it was small. 0
+[COPA] i emptied my pockets. </s> i retrieved a ticket stub. 1
+[COPA] i emptied my pockets. </s> i found a weapon. 0
+[COPA] termites invaded the house. </s> the termites disappeared from the house. 0
+[COPA] termites invaded the house. </s> the termites ate through the wood in the house. 1
+[COPA] the travelers reached the border. </s> the patrol agent checked their passports. 1
+[COPA] the travelers reached the border. </s> the patrol agent accused them of smuggling. 0
+[COPA] the office was closed. </s> it was a holiday. 1
+[COPA] the office was closed. </s> it was summer. 0
+[COPA] the girl ran out of energy. </s> she played checkers. 0
+[COPA] the girl ran out of energy. </s> she jumped rope. 1
+[COPA] the woman lost her place in line. </s> more people entered the line. 0
+[COPA] the woman lost her place in line. </s> she stepped out of the line. 1
+[COPA] the girl pinched her nose. </s> the baby drooled on her bib. 0
+[COPA] the girl pinched her nose. </s> the baby soiled her diaper. 1
+[COPA] the band played their hit song. </s> the audience clapped along to the music. 1
+[COPA] the band played their hit song. </s> the audience politely listened in silence. 0
+[COPA] the girl wanted to thank her math teacher. </s> the girl stayed after school for detention. 0
+[COPA] the girl wanted to thank her math teacher. </s> the girl brought the teacher an apple. 1
+[COPA] the young campers felt scared. </s> their camp counselor told them a ghost story. 1
+[COPA] the young campers felt scared. </s> they toasted marshmallows on the campfire. 0
+[COPA] the man hit his head. </s> he got lost in thought. 0
+[COPA] the man hit his head. </s> he got a concussion. 1
+[COPA] the check i wrote bounced. </s> my bank account was empty. 1
+[COPA] the check i wrote bounced. </s> i earned a pay raise. 0
+[COPA] the man's email inbox was full of spam. </s> he deleted the spam. 1
+[COPA] the man's email inbox was full of spam. </s> he sent out a mass email. 0
+[COPA] the sailor was quarantined. </s> he was exposed to the disease. 1
+[COPA] the sailor was quarantined. </s> he recovered from the disease. 0
+[COPA] the girl memorized the code. </s> she recited it to herself. 1
+[COPA] the girl memorized the code. </s> she forgot to write it down. 0
+[COPA] i poured the water into the glass. </s> the water quenched my thirst. 0
+[COPA] i poured the water into the glass. </s> the glass became full. 1
+[COPA] the man remained silent when his friend finishing speaking. </s> he wanted to offer his friend support. 0
+[COPA] the man remained silent when his friend finishing speaking. </s> he was thinking about his friend's words. 1
+[COPA] the accident was my fault. </s> i felt guilty. 1
+[COPA] the accident was my fault. </s> i pressed charges. 0
+[COPA] the chain came apart. </s> the chain was wrapped around a tire. 0
+[COPA] the chain came apart. </s> there was a broken link in the chain. 1
+[COPA] the couple decided to compromise. </s> they grew tired of arguing. 1
+[COPA] the couple decided to compromise. </s> they avoided discussing the problem. 0
+[COPA] the woman decided to run for public office. </s> she hired a campaign manager. 1
+[COPA] the woman decided to run for public office. </s> she testified in court. 0
+[COPA] the man anticipated cold weather on his trip. </s> he packed warm clothing in his suitcase. 1
+[COPA] the man anticipated cold weather on his trip. </s> he travelled with a big suitcase. 0
+[COPA] the student knew the answer to the question. </s> he raised his hand. 1
+[COPA] the student knew the answer to the question. </s> he goofed off. 0
+[COPA] the man's eyes watered. </s> dust got into his eyes. 1
+[COPA] the man's eyes watered. </s> he put goggles over his eyes. 0
+[COPA] the player won five games in a row. </s> her opponent accused her of cheating. 1
+[COPA] the player won five games in a row. </s> her opponent felt sorry for her. 0
+[COPA] the teacher tore up the student's exam. </s> he caught the student cheating. 1
+[COPA] the teacher tore up the student's exam. </s> the student's answers were incorrect. 0
+[COPA] i paused to stop talking. </s> i lost my voice. 0
+[COPA] i paused to stop talking. </s> i ran out of breath. 1
+[COPA] the frozen food thawed. </s> i put it in the microwave. 1
+[COPA] the frozen food thawed. </s> i covered it with plastic wrap. 0
+[COPA] the employee faked sick. </s> he had stomach cramps. 0
+[COPA] the employee faked sick. </s> he wanted a day off. 1
+[COPA] the girl landed in the pool. </s> she ran on the pool deck. 0
+[COPA] the girl landed in the pool. </s> she jumped off the diving board. 1
+[COPA] the movie tickets sold out. </s> it was opening day for the movie. 1
+[COPA] the movie tickets sold out. </s> the movie received poor reviews. 0
+[COPA] the man lost weight. </s> people isolated him. 0
+[COPA] the man lost weight. </s> people complimented him. 1
+[COPA] the girl's hands became blistered. </s> she typed up a letter. 0
+[COPA] the girl's hands became blistered. </s> she climbed up a rope. 1
+[COPA] the circus performer juggled while riding a unicycle. </s> the audience cheered in astonishment. 1
+[COPA] the circus performer juggled while riding a unicycle. </s> the acrobat swung from a trapeze. 0
+[COPA] i lost my patience. </s> my friend kept me waiting. 1
+[COPA] i lost my patience. </s> my friend arrived on time. 0
+[COPA] the warring countries wanted peace. </s> they developed nuclear weapons. 0
+[COPA] the warring countries wanted peace. </s> they negotiated a treaty. 1
+[COPA] the man took sleeping medication. </s> he became drowsy. 1
+[COPA] the man took sleeping medication. </s> he ran a fever. 0
+[COPA] the woman bumped into the sofa. </s> the leg of the sofa came loose. 0
+[COPA] the woman bumped into the sofa. </s> she bruised her knee. 1
+[COPA] the boy squeezed the balloon. </s> the balloon popped. 1
+[COPA] the boy squeezed the balloon. </s> the balloon flew away. 0
+[COPA] they travelers checked into their hotel room. </s> they unpacked their suitcases. 1
+[COPA] they travelers checked into their hotel room. </s> they went to the airport. 0
+[COPA] i bit into the peach. </s> the peach bruised. 0
+[COPA] i bit into the peach. </s> juice spilled out. 1
+[COPA] my hands became sticky. </s> i ate a doughnut. 1
+[COPA] my hands became sticky. </s> i had a sweet tooth. 0
+[COPA] i pushed the door. </s> the door opened. 1
+[COPA] i pushed the door. </s> the door locked. 0
+[COPA] activists boycotted the products. </s> the products were tested for quality assurance. 0
+[COPA] activists boycotted the products. </s> the products were manufactured through child labor. 1
+[COPA] i drilled a hole in the wall. </s> a mouse crawled out of the hole. 0
+[COPA] i drilled a hole in the wall. </s> dust blew out of the hole. 1
+[COPA] the woman felt envious of her sister. </s> her sister was happy. 1
+[COPA] the woman felt envious of her sister. </s> her sister got divorced. 0
+[COPA] i spilled wine on my shirt. </s> i put on an apron. 0
+[COPA] i spilled wine on my shirt. </s> i changed my shirt. 1
+[COPA] the cashier opened the cash register. </s> the customer searched his wallet. 0
+[COPA] the cashier opened the cash register. </s> the customer handed her money. 1
+[COPA] the street musician attracted a crowd. </s> people gave him change. 1
+[COPA] the street musician attracted a crowd. </s> he sent the crowd away. 0
+[COPA] the little boy cried to his babysitter. </s> he missed his parents. 1
+[COPA] the little boy cried to his babysitter. </s> it was snack time. 0
+[COPA] the pilot's radar detected a storm. </s> the pilot navigated away from the storm. 1
+[COPA] the pilot's radar detected a storm. </s> the pilot flew through the storm. 0
+[COPA] the tree shed its leaves. </s> the leaves turned colors. 0
+[COPA] the tree shed its leaves. </s> the leaves accumulated on the ground. 1
+[COPA] the boy was in a mischievous mood. </s> he decided to play a card game with his sister. 0
+[COPA] the boy was in a mischievous mood. </s> he decided to play a practical joke on his sister. 1
+[COPA] the child complained that he had to go to the bathroom. </s> his father gave him a soda to drink. 0
+[COPA] the child complained that he had to go to the bathroom. </s> his father stopped the car at a gas station. 1
+[COPA] the child sprinkled fish food into the tank. </s> the fish leapt out of the tank. 0
+[COPA] the child sprinkled fish food into the tank. </s> the fish swam towards the food. 1
+[COPA] the woman's political views changed. </s> she switched her party affiliation. 1
+[COPA] the woman's political views changed. </s> she engaged in a protest. 0
+[COPA] the bathroom sink was clogged. </s> i turned on the faucet. 0
+[COPA] the bathroom sink was clogged. </s> i poured drain cleaner into it. 1
+[COPA] the passengers got off the train. </s> the train arrived at the station. 1
+[COPA] the passengers got off the train. </s> the train blared its whistle. 0
+[COPA] the man pressed down on the moist flap of the envelope. </s> he put a stamp on the envelope. 0
+[COPA] the man pressed down on the moist flap of the envelope. </s> he sealed the envelope shut. 1
+[COPA] the friends lost touch. </s> they enjoyed each other's company. 0
+[COPA] the friends lost touch. </s> they moved to different cities. 1
+[COPA] the accountant mismanaged the company's funds. </s> she was fired from her position. 1
+[COPA] the accountant mismanaged the company's funds. </s> she went on maternity leave. 0
+[COPA] i looked at the clock. </s> i heard the clock tick. 0
+[COPA] i looked at the clock. </s> i wanted to check the time. 1
+[COPA] my hand cramped up. </s> i wrote the essay by hand. 1
+[COPA] my hand cramped up. </s> my wife and i held hands. 0
+[COPA] the bolt tightened. </s> i replaced the bolt. 0
+[COPA] the bolt tightened. </s> i twisted the wrench. 1
+[COPA] the couple signed a lease for an apartment. </s> the couple moved into the apartment. 1
+[COPA] the couple signed a lease for an apartment. </s> the city condemned the apartment. 0
+[COPA] the woman sat outside on the porch. </s> she wanted to watch the sunset. 1
+[COPA] the woman sat outside on the porch. </s> she thought she saw lightning. 0
+[COPA] the man wore a lifejacket in the water. </s> he couldn't swim. 1
+[COPA] the man wore a lifejacket in the water. </s> the water was shallow. 0
+[COPA] the woman made a typo in the word processor. </s> she deleted the document. 0
+[COPA] the woman made a typo in the word processor. </s> she hit the backspace key. 1
+[COPA] the girl bragged to her friends. </s> she got a bad grade. 0
+[COPA] the girl bragged to her friends. </s> she won a contest. 1
+[COPA] the lawn was muddy. </s> it poured overnight. 1
+[COPA] the lawn was muddy. </s> it was full of weeds. 0
+[COPA] the woman overslept. </s> she stayed the night in a hotel. 0
+[COPA] the woman overslept. </s> she forgot to set her alarm clock. 1
+[COPA] the man put on sunscreen. </s> he sat in the shade. 0
+[COPA] the man put on sunscreen. </s> he went to the beach. 1
+[COPA] the researchers proved the theory. </s> the researchers retracted the theory. 0
+[COPA] the researchers proved the theory. </s> individuals accepted the theory. 1
+[COPA] the fans at the game booed. </s> the game went into overtime. 0
+[COPA] the fans at the game booed. </s> the referee made a bad call. 1
+[COPA] i entered my combination on the lock. </s> i shut the lock. 0
+[COPA] i entered my combination on the lock. </s> the lock popped open. 1
+[COPA] the crowd intensified. </s> the father handed his son some money. 0
+[COPA] the crowd intensified. </s> the father grabbed his son's hand. 1
+[COPA] the snow was blocking the driveway. </s> i gathered the snow into a snowball. 0
+[COPA] the snow was blocking the driveway. </s> i shoveled the snow out of the way. 1
+[COPA] the kayakers paddled their oars. </s> the kayak reached the shore. 1
+[COPA] the kayakers paddled their oars. </s> the kayak hit a wave. 0
+[COPA] the girl lost control of her bike. </s> she let go of the handlebars. 0
+[COPA] the girl lost control of her bike. </s> she crashed into a fence. 1
+[COPA] i turned on the fan. </s> water sprinkled onto my skin. 0
+[COPA] i turned on the fan. </s> i felt cool air pass over me. 1
+[COPA] the surfers returned to the beach. </s> they were drenched. 0
+[COPA] the surfers returned to the beach. </s> they saw a shark. 1
+[COPA] i pulled the drain plug in the bathtub. </s> the water drained out of the tub. 1
+[COPA] i pulled the drain plug in the bathtub. </s> the water splashed onto the floor. 0
+[COPA] the husband felt guilty about cheating on his wife. </s> he accused her of infidelity. 0
+[COPA] the husband felt guilty about cheating on his wife. </s> he confessed his infidelity to her. 1
+[COPA] the ink on the poster smeared. </s> i waited for the ink to dry. 0
+[COPA] the ink on the poster smeared. </s> i spilled water on the poster. 1
+[COPA] the child woke up screaming. </s> he had a nightmare. 1
+[COPA] the child woke up screaming. </s> he wet the bed. 0
+[COPA] the boy put his feet up on the table. </s> his father sat down at the table. 0
+[COPA] the boy put his feet up on the table. </s> his father lectured him. 1
+[COPA] my friend turned his head in my direction. </s> i shouted his name. 1
+[COPA] my friend turned his head in my direction. </s> i waved my arms. 0
+[COPA] the government oppressed its citizens. </s> the citizens staged a revolt. 1
+[COPA] the government oppressed its citizens. </s> the citizens registered to vote. 0
+[COPA] the boy was lost in the woods. </s> he pitched a tent. 0
+[COPA] the boy was lost in the woods. </s> he screamed for help. 1
+[COPA] the woman travelled abroad. </s> she wanted to learn how to draw. 0
+[COPA] the woman travelled abroad. </s> she wanted to learn about other cultures. 1
+[COPA] the man was jealous of his coworker. </s> his coworker got a promotion. 1
+[COPA] the man was jealous of his coworker. </s> his coworker worked late. 0
+[COPA] the man witnessed aliens. </s> he was hallucinating. 1
+[COPA] the man witnessed aliens. </s> he was meditating. 0
+[COPA] the man's hair turned blonde. </s> he put bleach in it. 1
+[COPA] the man's hair turned blonde. </s> he put shampoo in it. 0
+[COPA] the artist created new work. </s> she critiqued her previous work. 0
+[COPA] the artist created new work. </s> she felt a stroke of inspiration. 1
+[COPA] the son moved away from home. </s> he was discharged from the military. 0
+[COPA] the son moved away from home. </s> he was going to college. 1
+[COPA] books fell out of the bookcase. </s> the shelves were covered with dust. 0
+[COPA] books fell out of the bookcase. </s> an earthquake shook the bookcase. 1
+[COPA] the electricity in my house shut off. </s> i turned on a light. 0
+[COPA] the electricity in my house shut off. </s> i reset the circuit breaker. 1
+[COPA] we rode the roller coaster. </s> it looked scary. 0
+[COPA] we rode the roller coaster. </s> it looked fun. 1
+[COPA] the bag of popcorn began to pop. </s> i poured butter into the bag. 0
+[COPA] the bag of popcorn began to pop. </s> i heated it in the microwave. 1
+[COPA] a tree fell on the power line. </s> the electricity in the neighborhood went out. 1
+[COPA] a tree fell on the power line. </s> the forecast predicted heavy winds. 0
+[COPA] the speaker made politically incorrect comments. </s> he bored the audience. 0
+[COPA] the speaker made politically incorrect comments. </s> he offended the audience. 1
+[COPA] i pricked myself with the pin. </s> a bead of sweat dripped from my face. 0
+[COPA] i pricked myself with the pin. </s> a drop of blood formed on my finger. 1
+[COPA] the fish floated on the surface of the tank. </s> it was hungry. 0
+[COPA] the fish floated on the surface of the tank. </s> it was dead. 1
+[COPA] the man's voice sounded hoarse. </s> he had a cold. 1
+[COPA] the man's voice sounded hoarse. </s> he quit smoking. 0
+[COPA] the elevator doors opened. </s> the elevator arrived at the designated floor. 1
+[COPA] the elevator doors opened. </s> the elevator got stuck between floors. 0
+[COPA] the teenager snuck out of the house. </s> he lied to his parents. 0
+[COPA] the teenager snuck out of the house. </s> his parents grounded him. 1
+[COPA] the bathroom flooded. </s> the toilet overflowed. 1
+[COPA] the bathroom flooded. </s> the water heater broke. 0
+[COPA] the puppy stayed near its owner. </s> the owner put a collar on the puppy. 0
+[COPA] the puppy stayed near its owner. </s> the owner kept the puppy on a leash. 1
+[COPA] the man caught his reflection. </s> he stood under the sprawling tree. 0
+[COPA] the man caught his reflection. </s> he stood over the calm lake. 1
+[COPA] i missed my girlfriend's phone call. </s> i called her back. 1
+[COPA] i missed my girlfriend's phone call. </s> i met her for dinner. 0
+[COPA] the family searched the neighborhood. </s> their dog ran away from home. 1
+[COPA] the family searched the neighborhood. </s> expensive jewelry was missing from their home. 0
+[COPA] i saw my breath when i exhaled. </s> the weather was chilly. 1
+[COPA] i saw my breath when i exhaled. </s> my chest felt tight. 0
+[COPA] the employees formed a union. </s> they wanted better working conditions. 1
+[COPA] the employees formed a union. </s> their employer raised their wages. 0
+[COPA] i baked an apple pie. </s> a rotting smell filled the kitchen. 0
+[COPA] i baked an apple pie. </s> a warm aroma filled the kitchen. 1
+[COPA] the woman struggled to walk. </s> she wore high heels. 1
+[COPA] the woman struggled to walk. </s> she took off her shoes. 0
+[COPA] steam rose off of the pot of water. </s> the water boiled. 1
+[COPA] steam rose off of the pot of water. </s> i covered the pot. 0
+[COPA] all my socks were in the laundry. </s> i wore sandals. 1
+[COPA] all my socks were in the laundry. </s> i wore boots. 0
+[COPA] the politician's argument was considered absurd. </s> he lost the support of voters. 1
+[COPA] the politician's argument was considered absurd. </s> he was accused of corruption. 0
+[COPA] everyone disapproved of the couple's engagement. </s> the couple got pregnant. 0
+[COPA] everyone disapproved of the couple's engagement. </s> the couple eloped. 1
+[COPA] the building was dedicated to the millionaire. </s> the millionaire wanted the building torn down. 0
+[COPA] the building was dedicated to the millionaire. </s> the millionaire contributed the funds to build it. 1
+[COPA] the sale associate accused the girl of stealing. </s> the sales associate saw the girl put merchandise in her purse. 1
+[COPA] the sale associate accused the girl of stealing. </s> the sales associate helped the girl find the purse she liked. 0
+[COPA] the country declared war on the neighboring territory. </s> soldiers were sent out to fight. 1
+[COPA] the country declared war on the neighboring territory. </s> soldiers were reunited with their families. 0
+[COPA] the court upheld the controversial ruling. </s> a riot broke loose in front of the courthouse. 1
+[COPA] the court upheld the controversial ruling. </s> a couple exchanged vows in front of the courthouse. 0
+[COPA] the girl smelled something burning. </s> she took the cookies out of the jar. 0
+[COPA] the girl smelled something burning. </s> she left the cookies in the oven. 1
+[COPA] the rain was pouring down. </s> the storm worsened. 0
+[COPA] the rain was pouring down. </s> i dashed to get inside. 1
+[COPA] the building was evacuated. </s> the elevator stopped functioning. 0
+[COPA] the building was evacuated. </s> the fire alarm went off. 1
+[COPA] the father resented his son's alcoholism. </s> the father bought his son a beer. 0
+[COPA] the father resented his son's alcoholism. </s> the father kicked his son out of the house. 1
+[COPA] the lawyer took the stairs up to her office. </s> the secretary went home for the day. 0
+[COPA] the lawyer took the stairs up to her office. </s> the elevator was out of order. 1
+[COPA] the man became annoyed with his friend. </s> his friend interrupted him. 1
+[COPA] the man became annoyed with his friend. </s> his friend bought him lunch. 0
+[COPA] the girl handed her money to the cashier. </s> the cashier gave the girl her change. 1
+[COPA] the girl handed her money to the cashier. </s> the cashier forgot to give the girl a receipt. 0
+[COPA] the woman was put in a wheelchair. </s> she was paralyzed in an accident. 1
+[COPA] the woman was put in a wheelchair. </s> she entered the hospital in a stretcher. 0
+[COPA] citizens hung the national flag up outside their homes. </s> the country was commemorating its independence. 1
+[COPA] citizens hung the national flag up outside their homes. </s> the country was facing economic hardship. 0
+[COPA] the team lost the tournament. </s> they disappointed their fans. 1
+[COPA] the team lost the tournament. </s> they inspired their fans. 0
+[COPA] my friend pointed out that i had food stuck in my teeth. </s> i felt embarrassed. 1
+[COPA] my friend pointed out that i had food stuck in my teeth. </s> i felt proud. 0
+[COPA] the boy failed his history exam. </s> he paid attention in class. 0
+[COPA] the boy failed his history exam. </s> he forgot to study. 1
+[COPA] the downtown building collapsed. </s> an earthquake hit the city. 1
+[COPA] the downtown building collapsed. </s> crime rates in the city increased. 0
+[COPA] the man's girlfriend broke up with him. </s> he begged her to take him back. 1
+[COPA] the man's girlfriend broke up with him. </s> she introduced him to her parents. 0
+[COPA] the two children simultaneously reached down to retrieve the ball. </s> the ball rolled away. 0
+[COPA] the two children simultaneously reached down to retrieve the ball. </s> their heads collided. 1
+[COPA] the raccoon ransacked the garbage can. </s> there was cardboard in the garbage can. 0
+[COPA] the raccoon ransacked the garbage can. </s> the lid was off the garbage can. 1
+[COPA] the boy sharpened the pencil. </s> it was cheap. 0
+[COPA] the boy sharpened the pencil. </s> it was dull. 1
+[COPA] the cashier denied the woman a refund for the dress. </s> she lost her receipt. 1
+[COPA] the cashier denied the woman a refund for the dress. </s> the dress didn't fit. 0
+[COPA] the scratch in my skin was deep. </s> it healed quickly. 0
+[COPA] the scratch in my skin was deep. </s> it left a scar. 1
+[COPA] the man received strange looks from passengers on the train. </s> he was staring at the ground. 0
+[COPA] the man received strange looks from passengers on the train. </s> he was talking to himself. 1
+[COPA] the child left crumbs on the floor. </s> ants crawled to the crumbs. 1
+[COPA] the child left crumbs on the floor. </s> the child put the bread away. 0
+[COPA] the woman handed her sister a tissue. </s> the woman's sister folded her hands. 0
+[COPA] the woman handed her sister a tissue. </s> the woman's sister began to cry. 1
+[COPA] the man took a mint. </s> his lips were chapped. 0
+[COPA] the man took a mint. </s> he worried about bad breath. 1
+[COPA] the couple left early for the show. </s> they anticipated traffic around the theatre. 1
+[COPA] the couple left early for the show. </s> they got directions to the theatre. 0
+[COPA] the woman stayed home from work. </s> her boss praised her. 0
+[COPA] the woman stayed home from work. </s> her coworker covered for her. 1
+[COPA] the man signed the activists' petition. </s> he supported their cause. 1
+[COPA] the man signed the activists' petition. </s> he denounced them as crazy. 0
+[COPA] the actor's heart was fluttering before his performance. </s> he had stage fright. 1
+[COPA] the actor's heart was fluttering before his performance. </s> he memorized his lines. 0
+[COPA] i was lost. </s> i counted my cash. 0
+[COPA] i was lost. </s> i unfolded a map. 1
+[COPA] the ripe fruit lingered in the sun. </s> it was eaten. 0
+[COPA] the ripe fruit lingered in the sun. </s> it shriveled up. 1
+[COPA] the car broke down. </s> i turned the ignition. 0
+[COPA] the car broke down. </s> the engine overheated. 1
+[COPA] the man hurt his back. </s> he went to see a psychiatrist. 0
+[COPA] the man hurt his back. </s> he stayed in bed for several days. 1
+[COPA] i started a fire in the fireplace. </s> i was out of firewood. 0
+[COPA] i started a fire in the fireplace. </s> it was cold in the house. 1
+[COPA] the woman stopped jogging. </s> she got a cramp in her side. 1
+[COPA] the woman stopped jogging. </s> she got a second wind. 0
+[COPA] i knocked on my neighbor's door. </s> my neighbor invited me in. 1
+[COPA] i knocked on my neighbor's door. </s> my neighbor left her house. 0
+[COPA] the woman sighed with frustration. </s> her husband misunderstood her concerns. 1
+[COPA] the woman sighed with frustration. </s> her husband kissed her goodbye. 0
+[COPA] the teacher commended the student. </s> the student answered the question correctly. 1
+[COPA] the teacher commended the student. </s> the student hesitated to answer the question. 0
+[COPA] the woman ran out of eggs. </s> she went to the farm. 0
+[COPA] the woman ran out of eggs. </s> she went to the supermarket. 1
+[COPA] i encountered an old friend. </s> i revealed a secret to him. 0
+[COPA] i encountered an old friend. </s> i gave him a hug. 1
+[COPA] the woman avoided going in the lake. </s> she caught a fish. 0
+[COPA] the woman avoided going in the lake. </s> it looked contaminated. 1
+[COPA] the student arrived to class soaking wet. </s> his umbrella was broken. 1
+[COPA] the student arrived to class soaking wet. </s> his bike was stolen. 0
+[COPA] the cursor on the computer screen moved. </s> the user clicked the mouse. 0
+[COPA] the cursor on the computer screen moved. </s> the user shifted the mouse. 1
+[COPA] the driver took a detour. </s> an accident occurred on the main road. 1
+[COPA] the driver took a detour. </s> she followed the truck in front of her. 0
+[COPA] i hung the wet linen on the outdoor clothesline. </s> the linen dried. 1
+[COPA] i hung the wet linen on the outdoor clothesline. </s> the linen stained. 0
+[COPA] the woman put on her shades. </s> the sunlight was bright. 1
+[COPA] the woman put on her shades. </s> she hailed a cab. 0
+[COPA] the man gazed at the night sky. </s> he wished it were summer. 0
+[COPA] the man gazed at the night sky. </s> he thought it was beautiful. 1
+[COPA] i felt exhausted. </s> i went to bed early. 1
+[COPA] i felt exhausted. </s> i stayed up all night. 0
+[COPA] the man went to the barber. </s> he was growing out his hair. 0
+[COPA] the man went to the barber. </s> his hair was getting long. 1
+[COPA] the boy played mean tricks on his new classmate. </s> the boy welcomed the new classmate. 0
+[COPA] the boy played mean tricks on his new classmate. </s> the boy disliked the new classmate. 1
+[COPA] i craved a glass of milk. </s> i was eating cookies. 1
+[COPA] i craved a glass of milk. </s> i was baking bread. 0
+[COPA] it began to rain. </s> the driver turned on the headlights. 1
+[COPA] it began to rain. </s> the driver shifted the car into reverse. 0
+[COPA] the parking lot of the building was empty. </s> i parked across the street. 0
+[COPA] the parking lot of the building was empty. </s> i parked near the entrance. 1
+[COPA] the writer missed her deadline for the draft submission. </s> she had writer's block. 1
+[COPA] the writer missed her deadline for the draft submission. </s> she edited the draft. 0
+[COPA] the associate hung up on me. </s> i asked to speak to a supervisor. 1
+[COPA] the associate hung up on me. </s> i provided my identification number. 0
+[COPA] the wind blew through the open window. </s> the doorbell rang. 0
+[COPA] the wind blew through the open window. </s> the curtains shuddered. 1
+[COPA] the electricity in my house shut off. </s> i unplugged the lamp. 0
+[COPA] the electricity in my house shut off. </s> i blew a fuse. 1
+[COPA] the weightlifter grunted. </s> he flexed his muscles in the mirror. 0
+[COPA] the weightlifter grunted. </s> he lifted the bar over his head. 1
+[COPA] the student tried to do the math in his head. </s> he got out a calculator. 0
+[COPA] the student tried to do the math in his head. </s> he got confused. 1
+[COPA] the baby fell asleep. </s> the father changed the baby's diaper. 0
+[COPA] the baby fell asleep. </s> the father gently rocked the baby. 1
+[COPA] the girl threw the water balloon at the boy. </s> the boy got a concussion. 0
+[COPA] the girl threw the water balloon at the boy. </s> the boy got soaked. 1
+[COPA] the photographer forgot to use the flash on the camera. </s> the photos turned out blurry. 1
+[COPA] the photographer forgot to use the flash on the camera. </s> everyone in the photos refused to smile. 0
+[COPA] i declined the invitation to the birthday party. </s> i was lonely. 0
+[COPA] i declined the invitation to the birthday party. </s> i was out of town. 1
+[COPA] i exercised. </s> i felt energetic. 1
+[COPA] i exercised. </s> i was scared. 0
+[COPA] i squeezed the damp sponge. </s> it soaked up water. 0
+[COPA] i squeezed the damp sponge. </s> water seeped out of it. 1
+[COPA] the vacationers took a ferry to the resort. </s> the resort was booked. 0
+[COPA] the vacationers took a ferry to the resort. </s> the resort was on an island. 1
+[COPA] the teenager got a tattoo. </s> she was afraid of needles. 0
+[COPA] the teenager got a tattoo. </s> she wanted to rebel. 1
+[COPA] an unfamiliar car parked outside my house. </s> i became suspicious. 1
+[COPA] an unfamiliar car parked outside my house. </s> i called the police. 0
+[COPA] the criminal turned himself in. </s> the evidence implicated him. 1
+[COPA] the criminal turned himself in. </s> there was no evidence against him. 0
+[COPA] the heavyset man decided to lose weight. </s> he cut out sweets. 1
+[COPA] the heavyset man decided to lose weight. </s> he avoided caffeine. 0
+[COPA] the girl stepped on the ice. </s> she slid. 1
+[COPA] the girl stepped on the ice. </s> she shivered. 0
+[COPA] the woman had rings under her eyes. </s> she stayed up all night. 1
+[COPA] the woman had rings under her eyes. </s> she put her son to bed. 0
+[COPA] lava flowed from the volcano. </s> the volcano erupted. 1
+[COPA] lava flowed from the volcano. </s> the volcano was dormant. 0
+[COPA] the woman put her shoes on. </s> she knew everyone at the party. 0
+[COPA] the woman put her shoes on. </s> she wanted to leave the party. 1
+[COPA] i paid the tollbooth attendant. </s> she let me pass through the tollbooth. 1
+[COPA] i paid the tollbooth attendant. </s> she detained me at the tollbooth. 0
+[COPA] the executive went bankrupt. </s> he sold his company stock. 0
+[COPA] the executive went bankrupt. </s> he squandered his fortune. 1
+[COPA] the man went to the doctor. </s> the doctor was on leave. 0
+[COPA] the man went to the doctor. </s> the man felt ill. 1
+[COPA] i exited my bedroom through the window. </s> the house was on fire. 1
+[COPA] i exited my bedroom through the window. </s> the house was empty. 0
+[COPA] the boy's fingers became pruny. </s> he took a long shower. 1
+[COPA] the boy's fingers became pruny. </s> he lathered his hands with soap. 0
+[COPA] i spit out the milk. </s> the milk tasted sour. 1
+[COPA] i spit out the milk. </s> my mouth was dry. 0
+[COPA] i missed the bus. </s> i was early to work. 0
+[COPA] i missed the bus. </s> i was late to work. 1
+[COPA] the truck collided with the car. </s> the truck sped up. 0
+[COPA] the truck collided with the car. </s> the car got smashed. 1
+[COPA] the team rigged the contest in their favor. </s> they won. 1
+[COPA] the team rigged the contest in their favor. </s> they dropped out. 0
+[COPA] the soda bottle hissed. </s> i turned over the bottle. 0
+[COPA] the soda bottle hissed. </s> i twisted off the cap. 1
+[COPA] the boy was locked out of his house. </s> he crawled in through an open window. 1
+[COPA] the boy was locked out of his house. </s> he climbed up to the roof. 0
+[COPA] the doorbell rang. </s> the visitor tapped the knocker on the door. 0
+[COPA] the doorbell rang. </s> the woman peered through the keyhole in the door. 1
+[COPA] the man stained his suit. </s> he got it dry-cleaned. 1
+[COPA] the man stained his suit. </s> he hung it in his closet. 0
+[COPA] the girl squeezed the tube of toothpaste. </s> the toothpaste squirted out of the tube. 1
+[COPA] the girl squeezed the tube of toothpaste. </s> the girl spit out the toothpaste. 0
+[COPA] civilian deaths from the war surged. </s> pacifists staged a protest. 1
+[COPA] civilian deaths from the war surged. </s> pacifists held a parade. 0
+[COPA] the girl yanked the ribbon out of her hair. </s> she tied the ribbon. 0
+[COPA] the girl yanked the ribbon out of her hair. </s> the ribbon looked babyish. 1
+[COPA] the man got plastic surgery. </s> he aged. 0
+[COPA] the man got plastic surgery. </s> he looked younger. 1
+[COPA] a baby chicken emerged from the egg. </s> the egg hatched. 1
+[COPA] a baby chicken emerged from the egg. </s> i cracked the egg. 0
+[COPA] the prisoner starved. </s> he died. 1
+[COPA] the prisoner starved. </s> he fled. 0
+[COPA] the man lost his balance on the ladder. </s> he climbed up the ladder. 0
+[COPA] the man lost his balance on the ladder. </s> he fell off the ladder. 1
+[COPA] the child burped. </s> he took a swig of soda. 1
+[COPA] the child burped. </s> he opened the soda can. 0
+[COPA] a cold draft came in through the window. </s> i relaxed. 0
+[COPA] a cold draft came in through the window. </s> i shivered. 1
+[COPA] the student received a scholarship to go to college. </s> her classmates respected her. 0
+[COPA] the student received a scholarship to go to college. </s> she made good grades. 1
+[COPA] the girl poked fun at the boy. </s> she lived next door to him. 0
+[COPA] the girl poked fun at the boy. </s> she had a crush on him. 1
+[COPA] the hungry vagrant stole food. </s> he incited pity. 0
+[COPA] the hungry vagrant stole food. </s> he had no money. 1
+[COPA] i called my friend to chat. </s> i wanted privacy. 0
+[COPA] i called my friend to chat. </s> i felt lonely. 1
+[COPA] the man extended his hand to me. </s> i shook his hand. 1
+[COPA] the man extended his hand to me. </s> i slapped him. 0
+[COPA] i ducked. </s> the fireworks launched up in the air. 0
+[COPA] i ducked. </s> the frisbee soared towards my head. 1
+[COPA] the girl bit her nails. </s> she was worried. 1
+[COPA] the girl bit her nails. </s> she was surprised. 0
+[COPA] i turned the page on the calendar. </s> i marked an appointment on the calendar. 0
+[COPA] i turned the page on the calendar. </s> it was the beginning of a new month. 1
+[COPA] the husband discovered that his wife was having an affair. </s> he fired his lawyer. 0
+[COPA] the husband discovered that his wife was having an affair. </s> he filed for divorce. 1
+[COPA] the girl dropped the rubber ball. </s> the ball bounced. 1
+[COPA] the girl dropped the rubber ball. </s> the ball glowed. 0
+[COPA] the girl made a mistake on her exam. </s> she guessed at the answer. 0
+[COPA] the girl made a mistake on her exam. </s> she erased her answer. 1
+[COPA] the player tackled his opponent. </s> his opponent caught the pass. 0
+[COPA] the player tackled his opponent. </s> his opponent hit the ground. 1
+[COPA] i picked the tomatoes from the vine. </s> they were ripe. 1
+[COPA] i picked the tomatoes from the vine. </s> i watered them. 0
+[COPA] the man wanted to act romantic. </s> he met his ex-girlfriend for lunch. 0
+[COPA] the man wanted to act romantic. </s> he bought his girlfriend chocolates. 1
+[COPA] the mercury in the thermometer rose. </s> i dropped the thermometer. 0
+[COPA] the mercury in the thermometer rose. </s> the weather got warmer. 1
+[COPA] a tornado came through the town. </s> the roof of the courthouse blew off. 1
+[COPA] a tornado came through the town. </s> the highway became dangerously icy. 0
+[COPA] the student received tutoring. </s> his grades improved. 1
+[COPA] the student received tutoring. </s> he cheated on the exam. 0
+[COPA] i felt comfortable. </s> i kneeled down on the ground. 0
+[COPA] i felt comfortable. </s> i wrapped myself in a blanket. 1
+[COPA] i polished the stone. </s> it became slippery. 0
+[COPA] i polished the stone. </s> it became shiny. 1
+[COPA] i added sugar to the coffee. </s> the coffee smelled strong. 0
+[COPA] i added sugar to the coffee. </s> the coffee tasted sweet. 1
+[COPA] the man shuffled through the papers. </s> he got a paper cut. 1
+[COPA] the man shuffled through the papers. </s> he shredded the papers. 0
+[COPA] i pounded the nail with the hammer. </s> the nail sunk into the wood. 1
+[COPA] i pounded the nail with the hammer. </s> the nail became rusty. 0
+[COPA] the fish bit the line. </s> the fisherman reeled in the fish. 1
+[COPA] the fish bit the line. </s> the fisherman recast the line. 0
+[COPA] the teenager was embarrassed to go to school. </s> she got a pimple. 1
+[COPA] the teenager was embarrassed to go to school. </s> she got her braces off. 0
+[COPA] my facial expression lit up. </s> i received good news. 1
+[COPA] my facial expression lit up. </s> i lost my patience. 0
+[COPA] i wiped my hands with a towel. </s> the towel was wet. 0
+[COPA] i wiped my hands with a towel. </s> my hands were wet. 1
+[COPA] the man lost his balance on the stool. </s> the stool wobbled underneath him. 1
+[COPA] the man lost his balance on the stool. </s> he spilled paint on the stool. 0
+[COPA] the teammates directed blame at each other. </s> they lost their game. 1
+[COPA] the teammates directed blame at each other. </s> their coach cancelled practice. 0
+[COPA] i asked for forgiveness. </s> i regretted my mistake. 1
+[COPA] i asked for forgiveness. </s> i achieved my goal. 0
+[COPA] the woman became bored with her date. </s> he asked her questions about herself. 0
+[COPA] the woman became bored with her date. </s> he talked incessantly about himself. 1
+[COPA] the girl flashed a smile. </s> her cheeks reddened. 0
+[COPA] the girl flashed a smile. </s> her dimples showed. 1
+[COPA] the enemy ship blew up. </s> it passed over the mine. 1
+[COPA] the enemy ship blew up. </s> it sailed into the harbor. 0
+[COPA] the man punctured his foot. </s> he walked into a puddle. 0
+[COPA] the man punctured his foot. </s> he stepped on broken glass. 1
+[COPA] the detectives dusted the crime scene for fingerprints. </s> they discovered the identity of the murderer. 1
+[COPA] the detectives dusted the crime scene for fingerprints. </s> they found the weapon at the crime scene. 0
+[COPA] there was a lot of traffic on the highway. </s> i took a detour. 1
+[COPA] there was a lot of traffic on the highway. </s> i asked for a ride. 0
+[COPA] the nation's economy declined. </s> many people got sick. 0
+[COPA] the nation's economy declined. </s> many people faced unemployment. 1
+[COPA] the crossing guard blew her whistle at the children. </s> they were about to walk into oncoming traffic. 1
+[COPA] the crossing guard blew her whistle at the children. </s> she recognized them from her neighborhood. 0
+[COPA] i rolled my eyes at my friend. </s> he told me the truth. 0
+[COPA] i rolled my eyes at my friend. </s> he made a sarcastic remark. 1
+[COPA] the car ran out of gas. </s> the driver was stranded on the road. 1
+[COPA] the car ran out of gas. </s> the driver picked up a hitchhiker. 0
+[COPA] the woman went into labor. </s> the baby was delivered. 1
+[COPA] the woman went into labor. </s> the woman had morning sickness. 0
+[COPA] the man's hat blew away. </s> he took off the hat. 0
+[COPA] the man's hat blew away. </s> it was windy outside. 1
+[COPA] the girl attended her classmate's birthday party. </s> she received an invitation. 1
+[COPA] the girl attended her classmate's birthday party. </s> she bought a gift. 0
+[COPA] the boy's forehead felt hot. </s> his mother took his temperature. 1
+[COPA] the boy's forehead felt hot. </s> his mother took him to the park. 0
+[COPA] the man sprayed himself with cologne. </s> he wanted to impress his date. 1
+[COPA] the man sprayed himself with cologne. </s> he put gel in his hair. 0
+[COPA] the electricity in the house shut off. </s> i looked for a flashlight. 1
+[COPA] the electricity in the house shut off. </s> i picked up a shovel. 0
+[COPA] the family moved into a bigger house. </s> the son graduated from high school. 0
+[COPA] the family moved into a bigger house. </s> the mother gave birth to twins. 1
+[COPA] the marathoner kept at a slow pace. </s> she wanted to conserve her energy. 1
+[COPA] the marathoner kept at a slow pace. </s> she saw the finish line. 0
+[COPA] the boy kicked the vending machine. </s> the machine spit out the change. 0
+[COPA] the boy kicked the vending machine. </s> the bag of chips was stuck. 1
+[COPA] my friend's dog died. </s> i rolled my eyes at him. 0
+[COPA] my friend's dog died. </s> i gave him a hug. 1
+[COPA] the businessman's credit card got declined. </s> he wrote an iou. 0
+[COPA] the businessman's credit card got declined. </s> he paid with cash. 1
+[COPA] the man cursed. </s> he clipped his nails. 0
+[COPA] the man cursed. </s> he stubbed his toe. 1
+[COPA] the man felt proud of his brother. </s> his brother got in an argument with their parents. 0
+[COPA] the man felt proud of his brother. </s> his brother got accepted into law school. 1
+[COPA] the girl wanted to learn about the solar system. </s> she went to the library. 1
+[COPA] the girl wanted to learn about the solar system. </s> she looked at the stars. 0
+[COPA] the poster stuck to the wall. </s> i positioned the poster above the door. 0
+[COPA] the poster stuck to the wall. </s> i put tape on the back of the poster. 1
+[COPA] the client approved the architect's plans for the building. </s> the architect constructed the building. 1
+[COPA] the client approved the architect's plans for the building. </s> the architect adjusted the plans. 0
+[COPA] the man dropped his spoon. </s> his hand was shaking. 1
+[COPA] the man dropped his spoon. </s> he licked the spoon. 0
+[COPA] the ceo of the company resigned. </s> the board of directors dissolved the company. 0
+[COPA] the ceo of the company resigned. </s> the board of directors found his replacement. 1
+[COPA] i arrived late to the lecture. </s> i took a seat in the back row. 1
+[COPA] i arrived late to the lecture. </s> i approached the podium. 0
+[COPA] the man was released from jail. </s> his family paid his bail. 1
+[COPA] the man was released from jail. </s> he attacked a fellow inmate. 0
+[COPA] the family lost all their belongings. </s> they sold their house. 0
+[COPA] the family lost all their belongings. </s> their house caught fire. 1
+[COPA] i stomped on the aluminum can. </s> the can was recycled. 0
+[COPA] i stomped on the aluminum can. </s> the can got crushed. 1
+[COPA] the girl joined the debate team. </s> she learned to use a computer. 0
+[COPA] the girl joined the debate team. </s> she learned communication skills. 1
+[COPA] my mood improved. </s> i listened to music. 1
+[COPA] my mood improved. </s> i did the dishes. 0
+[COPA] the charity made a goal to raise money. </s> they fed the homeless. 0
+[COPA] the charity made a goal to raise money. </s> they held an auction. 1
+[COPA] the roller coaster plunged down the steep drop. </s> the passengers giggled. 0
+[COPA] the roller coaster plunged down the steep drop. </s> the passengers screamed. 1
+[COPA] i was furious. </s> i checked the mailbox upon leaving the house. 0
+[COPA] i was furious. </s> i slammed the door upon leaving the house. 1
+[COPA] the man wanted to watch the sunrise. </s> he travelled north. 0
+[COPA] the man wanted to watch the sunrise. </s> he got up early. 1
+[COPA] i folded the paper. </s> i recycled the paper. 0
+[COPA] i folded the paper. </s> the paper creased. 1
+[COPA] the nation endured a natural disaster. </s> leaders of other countries formed an alliance. 0
+[COPA] the nation endured a natural disaster. </s> leaders of other countries sent emergency relief. 1
+[COPA] the boy's clothes got soaked. </s> he climbed out of the pool. 0
+[COPA] the boy's clothes got soaked. </s> he fell into the pool. 1
+[COPA] the student rushed to finish the book. </s> it was due to be returned to the library. 1
+[COPA] the student rushed to finish the book. </s> he borrowed it from a friend. 0
+[COPA] the criminal was executed. </s> he was thrown in jail. 0
+[COPA] the criminal was executed. </s> he was convicted of murder. 1
+[COPA] sunlight entered the room. </s> i opened the curtains. 1
+[COPA] sunlight entered the room. </s> i unlocked the door. 0
+[COPA] i yanked the imposter's hair. </s> her wig came off. 1
+[COPA] i yanked the imposter's hair. </s> she went bald. 0
+[COPA] the editor reworded a sentence in the manuscript. </s> he found the manuscript compelling. 0
+[COPA] the editor reworded a sentence in the manuscript. </s> he deemed the sentence unclear. 1
+[COPA] the woman cancelled her credit card account. </s> she realized the card was missing. 1
+[COPA] the woman cancelled her credit card account. </s> she realized the card was expired. 0
+[COPA] the man and woman fell in love. </s> they attended college. 0
+[COPA] the man and woman fell in love. </s> they got married. 1
+[COPA] the music was too faint to hear. </s> i turned up the volume. 1
+[COPA] the music was too faint to hear. </s> i composed my own song. 0
+[COPA] the boy's hair was sticking up. </s> the girl ruffled it. 1
+[COPA] the boy's hair was sticking up. </s> the girl pulled it. 0
+[COPA] the bug got squashed. </s> i sprayed myself with bug repellent. 0
+[COPA] the bug got squashed. </s> i stepped on the bug. 1
+[COPA] i opened my eyes. </s> i woke up. 1
+[COPA] i opened my eyes. </s> i relaxed. 0
+[COPA] my neighbor's music was blaring. </s> i asked him to turn it down. 1
+[COPA] my neighbor's music was blaring. </s> i asked to borrow the cd from him. 0
+[COPA] the man's family lived in poverty. </s> he was frugal with his earnings. 0
+[COPA] the man's family lived in poverty. </s> he earned below minimum wage. 1
+[COPA] the student graduated from the university. </s> he looked for a job. 1
+[COPA] the student graduated from the university. </s> he took up a hobby. 0
+[COPA] the artist mixed yellow paint into blue paint. </s> the paint splattered everywhere. 0
+[COPA] the artist mixed yellow paint into blue paint. </s> the paint turned green. 1
+[COPA] i changed the topic of conversation. </s> i ran out of things to talk about. 0
+[COPA] i changed the topic of conversation. </s> the conversation became tense. 1
+[COPA] my brother was released from the hospital. </s> i welcomed him back home. 1
+[COPA] my brother was released from the hospital. </s> i gave him the cold shoulder. 0
+[COPA] the curtain on the stage went up. </s> the opening scene of the play began. 1
+[COPA] the curtain on the stage went up. </s> the actors in the play exited the stage. 0
+[COPA] the hostage submitted to the kidnapper's mandates. </s> the kidnapper threatened to hurt the hostage. 1
+[COPA] the hostage submitted to the kidnapper's mandates. </s> the kidnapper left the hostage by himself. 0
+[COPA] a boom reverberated across the stage. </s> the musician tapped his foot. 0
+[COPA] a boom reverberated across the stage. </s> the musician pounded the drum. 1
+[COPA] the parents rushed to their child's bedroom. </s> the child awoke screaming from a nightmare. 1
+[COPA] the parents rushed to their child's bedroom. </s> the child was scared to look under her bed. 0
+[COPA] the woman communicated with sign language. </s> she was born premature. 0
+[COPA] the woman communicated with sign language. </s> she was born deaf. 1
+[COPA] a drought occurred in the region. </s> the water became contaminated. 0
+[COPA] a drought occurred in the region. </s> the crops perished. 1
+[COPA] the cat chased the bird. </s> the bird flew away. 1
+[COPA] the cat chased the bird. </s> the bird caught a worm. 0
+[COPA] the girl switched schools. </s> school let out for the summer. 0
+[COPA] the girl switched schools. </s> she moved to a new town. 1
+[COPA] the factory owner refused to raise employees' wages. </s> the owner appointed a new manager. 0
+[COPA] the factory owner refused to raise employees' wages. </s> the employees went on strike. 1
+[COPA] the leader antagonized the extremists among his country. </s> the extremists influenced him. 0
+[COPA] the leader antagonized the extremists among his country. </s> the extremists assassinated him. 1
+[COPA] i walked barefoot on the beach. </s> sand stuck to my feet. 1
+[COPA] i walked barefoot on the beach. </s> waves crashed along the shore. 0
+[COPA] i woke up in the middle of the night feeling cold. </s> i put sweatpants on. 1
+[COPA] i woke up in the middle of the night feeling cold. </s> i drank a glass of water. 0
+[COPA] the mother hushed her son. </s> her son smirked. 0
+[COPA] the mother hushed her son. </s> her son whined. 1
+[COPA] a hole ripped in my jeans. </s> i zipped up the jeans. 0
+[COPA] a hole ripped in my jeans. </s> i tripped on the pavement. 1
+[COPA] the boy wore braces. </s> he got a cavity. 0
+[COPA] the boy wore braces. </s> his teeth became straight. 1
+[COPA] i worked out at the gym yesterday. </s> i woke up today with sore muscles. 1
+[COPA] i worked out at the gym yesterday. </s> i woke up today with a sore throat. 0
+[COPA] the girl whispered back and forth to each other at the lunch table. </s> other students sat down at the lunch table. 0
+[COPA] the girl whispered back and forth to each other at the lunch table. </s> other students at the lunch table felt left out. 1
+[COPA] the child landed on the trampoline. </s> she sprung back up into the air. 1
+[COPA] the child landed on the trampoline. </s> she decided to try to do a flip. 0
+[COPA] i deposited the letter in the mailbox. </s> the post office delivered the letter. 1
+[COPA] i deposited the letter in the mailbox. </s> the post office expedited the letter. 0
+[COPA] the gambler was confident. </s> he bet all of his money. 1
+[COPA] the gambler was confident. </s> he went home broke. 0
+[COPA] the forest fire spread. </s> the winds became stronger. 1
+[COPA] the forest fire spread. </s> the arsonists were apprehended. 0
+[COPA] the child skinned his knee. </s> his mother sent him to his room. 0
+[COPA] the child skinned his knee. </s> his mother put a bandage on the wound. 1
+[COPA] the man survived the deadly illness. </s> he signed his will. 0
+[COPA] the man survived the deadly illness. </s> he received an organ transplant. 1
+[COPA] i took a sip of the scalding coffee. </s> i bit my tongue. 0
+[COPA] i took a sip of the scalding coffee. </s> i burnt my tongue. 1
+[COPA] the editor fired the writer. </s> the writer avoided bias in her stories. 0
+[COPA] the editor fired the writer. </s> the writer missed an important deadline. 1
+[COPA] i felt exhausted. </s> i slept all day. 0
+[COPA] i felt exhausted. </s> i studied all day. 1
+[COPA] the physician diagnosed the patient. </s> she identified the patient's symptoms. 1
+[COPA] the physician diagnosed the patient. </s> she prescribed pills to the patient. 0
+[COPA] i scratched my skin. </s> it was sweaty. 0
+[COPA] i scratched my skin. </s> it felt itchy. 1
+[COPA] the man underwent emergency surgery. </s> he lost his temper. 0
+[COPA] the man underwent emergency surgery. </s> he suffered a heart attack. 1
+[COPA] the man's arm muscles bulged. </s> he flexed his arms. 1
+[COPA] the man's arm muscles bulged. </s> he rubbed his arms. 0
+[COPA] the man raised his eyebrows. </s> he was surprised. 1
+[COPA] the man raised his eyebrows. </s> he felt discouraged. 0
+[COPA] i excused my colleague's blunder. </s> i believed his intentions were good. 1
+[COPA] i excused my colleague's blunder. </s> i believed that he knew better. 0
+[COPA] the man quit smoking. </s> he began exercising more. 1
+[COPA] the man quit smoking. </s> he started waking up earlier. 0
+[COPA] the woman punched her attacker in the nose. </s> the attacker's body went lifeless. 0
+[COPA] the woman punched her attacker in the nose. </s> the attacker started to bleed. 1
+[COPA] the dart missed the bull's eye. </s> the man's aim was off. 1
+[COPA] the dart missed the bull's eye. </s> the man was losing the game. 0
+[COPA] the homeowner requested that an exterminator come to his house. </s> he discovered rats in the basement. 1
+[COPA] the homeowner requested that an exterminator come to his house. </s> he kept an ant farm in his room. 0
+[COPA] i suggested to my houseguest that we go out to dinner. </s> i was too tired to prepare anything. 1
+[COPA] i suggested to my houseguest that we go out to dinner. </s> my houseguest overstayed her welcome. 0
+[COPA] the girl caught her brother reading her diary. </s> she started hiding the diary. 1
+[COPA] the girl caught her brother reading her diary. </s> she got a new diary. 0
+[COPA] the woman was short on money for rent. </s> she worked overtime. 1
+[COPA] the woman was short on money for rent. </s> she quit her job. 0
+[COPA] the child's hand quickly recoiled. </s> he touched the hot stove. 1
+[COPA] the child's hand quickly recoiled. </s> he patted the puppy's head. 0
+[COPA] the company wanted to gauge customer satisfaction. </s> they offered a discount to new customers. 0
+[COPA] the company wanted to gauge customer satisfaction. </s> they distributed a survey to customers. 1
+[COPA] the wood floor became scratched. </s> the boy threw the cushions off the couch. 0
+[COPA] the wood floor became scratched. </s> the boy dragged a chair across the floor. 1
+[COPA] i shielded my face. </s> my enemy taunted me. 0
+[COPA] i shielded my face. </s> my enemy cocked a fist. 1
+[COPA] the famous statue burned down. </s> it was struck by lightning. 1
+[COPA] the famous statue burned down. </s> people came to venerate it. 0
+[COPA] i left the fruit out on the table. </s> the fruit shed seeds. 0
+[COPA] i left the fruit out on the table. </s> flies swarmed the fruit. 1
+[COPA] the ballerina tore a ligament. </s> she pointed her toes. 0
+[COPA] the ballerina tore a ligament. </s> she twisted her ankle. 1
+[COPA] the child's shoelaces came untied. </s> he learned how to tie them. 0
+[COPA] the child's shoelaces came untied. </s> he ran around on the playground. 1
+[COPA] i became enthralled in the book. </s> i returned the book. 0
+[COPA] i became enthralled in the book. </s> i lost track of time. 1
+[COPA] the man held similar beliefs to those of his parents. </s> his parents influenced him. 1
+[COPA] the man held similar beliefs to those of his parents. </s> his parents disowned him. 0
+[COPA] the car gradually slowed to a stop. </s> it ran out of gas. 1
+[COPA] the car gradually slowed to a stop. </s> the driver fell asleep. 0
+[COPA] the man ate the ice cream in the sun. </s> the ice cream lost its flavor. 0
+[COPA] the man ate the ice cream in the sun. </s> the ice cream dripped from the cone. 1
+[COPA] i hung artwork in the room. </s> the carpet looked dirty. 0
+[COPA] i hung artwork in the room. </s> the walls looked bare. 1
+[COPA] i left work early. </s> i had a headache. 1
+[COPA] i left work early. </s> my boss held a meeting. 0
+[COPA] the puppy soiled the carpet. </s> the owner scolded the puppy. 1
+[COPA] the puppy soiled the carpet. </s> the owner gave the puppy a treat. 0
+[COPA] i apologized to my friend. </s> my friend forgave me. 1
+[COPA] i apologized to my friend. </s> my friend became infuriated. 0
+[COPA] the man stood out in the crowd. </s> he carried a backpack. 0
+[COPA] the man stood out in the crowd. </s> he wore a neon vest. 1
+[COPA] the witness lied under oath. </s> he completed his testimony. 0
+[COPA] the witness lied under oath. </s> he was charged with perjury. 1
+[COPA] the woman dyed her hair. </s> she wanted a new look. 1
+[COPA] the woman dyed her hair. </s> she wanted to blend in. 0
+[COPA] the immigrants were caught illegally residing in the country. </s> they found employment. 0
+[COPA] the immigrants were caught illegally residing in the country. </s> they were deported. 1
+[COPA] the public speaker cracked a joke. </s> the audience laughed. 1
+[COPA] the public speaker cracked a joke. </s> the audience stood up. 0
+[COPA] i looked into the sun. </s> the sun blinded me. 1
+[COPA] i looked into the sun. </s> the sun tanned my skin. 0
+[COPA] i felt bored. </s> i snorted. 0
+[COPA] i felt bored. </s> i yawned. 1
+[COPA] the steak was difficult to cut. </s> the knife was dull. 1
+[COPA] the steak was difficult to cut. </s> the steak was raw. 0
+[COPA] the woman declared bankruptcy. </s> she received alimony payment. 0
+[COPA] the woman declared bankruptcy. </s> she acquired massive debt. 1
+[COPA] the lights in my friend's apartment were on. </s> i wondered if he was out. 0
+[COPA] the lights in my friend's apartment were on. </s> i decided to pay him a visit. 1
+[COPA] i put the flower under my nose. </s> the petals came off the flower. 0
+[COPA] i put the flower under my nose. </s> i picked up the flower's scent. 1
+[COPA] the woman felt nostalgic. </s> she ran into a childhood friend. 1
+[COPA] the woman felt nostalgic. </s> she yelled at her children. 0
+[COPA] the student procrastinated on the paper. </s> he submitted the paper early. 0
+[COPA] the student procrastinated on the paper. </s> he submitted the paper incomplete. 1
+[COPA] my car broke down. </s> i went to the mall. 0
+[COPA] my car broke down. </s> i called a mechanic. 1
+[COPA] i discarded the note. </s> it was anonymous. 0
+[COPA] i discarded the note. </s> it was illegible. 1
+[COPA] the bird flapped its wings. </s> it laid eggs. 0
+[COPA] the bird flapped its wings. </s> it ascended upwards. 1
+[COPA] i parked in the driveway. </s> the garage was open. 0
+[COPA] i parked in the driveway. </s> the garage was full. 1
+[COPA] the criminal aimed the gun at his victim. </s> the criminal put down the gun. 0
+[COPA] the criminal aimed the gun at his victim. </s> the victim put his hands up. 1
+[COPA] i looked forward to the weekend. </s> i planned to attend my uncle's funeral. 0
+[COPA] i looked forward to the weekend. </s> i planned to attend my friend's wedding. 1
+[COPA] i lost track of time. </s> i was daydreaming. 1
+[COPA] i lost track of time. </s> i was nauseous. 0
+[COPA] the document printed out illegibly. </s> the printer was low on ink. 1
+[COPA] the document printed out illegibly. </s> the print was out of paper. 0
+[COPA] the stadium played the national anthem. </s> the fans turned to the flag. 1
+[COPA] the stadium played the national anthem. </s> the fans rushed the field. 0
+[COPA] the dip tasted bland. </s> i served it. 0
+[COPA] the dip tasted bland. </s> i put salt in it. 1
+[COPA] i set the paper towel on the spill. </s> the towel absorbed the liquid. 1
+[COPA] i set the paper towel on the spill. </s> the spill left a sticky residue. 0
+[COPA] the woman was interrupted in the midst of reading her book. </s> she bookmarked her page. 1
+[COPA] the woman was interrupted in the midst of reading her book. </s> she reread the book. 0
+[COPA] the plane hit some turbulence. </s> the man tightened his seatbelt. 1
+[COPA] the plane hit some turbulence. </s> the man looked out the window. 0
+[COPA] the boy flinched. </s> the girl ignored him. 0
+[COPA] the boy flinched. </s> the girl poked him. 1
+[COPA] the doctors gave the patient an artificial limb. </s> they amputated her leg. 1
+[COPA] the doctors gave the patient an artificial limb. </s> they monitored her vitals. 0
+[COPA] the boy pinched the girl's elbow. </s> she shrugged her shoulders at him. 0
+[COPA] the boy pinched the girl's elbow. </s> she jerked her arm away from him. 1
+[COPA] i asked my friend for advice. </s> i valued his opinion. 1
+[COPA] i asked my friend for advice. </s> i knew i was right. 0
+[COPA] the boy stepped in mud. </s> the mud stuck to his shoes. 1
+[COPA] the boy stepped in mud. </s> the mud hit him in the face. 0
+[COPA] the town received several inches of snow. </s> schools shut down. 1
+[COPA] the town received several inches of snow. </s> people hid underground. 0
+[COPA] the employee's shift ended. </s> he went home for the day. 1
+[COPA] the employee's shift ended. </s> he threatened to quit the job. 0
+[COPA] the tree damaged the house. </s> the tree fell onto the roof. 1
+[COPA] the tree damaged the house. </s> the tree shaded the backyard. 0
+[COPA] the wood split in half. </s> i stacked the wood in the fireplace. 0
+[COPA] the wood split in half. </s> i swung the axe down to the wood. 1
+[COPA] the family congratulated the couple. </s> the couple announced that they were separating. 0
+[COPA] the family congratulated the couple. </s> the couple announced that they were having a baby. 1
+[COPA] the girl sent the boy a valentine. </s> she liked him. 1
+[COPA] the girl sent the boy a valentine. </s> she kissed him. 0
+[COPA] i nodded my head at my friend's statement. </s> i was confused. 0
+[COPA] i nodded my head at my friend's statement. </s> i agreed with him. 1
+[COPA] the friends flipped a coin. </s> they wanted to find a compromise. 0
+[COPA] the friends flipped a coin. </s> they wanted to make a fair decision. 1
+[COPA] the timer in the kitchen went off. </s> the man unloaded the groceries into the refrigerator. 0
+[COPA] the timer in the kitchen went off. </s> the man took the pizza out of the oven. 1
+[COPA] the woman set an ambitious goal. </s> she slacked off. 0
+[COPA] the woman set an ambitious goal. </s> she worked hard. 1
+[COPA] the wealthy man died of old age. </s> his son got into legal trouble. 0
+[COPA] the wealthy man died of old age. </s> his son inherited his fortune. 1
+[COPA] the woman stomped on the flames. </s> the flames went out. 1
+[COPA] the woman stomped on the flames. </s> smoke arose from the flames. 0
+[COPA] the woman's car was in the shop. </s> her driver's license was revoked. 0
+[COPA] the woman's car was in the shop. </s> she got in a car accident. 1
+[COPA] i slept through my alarm. </s> i made breakfast. 0
+[COPA] i slept through my alarm. </s> i missed breakfast. 1
+[COPA] the public figure got out of the limousine. </s> cameras flashed in his direction. 1
+[COPA] the public figure got out of the limousine. </s> his family attended the press conference. 0
+[COPA] the woman lingered in the bathtub. </s> the bathwater became lukewarm. 1
+[COPA] the woman lingered in the bathtub. </s> the bathwater drained out of the tub. 0
+[COPA] the college student wanted to meet other students on campus. </s> he joined a fraternity. 1
+[COPA] the college student wanted to meet other students on campus. </s> he majored in engineering. 0
+[COPA] i lifted up the couch cushions. </s> i was looking for loose change. 1
+[COPA] i lifted up the couch cushions. </s> i was rearranging the living room. 0
+[COPA] the wasp flew towards the boy. </s> the boy ran away. 1
+[COPA] the wasp flew towards the boy. </s> the boy picked a flower. 0
+[COPA] the woman was found guilty of a misdemeanor. </s> she was sentenced to perform community service. 1
+[COPA] the woman was found guilty of a misdemeanor. </s> she was put on death row. 0
+[COPA] i stirred the sugar into the hot tea. </s> the tea steamed. 0
+[COPA] i stirred the sugar into the hot tea. </s> the sugar dissolved. 1
+[COPA] the veteran walked with a limp. </s> he was drafted for the war. 0
+[COPA] the veteran walked with a limp. </s> he was injured in battle. 1
+[COPA] the criminal ran away from the police. </s> the police attended to the victim. 0
+[COPA] the criminal ran away from the police. </s> the police chased the criminal. 1
+[COPA] the laptop wouldn't turn on. </s> i dropped it. 1
+[COPA] the laptop wouldn't turn on. </s> i charged it. 0
+[COPA] the woman ran out of room in her closet. </s> she acquired an extensive wardrobe. 1
+[COPA] the woman ran out of room in her closet. </s> she folded her laundry. 0
+[COPA] the man was heartbroken. </s> his wife gave birth. 0
+[COPA] the man was heartbroken. </s> his wife left him. 1
+[COPA] the man obtained a degree. </s> he became qualified for the job he wanted. 1
+[COPA] the man obtained a degree. </s> his job offer was rescinded. 0
+[COPA] the man's voice projected clearly throughout the auditorium. </s> he greeted the audience. 0
+[COPA] the man's voice projected clearly throughout the auditorium. </s> he spoke into the microphone. 1
+[COPA] i tossed a coin into the fountain of water. </s> the coin sunk to the bottom. 1
+[COPA] i tossed a coin into the fountain of water. </s> the coin broke in half. 0
+[COPA] the player hit the ball toward the hole. </s> the ball went in the hole. 1
+[COPA] the player hit the ball toward the hole. </s> the ball retreated back to the player. 0
+[COPA] i breathed in the dust in the attic. </s> i hiccupped. 0
+[COPA] i breathed in the dust in the attic. </s> i sneezed. 1
+[COPA] the store cashier called security. </s> the customer used counterfeit money. 1
+[COPA] the store cashier called security. </s> the customer left his headlights on. 0
+[COPA] i took the garbage out. </s> the garbage made the kitchen smell bad. 1
+[COPA] i took the garbage out. </s> i accidentally threw away my shopping list. 0
+[COPA] the family went to the zoo. </s> the children admired the animals. 1
+[COPA] the family went to the zoo. </s> the children chased the animals. 0
+[COPA] the man's breathing was loud. </s> his kidneys were failing. 0
+[COPA] the man's breathing was loud. </s> his lungs were congested. 1
+[COPA] i had an extra ticket for the concert. </s> i asked my friend for directions to the venue. 0
+[COPA] i had an extra ticket for the concert. </s> i asked my friend if he was interested in going. 1
+[COPA] the air conditioner in the house broke. </s> i brought out blankets. 0
+[COPA] the air conditioner in the house broke. </s> i opened the windows. 1
+[COPA] the boy's back ached. </s> his backpack was open. 0
+[COPA] the boy's back ached. </s> his backpack was heavy. 1
+[COPA] i bought my mother a present. </s> i baked her a cake. 0
+[COPA] i bought my mother a present. </s> it was her birthday. 1
+[COPA] the daffodils in the garden were destroyed. </s> a bee stung the gardener. 0
+[COPA] the daffodils in the garden were destroyed. </s> squirrels dug up the bulbs. 1
+[COPA] i struck the match. </s> the flame faded out. 0
+[COPA] i struck the match. </s> the match produced a flame. 1
+[COPA] the disputing parties reached a settlement. </s> they didn't want to debate in court. 1
+[COPA] the disputing parties reached a settlement. </s> they wanted to repair their personal relationship. 0
+[COPA] the children were sent to an orphanage. </s> their parents died. 1
+[COPA] the children were sent to an orphanage. </s> their parents spoiled them. 0
+[COPA] a meteorite landed in the ocean. </s> a tsunami occurred. 1
+[COPA] a meteorite landed in the ocean. </s> it began to hail. 0
+[COPA] the hiker encountered a poisonous snake. </s> she became dehydrated. 0
+[COPA] the hiker encountered a poisonous snake. </s> she panicked. 1
+[COPA] the oven became hot. </s> i turned the oven on. 1
+[COPA] the oven became hot. </s> i put the dish in the oven. 0
+[COPA] i squeezed the lemon wedge. </s> the lemon got moldy. 0
+[COPA] i squeezed the lemon wedge. </s> the lemon squirted. 1
+[COPA] the country discovered new land. </s> the country abandoned the land. 0
+[COPA] the country discovered new land. </s> the country colonized the land. 1
+[COPA] the glass toppled off the table. </s> it shattered all over the floor. 1
+[COPA] the glass toppled off the table. </s> it landed in a pile of laundry. 0
+[COPA] the table wobbled. </s> the floor was uneven. 1
+[COPA] the table wobbled. </s> the floor was slippery. 0
+[COPA] the father caught his son lying. </s> his son confessed the truth. 1
+[COPA] the father caught his son lying. </s> the father trusted his son. 0
+[COPA] the man's head throbbed with pain. </s> he took cough syrup. 0
+[COPA] the man's head throbbed with pain. </s> he took aspirin. 1
+[COPA] the train slowed down. </s> it was approaching the station. 1
+[COPA] the train slowed down. </s> it was running behind schedule. 0
+[COPA] the man went through therapy. </s> mental illness ran in his family. 0
+[COPA] the man went through therapy. </s> he was diagnosed with depression. 1
+[COPA] the woman clutched her throat. </s> she swallowed her food. 0
+[COPA] the woman clutched her throat. </s> she choked on her food. 1
+[COPA] the woman had a sore throat. </s> her voice sounded raspy. 1
+[COPA] the woman had a sore throat. </s> she spoke with an accent. 0
+[COPA] the dog eyed the juicy steak on the table. </s> it drooled. 1
+[COPA] the dog eyed the juicy steak on the table. </s> it laid down. 0
+[COPA] the woman's business succeeded. </s> she fired her employees. 0
+[COPA] the woman's business succeeded. </s> she became wealthy. 1
+[COPA] the students exited the classroom. </s> the bell rang. 1
+[COPA] the students exited the classroom. </s> the teacher assigned homework. 0
+[COPA] the woman claimed she saw a ghost. </s> her acquaintances expressed skepticism. 1
+[COPA] the woman claimed she saw a ghost. </s> her acquaintances related to her. 0
+[COPA] the man lost his hearing. </s> he nearly drowned in the ocean. 0
+[COPA] the man lost his hearing. </s> he was nearly killed in an explosion. 1
+[COPA] the child let go of the balloon string. </s> the balloon deflated. 0
+[COPA] the child let go of the balloon string. </s> the balloon rose into the air. 1
+[COPA] the man lost his ability to speak. </s> he had a stroke. 1
+[COPA] the man lost his ability to speak. </s> he took a deep breath. 0
+[COPA] the woman tripped on the sidewalk. </s> there was a crack in the cement. 1
+[COPA] the woman tripped on the sidewalk. </s> she heard her name being called. 0
+[COPA] the man did a canon ball into the pool. </s> the lifeguard jumped in after him. 0
+[COPA] the man did a canon ball into the pool. </s> the man soaked the lifeguard. 1
+[COPA] i took antibiotics. </s> my infection cleared up. 1
+[COPA] i took antibiotics. </s> my infection spread. 0
+[COPA] the traffic light turned yellow. </s> the driver pushed the brake. 1
+[COPA] the traffic light turned yellow. </s> the driver honked his horn. 0
+[COPA] the plastic container melted. </s> i soaked the container in warm water. 0
+[COPA] the plastic container melted. </s> i placed the container on the hot stove. 1
+[COPA] the car got dented. </s> the driver hit a telephone pole. 1
+[COPA] the car got dented. </s> the driver ran a red light. 0
+[COPA] the boy studied all night. </s> he skipped the exam. 0
+[COPA] the boy studied all night. </s> he passed the exam. 1
+[COPA] the young boy clung to the ledge of the pool. </s> he feared learning to swim. 1
+[COPA] the young boy clung to the ledge of the pool. </s> the lifeguard was on duty. 0
+[COPA] i put my hand to my chest. </s> i felt my heartbeat. 1
+[COPA] i put my hand to my chest. </s> my heart rate sped up. 0
+[COPA] the building adjacent to my office was under construction. </s> my office was crowded. 0
+[COPA] the building adjacent to my office was under construction. </s> my office was noisy. 1
+[COPA] the family wanted to get to know their new neighbors. </s> the family invited the neighbors over for dinner. 1
+[COPA] the family wanted to get to know their new neighbors. </s> the family waved to the neighbors from their yard. 0
+[COPA] water splashed up from the pool. </s> the swimmer dove into the pool. 1
+[COPA] water splashed up from the pool. </s> the swimmer floated in the pool. 0
+[COPA] i bit into a slice of watermelon. </s> i accidentally swallowed a seed. 1
+[COPA] i bit into a slice of watermelon. </s> i accidentally chipped my tooth. 0
+[COPA] the boy tripped. </s> his jacket was unzipped. 0
+[COPA] the boy tripped. </s> his shoelaces were untied. 1
+[COPA] the woman put earplugs in. </s> she was distracted by noise. 1
+[COPA] the woman put earplugs in. </s> she got her ears pierced. 0
+[COPA] i refilled my water bottle. </s> i drank all the water in it. 1
+[COPA] i refilled my water bottle. </s> i kept it in the fridge. 0
+[COPA] the television show was censored. </s> it contained vulgar language. 1
+[COPA] the television show was censored. </s> it had a complicated plot. 0
+[COPA] the ship wrecked. </s> the crew drowned. 1
+[COPA] the ship wrecked. </s> the crew encountered pirates. 0
+[COPA] the boy felt stumped by the riddle. </s> he solved the riddle. 0
+[COPA] the boy felt stumped by the riddle. </s> he requested a hint. 1
+[COPA] the phone rang. </s> the man hung up the phone. 0
+[COPA] the phone rang. </s> the man picked up the phone. 1
+[COPA] the woman was staring at me. </s> i hugged her. 0
+[COPA] the woman was staring at me. </s> i felt uncomfortable. 1
+[COPA] the group left the museum. </s> they took pictures of the exhibits. 0
+[COPA] the group left the museum. </s> they viewed all the exhibits. 1
+[COPA] the man started an argument with me. </s> my friend introduced me to the man. 0
+[COPA] the man started an argument with me. </s> my friend stood up for me. 1
+[COPA] the tire on my bike was flat. </s> i pumped air into the tire. 1
+[COPA] the tire on my bike was flat. </s> i switched gears on the bike. 0
+[COPA] the girl looked pale. </s> her father read her a story. 0
+[COPA] the girl looked pale. </s> her father felt her forehead. 1
+[COPA] the pen ran out of ink. </s> i used a pencil. 1
+[COPA] the pen ran out of ink. </s> i signed my name. 0
+[COPA] the man was denied for a loan. </s> he was in debt. 1
+[COPA] the man was denied for a loan. </s> he started a business. 0
+[COPA] the girl stayed home from school. </s> she had chicken pox. 1
+[COPA] the girl stayed home from school. </s> she enjoyed learning math. 0
+[COPA] the trash bag was full. </s> i took it to the dumpster. 1
+[COPA] the trash bag was full. </s> i dumped it down the sink. 0
+[COPA] i vacuumed the carpet. </s> my roommate spilled punch. 0
+[COPA] i vacuumed the carpet. </s> my dog shed hair. 1
+[COPA] the man lost his temper. </s> he turned off his computer. 0
+[COPA] the man lost his temper. </s> he threw a chair across the room. 1
+[COPA] the girl threw a twig into the campfire. </s> the twig burned. 1
+[COPA] the girl threw a twig into the campfire. </s> the fire went out. 0
+[COPA] the man got out of the shower. </s> the hot water was gone. 1
+[COPA] the man got out of the shower. </s> he couldn't find a towel. 0
+[COPA] the parents wanted their children to go to college. </s> they set aside a savings fund for tuition. 1
+[COPA] the parents wanted their children to go to college. </s> they encouraged their children to play outside. 0
+[COPA] the man unlaced his shoes. </s> the shoes loosened. 1
+[COPA] the man unlaced his shoes. </s> the shoes became worn. 0
+[COPA] the man ate half of the entree. </s> he refrigerated the leftovers. 1
+[COPA] the man ate half of the entree. </s> he saved the recipe. 0
+[COPA] my ankle was swollen. </s> i put ice on it. 1
+[COPA] my ankle was swollen. </s> i rubbed lotion on it. 0
+[COPA] my office door was open. </s> i talked to my colleague at my desk. 0
+[COPA] my office door was open. </s> i overheard the conversation in the hall. 1
+[COPA] i had to wait in line. </s> i took a seat. 0
+[COPA] i had to wait in line. </s> i skimmed a magazine. 1
+[COPA] the man swatted at the fly. </s> the fly buzzed away. 1
+[COPA] the man swatted at the fly. </s> the fly stayed still. 0
+[COPA] the man wrote a will. </s> he was dying. 1
+[COPA] the man wrote a will. </s> he was a widower. 0
+[COPA] the runner sensed his competitor gaining on him. </s> he dropped out of the race. 0
+[COPA] the runner sensed his competitor gaining on him. </s> he sped up his pace. 1
+[COPA] i thought carefully about the problem. </s> i asked for advice. 0
+[COPA] i thought carefully about the problem. </s> i came up with a solution. 1
+[COPA] the traveler walked on the shaky suspension bridge. </s> he felt terrified. 1
+[COPA] the traveler walked on the shaky suspension bridge. </s> he felt ecstatic. 0
+[COPA] the man anticipated the team's victory. </s> he met his friends to watch the game. 0
+[COPA] the man anticipated the team's victory. </s> he made a bet with his friends. 1
+[COPA] the boy couldn't fall asleep. </s> he set his alarm clock. 0
+[COPA] the boy couldn't fall asleep. </s> he counted sheep. 1

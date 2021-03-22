@@ -1,4 +1,4 @@
-# This script processes datasets and converts them in the from requirred for MTL(common, specific)
+# This script processes datasets and converts them in the form required for MTL(common, specific)
 # and Language Modeling (positive, both)
 
 import os 
@@ -188,13 +188,28 @@ def split_anli(in_path, lab_path, ratio=0.99):
 		val_lab = lab[int(ratio*len(f)):]
 	return train_f, train_lab, val_f, val_lab
 
+def add_labels(in_path, out_path, label=None):
+	with open(in_path, 'r') as inf, open(out_path, 'w') as out:
+		lines = inf.readlines()
+		for line in lines:
+			out.write("{}\n".format(label + ' ' + line.strip()))
+
+
+def remove_labels(in_path, out_path):
+	with open(in_path, 'r') as inf, open(out_path, 'w') as out:
+		lines = inf.readlines()
+		for line in lines:
+			line = line.strip().split(' ')
+			line = " ".join(line[1:])
+			out.write("{}\n".format(line.strip()))	
+
 #convert_JOCI('./JOCI/data/joci.csv', './JOCI/mtl_common_joci.txt', './JOCI/mtl_specific_joci.txt', './JOCI/lm_p_joci.txt', './JOCI/lm_n_joci.txt')
 
 # train_f, val_f = split_hella('./HellaSwag/hellaswag_train.jsonl')
 # convert_HellaSwag( train_f, './HellaSwag/mtl_common_hellaswag_train.txt', './HellaSwag/mtl_specific_hellaswag_train.txt', './HellaSwag/lm_p_hellaswag_train.txt', './HellaSwag/lm_n_hellaswag_train.txt')
 # convert_HellaSwag( val_f, './HellaSwag/mtl_common_hellaswag_val.txt', './HellaSwag/mtl_specific_hellaswag_val.txt', './HellaSwag/lm_p_hellaswag_val.txt', './HellaSwag/lm_n_hellaswag_val.txt')
-test_f, val_f = split_hella('./HellaSwag/hellaswag_val.jsonl', ratio=1.0)
-convert_HellaSwag_test( test_f, './HellaSwag/mtl_common_hellaswag_test.txt', './HellaSwag/mtl_specific_hellaswag_test.txt', './HellaSwag/lm_p_hellaswag_test.txt', './HellaSwag/lm_n_hellaswag_test.txt')
+# test_f, val_f = split_hella('./HellaSwag/hellaswag_val.jsonl', ratio=1.0)
+# convert_HellaSwag_test( test_f, './HellaSwag/mtl_common_hellaswag_test.txt', './HellaSwag/mtl_specific_hellaswag_test.txt', './HellaSwag/lm_p_hellaswag_test.txt', './HellaSwag/lm_n_hellaswag_test.txt')
 
 # convert_Copa('./COPA/datasets/copa-dev.xml', './COPA/mtl_common_copa_val.txt', './COPA/mtl_specific_copa_val.txt', './COPA/lm_p_copa_val.txt', './COPA/lm_n_copa_val.txt')
 # convert_Copa('./COPA/datasets/copa-test.xml', './COPA/mtl_common_copa_test.txt', './COPA/mtl_specific_copa_test.txt', './COPA/lm_p_copa_test.txt', './COPA/lm_n_copa_test.txt')
@@ -223,7 +238,32 @@ convert_HellaSwag_test( test_f, './HellaSwag/mtl_common_hellaswag_test.txt', './
 # convert_Defeasible(["./defeasible/defeasible-social/test.csv"], './defeasible/defeasible-social/mtl_common_social_test.txt', './defeasible/defeasible-social/mtl_specific_social_test.txt', './defeasible/defeasible-social/lm_p_social_test.txt', './defeasible/defeasible-social/lm_n_social_test.txt')
 
 
+# add_labels("./defeasible/defeasible-snli/mtl_common_snli_train.txt", "./defeasible/defeasible-snli/mtl_common_snli_train_ti.txt", label='[SNLI]')
+# add_labels("./defeasible/defeasible-snli/mtl_common_snli_test.txt", "./defeasible/defeasible-snli/mtl_common_snli_test_ti.txt", label='[SNLI]')
+# add_labels("./defeasible/defeasible-snli/mtl_common_snli_val.txt", "./defeasible/defeasible-snli/mtl_common_snli_val_ti.txt", label='[SNLI]')
 
+# add_labels("./defeasible/defeasible-atomic/mtl_common_atomic_train.txt", "./defeasible/defeasible-atomic/mtl_common_atomic_train_ti.txt", label='[ATOMIC]')
+# add_labels("./defeasible/defeasible-atomic/mtl_common_atomic_test.txt", "./defeasible/defeasible-atomic/mtl_common_atomic_test_ti.txt", label='[ATOMIC]')
+# add_labels("./defeasible/defeasible-atomic/mtl_common_atomic_val.txt", "./defeasible/defeasible-atomic/mtl_common_atomic_val_ti.txt", label='[ATOMIC]')
 
+# add_labels("./defeasible/defeasible-social/mtl_common_social_train.txt", "./defeasible/defeasible-social/mtl_common_social_train_ti.txt", label='[SOCIAL]')
+# add_labels("./defeasible/defeasible-social/mtl_common_social_test.txt", "./defeasible/defeasible-social/mtl_common_social_test_ti.txt", label='[SOCIAL]')
+# add_labels("./defeasible/defeasible-social/mtl_common_social_val.txt", "./defeasible/defeasible-social/mtl_common_social_val_ti.txt", label='[SOCIAL]')
+
+# add_labels("./JOCI/mtl_common_joci_train.txt", "./JOCI/mtl_common_joci_train_ti.txt", label='[JOCI]')
+# add_labels("./JOCI/mtl_common_joci_test.txt", "./JOCI/mtl_common_joci_test_ti.txt", label='[JOCI]')
+# add_labels("./JOCI/mtl_common_joci_val.txt", "./JOCI/mtl_common_joci_val_ti.txt", label='[JOCI]')
+
+# add_labels("./aNLI/mtl_common_anli_train.txt", "./aNLI/mtl_common_anli_train_ti.txt", label='[ANLI]')
+# add_labels("./aNLI/mtl_common_anli_test.txt", "./aNLI/mtl_common_anli_test_ti.txt", label='[ANLI]')
+# add_labels("./aNLI/mtl_common_anli_val.txt", "./aNLI/mtl_common_anli_val_ti.txt", label='[ANLI]')
+
+# add_labels("./HellaSwag/mtl_common_hellaswag_train.txt", "./HellaSwag/mtl_common_hellaswag_train_ti.txt", label='[HELLA]')
+# add_labels("./HellaSwag/mtl_common_hellaswag_test.txt", "./HellaSwag/mtl_common_hellaswag_test_ti.txt", label='[HELLA]')
+# add_labels("./HellaSwag/mtl_common_hellaswag_val.txt", "./HellaSwag/mtl_common_hellaswag_val_ti.txt", label='[HELLA]')
+
+# remove labels to run without labell multi-task model
+remove_labels( "../allCommon/mtl_common_all_train_ti.txt", "../allCommon/mtl_common_all_train.txt")
+remove_labels( "../allCommon/mtl_common_all_val_ti.txt", "../allCommon/mtl_common_all_val.txt")
 
 
