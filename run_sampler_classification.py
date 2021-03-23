@@ -175,7 +175,13 @@ class MultiPlausibleDataset(Dataset):
 
         split_event = event.strip().split('</s>')
         dataset_type = task_id
-        if len(split_event)==5:
+
+        if len(split_event)==4:
+            # input from hellaswag negative datapoint randomly choose one negative answer
+            hypo = np.random.choice(range(3),1)[0]
+            event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
+            target = 0
+        elif len(split_event)==5:
             # input from hellaswag negative datapoint randomly choose one negative answer
             hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
             label = np.random.choice([0,1], 1)[0]
@@ -411,6 +417,7 @@ if __name__=="__main__":
     do_eval = args.do_eval
     adam_epsilon = 1e-8
     warmup_steps = args.warm_up
+    filename = args.filename
     dataset_type = args.type
     
     if not os.path.exists(output_dir):
@@ -493,11 +500,11 @@ if __name__=="__main__":
         for epoch in range(epochs):
             print(f'Epoch {epoch + 1}/{epochs}')
             print('-' * 10)
-            train_acc, train_loss, train_f1score, learning_rate = train_epoch(model, train_data_loader, loss_fn, optimizer, device, scheduler, len(train_events))
+            train_acc, train_loss, train_f1score, learning_rate = train_epoch(model, train_data_loader, loss_fn, optimizer, device, scheduler, sum(len(train_events[e]) for e in train_events))
 
             print(f'Train loss {train_loss} accuracy {train_acc} f1score {train_f1score} lr {learning_rate}')
 
-            val_acc, val_loss, val_f1score = eval_model(model, val_data_loader, loss_fn,  device, len(val_events))
+            val_acc, val_loss, val_f1score = eval_model(model, val_data_loader, loss_fn,  device, sum(len(val_events[e]) for e in val_events))
             print(f'Val   loss {val_loss} accuracy {val_acc} f1score {val_f1score}')
 
             history['train_acc'].append(train_acc)
