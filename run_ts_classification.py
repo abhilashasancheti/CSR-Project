@@ -28,9 +28,9 @@ from transformers.modeling_roberta import RobertaPreTrainedModel, RobertaClassif
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
 
-np.random.seed(100)
-random.seed(100)
-torch.manual_seed(100)
+np.random.seed(123)
+random.seed(123)
+torch.manual_seed(123)
 
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
@@ -58,6 +58,37 @@ task_type_2_id["joci"] = 3
 task_type_2_id["atomic"] = 4
 task_type_2_id["social"] = 5
 task_type_2_id["snli"] = 6
+
+def create_sub_batches(sequence_output, dataset_type):
+    seq_out = {}
+    seq_out["anli"] = []
+    seq_out["atomic"] = []
+    seq_out["copa"] = []
+    seq_out["hella"] = []
+    seq_out['joci'] = []
+    seq_out["snli"] = []
+    seq_out["social"] = []
+    sub_batches = {}
+    sub_batches["anli"] = []
+    sub_batches["atomic"] = []
+    sub_batches["copa"] = []
+    sub_batches["hella"] = []
+    sub_batches['joci'] = []
+    sub_batches["snli"] = []
+    sub_batches["social"] = []
+
+    # print(sequence_output)
+    # print(sequence_output[0])
+    # segregating instances from same task
+    # sequence_output = sequence_output.cpu().detach().numpy()
+    for i in range(len(dataset_type)):
+        sub_batches[dataset_type[i]].append(int(i))
+
+    for dtype in list(set(dataset_type)):
+        seq_out[dtype]= sequence_output[torch.LongTensor(sub_batches[dtype]),:]
+    # print(seq_out["anli"])
+    return seq_out
+
 
 class RobertaForSequenceClassification(RobertaPreTrainedModel):
     authorized_missing_keys = [r"position_ids"]
@@ -111,26 +142,27 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
             return_dict=return_dict,
         )
         sequence_output = outputs[0]
-        if dataset_type[0] =='anli':
-            logits = self.classifier_anli(sequence_output)
-        elif dataset_type[0] =='snli':
-            logits = self.classifier_snli(sequence_output)
-        elif dataset_type[0] =='atomic':
-            logits = self.classifier_atomic(sequence_output)
-        elif dataset_type[0] =='social':
-            logits = self.classifier_social(sequence_output)
-        elif dataset_type[0] =='copa':
-            logits = self.classifier_copa(sequence_output)
-        elif dataset_type[0] =='joci':
-            logits = self.classifier_joci(sequence_output)
-        elif dataset_type[0] =='snli':
-            logits = self.classifier_snli(sequence_output)
-        elif dataset_type[0] =='hella':
-            logits = self.classifier_hella(sequence_output)
-        else:
-            print("invalid type")
-            exit()
 
+        seq_out = create_sub_batches(sequence_output, dataset_type)
+        logits = None
+        
+        if len(seq_out['anli'])>0:
+            logits = self.classifier_anli(seq_out['anli'])
+            print(logits)
+        if len(seq_out['atomic'])>0:
+            logits =  torch.cat([logits, self.classifier_atomic(torch.tensor(seq_out['atomic']))],dim=0)if logits is not None else self.classifier_atomic(torch.tensor(seq_out['atomic']))
+        if len(seq_out['copa'])>0:
+            logits = torch.cat([logits, self.classifier_copa(torch.tensor(seq_out['copa']))],dim=0) if logits is not None else self.classifier_copa(torch.tensor(seq_out['copa']))
+        if len(seq_out['hella'])>0:
+            logits = torch.cat([logits,self.classifier_hella(torch.tensor(seq_out['hella']))], dim=0)if logits is not None else self.classifier_hella(torch.tensor(seq_out['hella']))
+        if len(seq_out['joci'])>0:
+            logits = torch.cat([logits,self.classifier_joci(torch.tensor(seq_out['joci']))], dim=0) if logits is not None else self.classifier_joci(torch.tensor(seq_out['joci']))
+        if len(seq_out['snli'])>0:
+            logits = torch.cat([logits,self.classifier_snli(torch.tensor(seq_out['snli']))], dim=0) if logits is not None else self.classifier_snli(torch.tensor(seq_out['snli']))
+        if len(seq_out['social'])>0:
+            logits = torch.cat([logits,self.classifier_social(torch.tensor(seq_out['social']))], dim=0) if logits is not None else self.classifier_social(torch.tensor(seq_out['social']))
+        
+        print(logits)
         loss = None
 
 
@@ -148,69 +180,69 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
 MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
                  "roberta": (RobertaForSequenceClassification, RobertaTokenizer)}
 
-class MultiTaskBatchSampler(BatchSampler):
-    def __init__(self, datasets, batch_size,  bin_size=64, bin_on=False, bin_grow_ratio=0.5):
-        self._datasets = datasets
-        self._batch_size = batch_size
-        # self._mix_opt = mix_opt
-        # self._extra_task_ratio = extra_task_ratio
-        # self.bin_size = bin_size
-        # self.bin_on = bin_on
-        # self.bin_grow_ratio = bin_grow_ratio
-        train_data_list = []
-        for i in range(len(list(datasets.keys()))):
-            # if bin_on:
-            #     train_data_list.append(self._get_shuffled_index_batches_bin(dataset, batch_size, bin_size=bin_size, bin_grow_ratio=bin_grow_ratio))
-            # else:
-            train_data_list.append(self._get_shuffled_index_batches(len(datasets[task_id_2_type[i]]), batch_size))
-        self._train_data_list = train_data_list
+# class MultiTaskBatchSampler(BatchSampler):
+#     def __init__(self, datasets, batch_size,  bin_size=64, bin_on=False, bin_grow_ratio=0.5):
+#         self._datasets = datasets
+#         self._batch_size = batch_size
+#         # self._mix_opt = mix_opt
+#         # self._extra_task_ratio = extra_task_ratio
+#         # self.bin_size = bin_size
+#         # self.bin_on = bin_on
+#         # self.bin_grow_ratio = bin_grow_ratio
+#         train_data_list = []
+#         for i in range(len(list(datasets.keys()))):
+#             # if bin_on:
+#             #     train_data_list.append(self._get_shuffled_index_batches_bin(dataset, batch_size, bin_size=bin_size, bin_grow_ratio=bin_grow_ratio))
+#             # else:
+#             train_data_list.append(self._get_shuffled_index_batches(len(datasets[task_id_2_type[i]]), batch_size))
+#         self._train_data_list = train_data_list
 
-    @staticmethod
-    def _get_shuffled_index_batches(dataset_len, batch_size):
-        index_batches = [list(range(i, min(i+batch_size, dataset_len))) for i in range(0, dataset_len, batch_size)]
-        random.shuffle(index_batches)
-        return index_batches
+#     @staticmethod
+#     def _get_shuffled_index_batches(dataset_len, batch_size):
+#         index_batches = [list(range(i, min(i+batch_size, dataset_len))) for i in range(0, dataset_len, batch_size)]
+#         random.shuffle(index_batches)
+#         return index_batches
 
-    # @staticmethod
-    # def _get_shuffled_index_batches_bin(dataset, batch_size, bin_size, bin_grow_ratio):
-    #     maxlen = dataset.maxlen
-    #     bins = create_bins(bin_size, maxlen)
-    #     data = [[] for i in range(0, len(bins))]
+#     # @staticmethod
+#     # def _get_shuffled_index_batches_bin(dataset, batch_size, bin_size, bin_grow_ratio):
+#     #     maxlen = dataset.maxlen
+#     #     bins = create_bins(bin_size, maxlen)
+#     #     data = [[] for i in range(0, len(bins))]
         
-    #     for idx, sample in enumerate(dataset):
-    #         bin_idx = search_bin(bins, len(sample['sample']['token_id']))
-    #         data[bin_idx].append(idx)
-    #     index_batches = []
+#     #     for idx, sample in enumerate(dataset):
+#     #         bin_idx = search_bin(bins, len(sample['sample']['token_id']))
+#     #         data[bin_idx].append(idx)
+#     #     index_batches = []
 
-    #     for idx, sub_data in enumerate(data):
-    #         if len(sub_data) < 1: continue
-    #         batch_size = 1 if batch_size < 1 else batch_size
-    #         sub_dataset_len = len(sub_data)
-    #         sub_batches = [list(range(i, min(i+batch_size, sub_dataset_len))) for i in range(0, sub_dataset_len, batch_size)]
-    #         index_batches.extend(sub_batches)
-    #         batch_size = int(batch_size * bin_grow_ratio)
-    #     random.shuffle(index_batches)
-        # return index_batches
+#     #     for idx, sub_data in enumerate(data):
+#     #         if len(sub_data) < 1: continue
+#     #         batch_size = 1 if batch_size < 1 else batch_size
+#     #         sub_dataset_len = len(sub_data)
+#     #         sub_batches = [list(range(i, min(i+batch_size, sub_dataset_len))) for i in range(0, sub_dataset_len, batch_size)]
+#     #         index_batches.extend(sub_batches)
+#     #         batch_size = int(batch_size * bin_grow_ratio)
+#     #     random.shuffle(index_batches)
+#         # return index_batches
 
-    def __len__(self):
-        return sum(len(train_data) for train_data in self._train_data_list)
+#     def __len__(self):
+#         return sum(len(train_data) for train_data in self._train_data_list)
 
-    def __iter__(self):
-        all_iters = [iter(item) for item in self._train_data_list]
-        all_indices = self._gen_task_indices(self._train_data_list)
-        for local_task_idx in all_indices:
-            task_id = task_id_2_type[local_task_idx]
-            batch = next(all_iters[local_task_idx])
-            yield [(task_id, sample_id) for sample_id in batch]
+#     def __iter__(self):
+#         all_iters = [iter(item) for item in self._train_data_list]
+#         all_indices = self._gen_task_indices(self._train_data_list)
+#         for local_task_idx in all_indices:
+#             task_id = task_id_2_type[local_task_idx]
+#             batch = next(all_iters[local_task_idx])
+#             yield [(task_id, sample_id) for sample_id in batch]
 
-    @staticmethod
-    def _gen_task_indices(train_data_list):
-        all_indices = []
-        for i in range(0, len(train_data_list)):
-            all_indices += [i] * len(train_data_list[i])
+#     @staticmethod
+#     def _gen_task_indices(train_data_list):
+#         all_indices = []
+#         for i in range(0, len(train_data_list)):
+#             all_indices += [i] * len(train_data_list[i])
     
-        random.shuffle(all_indices)
-        return all_indices
+#         random.shuffle(all_indices)
+#         return all_indices
 
 # class MultiTaskDataset(Dataset):
 #     def __init__(self, datasets):
@@ -233,12 +265,12 @@ class MultiTaskBatchSampler(BatchSampler):
 
 class PlausibleDataset(Dataset):
     
-    def __init__(self, events, targets, tokenizer, max_len, dataset_type):
+    def __init__(self, events, targets, tokenizer, max_len):
         self.events = events
         self.targets = targets
         self.tokenizer = tokenizer
         self.max_len = max_len
-        self.type = dataset_type
+
         
     def __len__(self):
         return len(self.events)
@@ -246,7 +278,7 @@ class PlausibleDataset(Dataset):
     def __getitem__(self, item):
         event = str(self.events[item])
         target = self.targets[item]
-        dataset_type = self.type
+
 
         split_event = event.strip().split('</s>')
         # for absolute 
@@ -267,6 +299,9 @@ class PlausibleDataset(Dataset):
                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
                 target = 1
                 
+        split_event = event.strip().split(' ')
+        event = " ".join(split_event[1:])
+        dataset_type = split_event[0].lstrip('[').rstrip(']').lower()
         encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
@@ -279,53 +314,53 @@ class PlausibleDataset(Dataset):
       'type': dataset_type
     }
 
-class MultiPlausibleDataset(Dataset):
+# class MultiPlausibleDataset(Dataset):
     
-    def __init__(self, events, targets, tokenizer, max_len):
-        self.events = events #dictionary
-        self.targets = targets #dictionary
-        self.tokenizer = tokenizer
-        self.max_len = max_len
-        self.task_types = ['anli', 'hella', 'copa', 'joci', 'atomic', 'social', 'snli' ]
+#     def __init__(self, events, targets, tokenizer, max_len):
+#         self.events = events #dictionary
+#         self.targets = targets #dictionary
+#         self.tokenizer = tokenizer
+#         self.max_len = max_len
+#         self.task_types = ['anli', 'hella', 'copa', 'joci', 'atomic', 'social', 'snli' ]
         
-    def __len__(self):
-        return sum(len(self.events[task_id]) for task_id in self.task_types)
+#     def __len__(self):
+#         return sum(len(self.events[task_id]) for task_id in self.task_types)
 
-    def __getitem__(self, item):
-        task_id, sample_id = item
-        event = str(self.events[task_id][sample_id])
-        target = self.targets[task_id][sample_id]
+#     def __getitem__(self, item):
+#         task_id, sample_id = item
+#         event = str(self.events[task_id][sample_id])
+#         target = self.targets[task_id][sample_id]
         
 
-        split_event = event.strip().split('</s>')
-        dataset_type = task_id
-                # for absolute 
-        if len(split_event)==4:
-            # input from hellaswag negative datapoint randomly choose one negative answer
-            hypo = np.random.choice(range(3),1)[0]
-            event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
-            target = 0
-        elif len(split_event)==5:
-            # input from hellaswag negative datapoint randomly choose one negative answer
-            hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
-            label = np.random.choice([0,1], 1)[0]
-            if label==0:
-                event = split_event[0].strip() +  ' </s> ' + split_event[target+1].strip() + ' </s> ' + split_event[1+hypo].strip()
-                target = 0
-            else:
-                event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
-                target = 1
-        encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
-        input_ids = encoding['input_ids'].flatten()
+#         split_event = event.strip().split('</s>')
+#         dataset_type = task_id
+#                 # for absolute 
+#         if len(split_event)==4:
+#             # input from hellaswag negative datapoint randomly choose one negative answer
+#             hypo = np.random.choice(range(3),1)[0]
+#             event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
+#             target = 0
+#         elif len(split_event)==5:
+#             # input from hellaswag negative datapoint randomly choose one negative answer
+#             hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
+#             label = np.random.choice([0,1], 1)[0]
+#             if label==0:
+#                 event = split_event[0].strip() +  ' </s> ' + split_event[target+1].strip() + ' </s> ' + split_event[1+hypo].strip()
+#                 target = 0
+#             else:
+#                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
+#                 target = 1
+#         encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
+#         input_ids = encoding['input_ids'].flatten()
                 
         
-        return {
-      'event_description': event,
-      'input_ids': input_ids,
-      'attention_mask': encoding['attention_mask'].flatten(),
-      'targets': torch.tensor(target, dtype=torch.long),
-      'type': dataset_type
-    }
+#         return {
+#       'event_description': event,
+#       'input_ids': input_ids,
+#       'attention_mask': encoding['attention_mask'].flatten(),
+#       'targets': torch.tensor(target, dtype=torch.long),
+#       'type': dataset_type
+#     }
 
 def read_data(data_path):
     with open(data_path, 'r') as f:
@@ -337,28 +372,27 @@ def read_data(data_path):
             labels.append(int(line.strip()[-1]))
     return inputs, labels    
 
-def read_data_all(data_path, phase):
-    events = {}
-    targets = {}
+# def read_data_all(data_path, phase):
+#     events = {}
+#     targets = {}
     
-    events["anli"], targets["anli"] = read_data(data_path + '/aNLI/mtl_common_anli_'+ phase + '.txt')
-    events["hella"], targets["hella"] = read_data(data_path + '/HellaSwag/mtl_common_hellaswag_'+ phase + '.txt')
-    events["copa"], targets["copa"] = read_data(data_path + '/COPA/mtl_common_copa_'+ phase + '.txt')
-    events["joci"], targets["joci"] = read_data(data_path + '/JOCI/mtl_common_joci_'+ phase + '.txt')
-    events["atomic"], targets["atomic"] = read_data(data_path + '/defeasible/defeasible-atomic/mtl_common_atomic_'+ phase + '.txt')
-    events["social"], targets["social"] = read_data(data_path + '/defeasible/defeasible-social/mtl_common_social_'+ phase + '.txt')
-    events["snli"], targets["snli"] = read_data(data_path + '/defeasible/defeasible-snli/mtl_common_snli_'+ phase + '.txt')
+#     events["anli"], targets["anli"] = read_data(data_path + '/aNLI/mtl_common_anli_'+ phase + '.txt')
+#     events["hella"], targets["hella"] = read_data(data_path + '/HellaSwag/mtl_common_hellaswag_'+ phase + '.txt')
+#     events["copa"], targets["copa"] = read_data(data_path + '/COPA/mtl_common_copa_'+ phase + '.txt')
+#     events["joci"], targets["joci"] = read_data(data_path + '/JOCI/mtl_common_joci_'+ phase + '.txt')
+#     events["atomic"], targets["atomic"] = read_data(data_path + '/defeasible/defeasible-atomic/mtl_common_atomic_'+ phase + '.txt')
+#     events["social"], targets["social"] = read_data(data_path + '/defeasible/defeasible-social/mtl_common_social_'+ phase + '.txt')
+#     events["snli"], targets["snli"] = read_data(data_path + '/defeasible/defeasible-snli/mtl_common_snli_'+ phase + '.txt')
 
-    return events, targets
+#     return events, targets
 
-def create_data_loader_test(events, targets, tokenizer, max_len, batch_size, dataset_type):
+def create_data_loader_test(events, targets, tokenizer, max_len, batch_size):
     
     ds = PlausibleDataset(
     events=events,
     targets=targets,
     tokenizer=tokenizer,
-    max_len=max_len,
-    dataset_type = dataset_type
+    max_len=max_len
   )
 
     return DataLoader(
@@ -370,17 +404,43 @@ def create_data_loader_test(events, targets, tokenizer, max_len, batch_size, dat
 
 def create_data_loader(events, targets, tokenizer, max_len, batch_size):
     
-    ds = MultiPlausibleDataset(
+    ds = PlausibleDataset(
     events=events,
     targets=targets,
     tokenizer=tokenizer,
     max_len=max_len
   )
-    multi_task_batch_sampler = MultiTaskBatchSampler(events, batch_size)
-    
-    return DataLoader(ds, batch_sampler=multi_task_batch_sampler)
-    
+    return DataLoader(
+    ds,
+    batch_size=batch_size,
+    num_workers=0,
+    shuffle=True
+  )
 
+def permute_batch(batch):
+    dataset_type = batch['type']
+    new_batch = {}
+    new_batch['input_ids'] = []
+    new_batch['event_description'] = []
+    new_batch['attention_mask'] = []
+    new_batch['targets'] = []
+    new_batch['type'] = []
+    permu_mat = torch.zeros((batch["targets"].shape[0],batch["targets"].shape[0]), dtype=batch["targets"].dtype)
+    # print("permu mat shape",permu_mat.shape)
+    idx = range(len(batch["type"]))
+    idx = sorted( idx, key=lambda x : batch["type"][x])
+    dataset_type = sorted(dataset_type)
+    # print("dataset_type",dataset_type)
+    for i,j in enumerate(idx):
+        permu_mat[j][i] = 1
+    new_batch['type'] = dataset_type
+    # print(batch["input_ids"].shape)
+    new_batch['input_ids'] = torch.transpose(torch.matmul(torch.transpose(batch["input_ids"],0,1), permu_mat), 0,1)
+    # print("input_id_shape", new_batch['input_ids'].shape)
+    new_batch["targets"] = torch.matmul(batch["targets"], permu_mat)
+    new_batch['attention_mask'] = torch.transpose(torch.matmul(torch.transpose(batch["attention_mask"],0,1), permu_mat),0,1)
+    new_batch["event_description"] = [batch['event_description'][i] for i in idx]
+    return new_batch
 
 
 def train_epoch(
@@ -396,7 +456,11 @@ def train_epoch(
     f1score = []
     targets_all, preds_all = [], []
     correct_predictions = 0
+    i=0
     for d in data_loader:
+        if i > 1:
+            break
+        d = permute_batch(d)
         #print(d['event_description'], d['targets'])
         optimizer.zero_grad()
         input_ids = d["input_ids"].to(device)
@@ -423,7 +487,7 @@ def train_epoch(
         model.zero_grad()
         
         learning_rate = scheduler.get_last_lr()[0] if version.parse(torch.__version__) >= version.parse("1.4") else scheduler.get_lr()[0]
-        
+        i+=1
     return correct_predictions.double() / n_examples, np.mean(losses), f1_score(targets_all, preds_all), learning_rate
 
 def eval_model(model, data_loader, loss_fn, device, n_examples):
@@ -437,6 +501,7 @@ def eval_model(model, data_loader, loss_fn, device, n_examples):
 
     with torch.no_grad():
         for d in data_loader:
+            d = permute_batch(d)
             input_ids = d["input_ids"].to(device)
             attention_mask = d["attention_mask"].to(device)
             targets = d["targets"].to(device)
@@ -574,13 +639,13 @@ if __name__=="__main__":
 
      
     if do_train:
-        train_events, train_targets = read_data_all(train_data_path, phase="train")
+        train_events, train_targets = read_data(train_data_path)
    
         # load data
         train_data_loader = create_data_loader(train_events, train_targets, tokenizer, max_length, batch_size)
          
     if do_eval:
-        val_events, val_targets = read_data_all(val_data_path, phase='val')
+        val_events, val_targets = read_data(val_data_path)
         
         # load data
         val_data_loader = create_data_loader(val_events, val_targets, tokenizer, max_length, batch_size)
@@ -623,19 +688,19 @@ if __name__=="__main__":
 
         # i=0
         # for d in train_data_loader:
-        #     if d['type']==['hella']*batch_size:
-        #         print(d)
-        #         i+=1
-        #     if i>3:
+        #     print(d)
+        #     print(permute_batch(d))
+        #     i+=1
+        #     if i>1:
         #         break
         for epoch in range(epochs):
             print(f'Epoch {epoch + 1}/{epochs}')
             print('-' * 10)
-            train_acc, train_loss, train_f1score, learning_rate = train_epoch(model, train_data_loader, loss_fn, optimizer, device, scheduler, sum(len(train_events[e]) for e in train_events))
+            train_acc, train_loss, train_f1score, learning_rate = train_epoch(model, train_data_loader, loss_fn, optimizer, device, scheduler, len(train_events))
 
             print(f'Train loss {train_loss} accuracy {train_acc} f1score {train_f1score} lr {learning_rate}')
 
-            val_acc, val_loss, val_f1score = eval_model(model, val_data_loader, loss_fn,  device, sum(len(val_events[e]) for e in val_events))
+            val_acc, val_loss, val_f1score = eval_model(model, val_data_loader, loss_fn,  device, len(val_events))
             print(f'Val   loss {val_loss} accuracy {val_acc} f1score {val_f1score}')
 
             history['train_acc'].append(train_acc)

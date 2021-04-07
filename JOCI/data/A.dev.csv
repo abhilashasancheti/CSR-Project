@@ -1,0 +1,300 @@
+CONTEXT,HYPOTHESIS,LABEL,CONTEXT_FROM,HYPOTHESIS_FROM,CONTEXT_ID,HYPOTHESIS_ID,SUBSET
+A woman sells flowers and incense at the market.,A woman is selling things that smell good.,5,SNLI-train,SNLI-ENTAILMENT,110269384.jpg#2,110269384.jpg#2r1e,SNLI
+A woman sells flowers and incense at the market.,A woman is selling flowers and incense that she handmade.,3,SNLI-train,SNLI-NEUTRAL,110269384.jpg#2,110269384.jpg#2r1n,SNLI
+A woman sells flowers and incense at the market.,A man is stealing flowers.,2,SNLI-train,SNLI-CONTRADICTION,110269384.jpg#2,110269384.jpg#2r1c,SNLI
+People walking along a river near a beautiful homestead.,There was a river near a homestead.,5,SNLI-train,SNLI-ENTAILMENT,1157855775.jpg#1,1157855775.jpg#1r1e,SNLI
+People walking along a river near a beautiful homestead.,A couple on a date walking together.,3,SNLI-train,SNLI-NEUTRAL,1157855775.jpg#1,1157855775.jpg#1r2n,SNLI
+People walking along a river near a beautiful homestead.,Two people enjoying an afternoon on the lake.,1,SNLI-train,SNLI-CONTRADICTION,1157855775.jpg#1,1157855775.jpg#1r2c,SNLI
+A young man demonstrating his prowess in the martial arts for his girlfriend as she sits on a concrete wall that is part of a general seating area.,A man is doing karate.,4,SNLI-train,SNLI-ENTAILMENT,1167144956.jpg#0,1167144956.jpg#0r2e,SNLI
+A young man demonstrating his prowess in the martial arts for his girlfriend as she sits on a concrete wall that is part of a general seating area.,A young girl watches her boyfriend compete in a marital arts tournament.,4,SNLI-train,SNLI-NEUTRAL,1167144956.jpg#0,1167144956.jpg#0r4n,SNLI
+A young man demonstrating his prowess in the martial arts for his girlfriend as she sits on a concrete wall that is part of a general seating area.,A guy and girl sit beside each other.,3,SNLI-train,SNLI-CONTRADICTION,1167144956.jpg#0,1167144956.jpg#0r4c,SNLI
+"A man with a determined look on his face holds a small wooden hammer while wearing a bib displaying a large red crab, another red crustacean held in his hand while another man sits and holds some food behind him.","The man is wearing a bib, holding a hammer, and preparing to smash a crab while his friend stands behind him.",5,SNLI-train,SNLI-ENTAILMENT,119364730.jpg#0,119364730.jpg#0r2e,SNLI
+"A man with a determined look on his face holds a small wooden hammer while wearing a bib displaying a large red crab, another red crustacean held in his hand while another man sits and holds some food behind him.",The men are at a crabfest,3,SNLI-train,SNLI-NEUTRAL,119364730.jpg#0,119364730.jpg#0r1n,SNLI
+"A man with a determined look on his face holds a small wooden hammer while wearing a bib displaying a large red crab, another red crustacean held in his hand while another man sits and holds some food behind him.",The men are in CPR training.,1,SNLI-train,SNLI-CONTRADICTION,119364730.jpg#0,119364730.jpg#0r1c,SNLI
+"A woman works on a piece of computer equipment, while surrounded by a variety of mechanical and computer equipment, in what appears to be some type of laboratory workroom.",A woman works on a piece of computer equipment.,5,SNLI-train,SNLI-ENTAILMENT,1269021329.jpg#0,1269021329.jpg#0r5e,SNLI
+"A woman works on a piece of computer equipment, while surrounded by a variety of mechanical and computer equipment, in what appears to be some type of laboratory workroom.",A woman designs computer hardware in her engineering laboratory.,3,SNLI-train,SNLI-NEUTRAL,1269021329.jpg#0,1269021329.jpg#0r3n,SNLI
+"A woman works on a piece of computer equipment, while surrounded by a variety of mechanical and computer equipment, in what appears to be some type of laboratory workroom.","A woman works as a travelling salesperson, selling computer equipment door-to-door.",1,SNLI-train,SNLI-CONTRADICTION,1269021329.jpg#0,1269021329.jpg#0r3c,SNLI
+"There is a man wearing construction gear, standing next to a bulldozer that is picking up rubble and debris.",The worker is wearing protective gear.,5,SNLI-train,SNLI-ENTAILMENT,1283466.jpg#0,1283466.jpg#0r1e,SNLI
+"There is a man wearing construction gear, standing next to a bulldozer that is picking up rubble and debris.",He is standing next to a dump truck.,3,SNLI-train,SNLI-NEUTRAL,1283466.jpg#0,1283466.jpg#0r2n,SNLI
+"There is a man wearing construction gear, standing next to a bulldozer that is picking up rubble and debris.",The construction worker is driving the bulldozer.,3,SNLI-train,SNLI-CONTRADICTION,1283466.jpg#0,1283466.jpg#0r1c,SNLI
+A male adolescent or young teenager is wearing camouflaged shorts or long swim trunks and is upside down over a body of water like a lake or reservoir whose cement walls and graveled top appear in the corner.,A young teenager is wearing camouflaged shorts.,5,SNLI-train,SNLI-ENTAILMENT,1296740217.jpg#0,1296740217.jpg#0r1e,SNLI
+A male adolescent or young teenager is wearing camouflaged shorts or long swim trunks and is upside down over a body of water like a lake or reservoir whose cement walls and graveled top appear in the corner.,the boy is thirteen years old,3,SNLI-train,SNLI-NEUTRAL,1296740217.jpg#0,1296740217.jpg#0r5n,SNLI
+A male adolescent or young teenager is wearing camouflaged shorts or long swim trunks and is upside down over a body of water like a lake or reservoir whose cement walls and graveled top appear in the corner.,The man is watching TV in the living room,1,SNLI-train,SNLI-CONTRADICTION,1296740217.jpg#0,1296740217.jpg#0r3c,SNLI
+"Two men with their heads down on a restaurant table, seemingly in response to the man with the brown suede coat in front of them.",Two men are eating.,1,SNLI-train,SNLI-ENTAILMENT,13255060.jpg#1,13255060.jpg#1r4e,SNLI
+"Two men with their heads down on a restaurant table, seemingly in response to the man with the brown suede coat in front of them.",Two men are gonna eat dinner.,3,SNLI-train,SNLI-NEUTRAL,13255060.jpg#1,13255060.jpg#1r1n,SNLI
+"Two men with their heads down on a restaurant table, seemingly in response to the man with the brown suede coat in front of them.",Two men are at the beach talking to a woman.,2,SNLI-train,SNLI-CONTRADICTION,13255060.jpg#1,13255060.jpg#1r2c,SNLI
+A man wearing a black suit is surrounded by many people inside a building with busts of people on the wall.,A man is in a building with people.,5,SNLI-train,SNLI-ENTAILMENT,1391394685.jpg#0,1391394685.jpg#0r1e,SNLI
+A man wearing a black suit is surrounded by many people inside a building with busts of people on the wall.,The man in the black suit is enjoying his time at a museum.,4,SNLI-train,SNLI-NEUTRAL,1391394685.jpg#0,1391394685.jpg#0r5n,SNLI
+A man wearing a black suit is surrounded by many people inside a building with busts of people on the wall.,The crowd is furious at the man in the counter.,2,SNLI-train,SNLI-CONTRADICTION,1391394685.jpg#0,1391394685.jpg#0r2c,SNLI
+"A man wearing a black shirt and blue jeans up in the air holding a plywood in each hand in front of a building that has a word ""stomp"".",A person is standing in front of a building holding aloft some plywood,5,SNLI-train,SNLI-ENTAILMENT,1802509657.jpg#0,1802509657.jpg#0r4e,SNLI
+"A man wearing a black shirt and blue jeans up in the air holding a plywood in each hand in front of a building that has a word ""stomp"".",A lumberjack with wood in his hands leaps into the air.,3,SNLI-train,SNLI-NEUTRAL,1802509657.jpg#0,1802509657.jpg#0r1n,SNLI
+"A man wearing a black shirt and blue jeans up in the air holding a plywood in each hand in front of a building that has a word ""stomp"".",A man sits down to think.,1,SNLI-train,SNLI-CONTRADICTION,1802509657.jpg#0,1802509657.jpg#0r1c,SNLI
+A hair designer working during renovations.,A person working.,5,SNLI-train,SNLI-ENTAILMENT,180362495.jpg#4,180362495.jpg#4r1e,SNLI
+A hair designer working during renovations.,Working through the kinks.,0,SNLI-train,SNLI-NEUTRAL,180362495.jpg#4,180362495.jpg#4r1n,SNLI
+A hair designer working during renovations.,A worker picks fruit.,1,SNLI-train,SNLI-CONTRADICTION,180362495.jpg#4,180362495.jpg#4r1c,SNLI
+A child that is dressed as Spiderman is ringing the doorbell.,A child is seeing if someone is home.,4,SNLI-train,SNLI-ENTAILMENT,1814391289.jpg#1,1814391289.jpg#1r2e,SNLI
+A child that is dressed as Spiderman is ringing the doorbell.,The child is celebrating Halloween.,4,SNLI-train,SNLI-NEUTRAL,1814391289.jpg#1,1814391289.jpg#1r3n,SNLI
+A child that is dressed as Spiderman is ringing the doorbell.,The child is driving a car.,1,SNLI-train,SNLI-CONTRADICTION,1814391289.jpg#1,1814391289.jpg#1r2c,SNLI
+A tarp wrapped around a tree and a watering can.,A watering can is near a tree.,5,SNLI-train,SNLI-ENTAILMENT,197924859.jpg#3,197924859.jpg#3r1e,SNLI
+A tarp wrapped around a tree and a watering can.,A watering can was used for watering the tree.,4,SNLI-train,SNLI-NEUTRAL,197924859.jpg#3,197924859.jpg#3r1n,SNLI
+A tarp wrapped around a tree and a watering can.,Weedkiller is being used on the lawn.,2,SNLI-train,SNLI-CONTRADICTION,197924859.jpg#3,197924859.jpg#3r1c,SNLI
+A man cleaning the inside of a large pane of glass.,A man is cleaning an object.,5,SNLI-train,SNLI-ENTAILMENT,2045109977.jpg#1,2045109977.jpg#1r1e,SNLI
+A man cleaning the inside of a large pane of glass.,A man is carefully cleaning a window.,3,SNLI-train,SNLI-NEUTRAL,2045109977.jpg#1,2045109977.jpg#1r1n,SNLI
+A man cleaning the inside of a large pane of glass.,A man is cooking on Pluto.,1,SNLI-train,SNLI-CONTRADICTION,2045109977.jpg#1,2045109977.jpg#1r1c,SNLI
+Three people walking through a ravine between two rocky cliffs.,There are people walking outdoors.,5,SNLI-train,SNLI-ENTAILMENT,2179330298.jpg#1,2179330298.jpg#1r1e,SNLI
+Three people walking through a ravine between two rocky cliffs.,Two men and a woman hike near cliffs.,3,SNLI-train,SNLI-NEUTRAL,2179330298.jpg#1,2179330298.jpg#1r1n,SNLI
+Three people walking through a ravine between two rocky cliffs.,The people are scaling the cliffs.,2,SNLI-train,SNLI-CONTRADICTION,2179330298.jpg#1,2179330298.jpg#1r1c,SNLI
+A small boy playing with a toy train set on a tabletop.,A boy plays with a train,5,SNLI-train,SNLI-ENTAILMENT,2254902963.jpg#2,2254902963.jpg#2r1e,SNLI
+A small boy playing with a toy train set on a tabletop.,A boy is playing with Thomas the train.,3,SNLI-train,SNLI-NEUTRAL,2254902963.jpg#2,2254902963.jpg#2r1n,SNLI
+A small boy playing with a toy train set on a tabletop.,The boy plays with a boat.,1,SNLI-train,SNLI-CONTRADICTION,2254902963.jpg#2,2254902963.jpg#2r1c,SNLI
+A group of girls are changing in the dressing rom.,Some girls are in a dressing room.,5,SNLI-train,SNLI-ENTAILMENT,2282098850.jpg#2,2282098850.jpg#2r1e,SNLI
+A group of girls are changing in the dressing rom.,Some girls are trying on new clothes.,3,SNLI-train,SNLI-NEUTRAL,2282098850.jpg#2,2282098850.jpg#2r1n,SNLI
+A group of girls are changing in the dressing rom.,Some girls are reading in a library.,2,SNLI-train,SNLI-CONTRADICTION,2282098850.jpg#2,2282098850.jpg#2r1c,SNLI
+A wolf moves over the snow.,The wolf is outdoors.,5,SNLI-train,SNLI-ENTAILMENT,2318659263.jpg#4,2318659263.jpg#4r1e,SNLI
+A wolf moves over the snow.,The wolf is old.,3,SNLI-train,SNLI-NEUTRAL,2318659263.jpg#4,2318659263.jpg#4r1n,SNLI
+A wolf moves over the snow.,The wolf is moving over dry lands.,2,SNLI-train,SNLI-CONTRADICTION,2318659263.jpg#4,2318659263.jpg#4r1c,SNLI
+Asian person holding a white porcelain Asian figurine of a woman holding a fan.,A person is holding a figurine.,5,SNLI-train,SNLI-ENTAILMENT,2321764238.jpg#1,2321764238.jpg#1r1e,SNLI
+Asian person holding a white porcelain Asian figurine of a woman holding a fan.,A person in blue is holding a figurine.,3,SNLI-train,SNLI-NEUTRAL,2321764238.jpg#1,2321764238.jpg#1r1n,SNLI
+Asian person holding a white porcelain Asian figurine of a woman holding a fan.,A person is holding a blue figurine.,1,SNLI-train,SNLI-CONTRADICTION,2321764238.jpg#1,2321764238.jpg#1r1c,SNLI
+A person is reaching out of a window in a high rise to pull on a rope pulley.,a person is holding a rope,5,SNLI-train,SNLI-ENTAILMENT,2345750552.jpg#1,2345750552.jpg#1r1e,SNLI
+A person is reaching out of a window in a high rise to pull on a rope pulley.,a person is nude while holding a rope,2,SNLI-train,SNLI-NEUTRAL,2345750552.jpg#1,2345750552.jpg#1r1n,SNLI
+A person is reaching out of a window in a high rise to pull on a rope pulley.,a person is sleeping at a water park,1,SNLI-train,SNLI-CONTRADICTION,2345750552.jpg#1,2345750552.jpg#1r1c,SNLI
+A man in a yellow shirt is standing in the sidewalk measuring.,a man is standing in the sidewalk,5,SNLI-train,SNLI-ENTAILMENT,2383712490.jpg#3,2383712490.jpg#3r1e,SNLI
+A man in a yellow shirt is standing in the sidewalk measuring.,the man is measuring how long the sidewalk is,3,SNLI-train,SNLI-NEUTRAL,2383712490.jpg#3,2383712490.jpg#3r1n,SNLI
+A man in a yellow shirt is standing in the sidewalk measuring.,the man is eating lunch,2,SNLI-train,SNLI-CONTRADICTION,2383712490.jpg#3,2383712490.jpg#3r1c,SNLI
+A woman holding a broom in a small bathroom; another woman is right outside the door speaking with her.,There are two women inside and outside bathroom.,1,SNLI-train,SNLI-ENTAILMENT,2432584943.jpg#1,2432584943.jpg#1r1e,SNLI
+A woman holding a broom in a small bathroom; another woman is right outside the door speaking with her.,The women are cleaning the bathroom.,4,SNLI-train,SNLI-NEUTRAL,2432584943.jpg#1,2432584943.jpg#1r1n,SNLI
+A woman holding a broom in a small bathroom; another woman is right outside the door speaking with her.,The women are talking about movie.,3,SNLI-train,SNLI-CONTRADICTION,2432584943.jpg#1,2432584943.jpg#1r1c,SNLI
+A street performer on stilts walks on the stone tiles and discovers the thief escaping with the suitcase.,The street performer discovers something.,5,SNLI-train,SNLI-ENTAILMENT,2446830166.jpg#0,2446830166.jpg#0r1e,SNLI
+A street performer on stilts walks on the stone tiles and discovers the thief escaping with the suitcase.,The street performer is african american.,3,SNLI-train,SNLI-NEUTRAL,2446830166.jpg#0,2446830166.jpg#0r1n,SNLI
+A street performer on stilts walks on the stone tiles and discovers the thief escaping with the suitcase.,The street performer is a magician.,2,SNLI-train,SNLI-CONTRADICTION,2446830166.jpg#0,2446830166.jpg#0r1c,SNLI
+An elderly man sits on a stool robed in off-white,An elderly man is sitting down.,5,SNLI-train,SNLI-ENTAILMENT,2466917521.jpg#4,2466917521.jpg#4r1e,SNLI
+An elderly man sits on a stool robed in off-white,An elderly man is looking straight ahead,3,SNLI-train,SNLI-NEUTRAL,2466917521.jpg#4,2466917521.jpg#4r1n,SNLI
+An elderly man sits on a stool robed in off-white,A man is driving a car.,1,SNLI-train,SNLI-CONTRADICTION,2466917521.jpg#4,2466917521.jpg#4r1c,SNLI
+"A teenage girl in blue is holding a piece of paper that says, ""Dreams,"" with another person.",A teenage girl is holding a peice of paper.,5,SNLI-train,SNLI-ENTAILMENT,2477900423.jpg#1,2477900423.jpg#1r2e,SNLI
+"A teenage girl in blue is holding a piece of paper that says, ""Dreams,"" with another person.",A girl holds a sign that denotes her wishes.,4,SNLI-train,SNLI-NEUTRAL,2477900423.jpg#1,2477900423.jpg#1r1n,SNLI
+"A teenage girl in blue is holding a piece of paper that says, ""Dreams,"" with another person.",A girl poses with her sister holding a stop sign.,1,SNLI-train,SNLI-CONTRADICTION,2477900423.jpg#1,2477900423.jpg#1r2c,SNLI
+"A man, standing amongst many people, is wearing a red shirt and a kilt-like ensemble.",A man wears a kilt.,4,SNLI-train,SNLI-ENTAILMENT,2481001259.jpg#0,2481001259.jpg#0r1e,SNLI
+"A man, standing amongst many people, is wearing a red shirt and a kilt-like ensemble.",A man wears the kilt of his ancestral Scottish clan.,5,SNLI-train,SNLI-NEUTRAL,2481001259.jpg#0,2481001259.jpg#0r1n,SNLI
+"A man, standing amongst many people, is wearing a red shirt and a kilt-like ensemble.",A lady wears a skirt that resembles a kilt.,1,SNLI-train,SNLI-CONTRADICTION,2481001259.jpg#0,2481001259.jpg#0r1c,SNLI
+An old gray-haired man demonstrates a vegetable peeler on a carrot.,An old man is peeling a carrot.,5,SNLI-train,SNLI-ENTAILMENT,2524831824.jpg#1,2524831824.jpg#1r1e,SNLI
+An old gray-haired man demonstrates a vegetable peeler on a carrot.,The old man teaches his grandson how to use a vegetable peeler.,3,SNLI-train,SNLI-NEUTRAL,2524831824.jpg#1,2524831824.jpg#1r1n,SNLI
+An old gray-haired man demonstrates a vegetable peeler on a carrot.,A young woman is cleaning the house.,2,SNLI-train,SNLI-CONTRADICTION,2524831824.jpg#1,2524831824.jpg#1r1c,SNLI
+A man wearing glasses is looking at an electronic device wile holding a lollipop.,A man has a lollipop and an electronic device.,5,SNLI-train,SNLI-ENTAILMENT,2535447414.jpg#1,2535447414.jpg#1r1e,SNLI
+A man wearing glasses is looking at an electronic device wile holding a lollipop.,A man may have a smartphone.,3,SNLI-train,SNLI-NEUTRAL,2535447414.jpg#1,2535447414.jpg#1r1n,SNLI
+A man wearing glasses is looking at an electronic device wile holding a lollipop.,A child has a smartphone and nothing else.,1,SNLI-train,SNLI-CONTRADICTION,2535447414.jpg#1,2535447414.jpg#1r1c,SNLI
+A man is in the process of shaving.,The man is near a shaver.,5,SNLI-train,SNLI-ENTAILMENT,2575372856.jpg#4,2575372856.jpg#4r1e,SNLI
+A man is in the process of shaving.,The man has brown hair.,3,SNLI-train,SNLI-NEUTRAL,2575372856.jpg#4,2575372856.jpg#4r1n,SNLI
+A man is in the process of shaving.,The man is asleep in his bed.,1,SNLI-train,SNLI-CONTRADICTION,2575372856.jpg#4,2575372856.jpg#4r1c,SNLI
+A worker is carrying plywood for a construction project.,A person carries wood used in the project.,5,SNLI-train,SNLI-ENTAILMENT,261391148.jpg#3,261391148.jpg#3r1e,SNLI
+A worker is carrying plywood for a construction project.,The construction worker is carrying plywood for the new home.,3,SNLI-train,SNLI-NEUTRAL,261391148.jpg#3,261391148.jpg#3r1n,SNLI
+A worker is carrying plywood for a construction project.,The mason lays brick at the construction project.,4,SNLI-train,SNLI-CONTRADICTION,261391148.jpg#3,261391148.jpg#3r1c,SNLI
+"11 cheerleaders in yellow and white on a football field, 8 of which are doing a lift.","There is a group of 11 cheerleaders in yellow and white uniforms on the field, it seems like 8 of them are doing a lift.",5,SNLI-train,SNLI-ENTAILMENT,264483970.jpg#2,264483970.jpg#2r1e,SNLI
+"11 cheerleaders in yellow and white on a football field, 8 of which are doing a lift.",There is a group of cheerleaders doing flips on the fields.,3,SNLI-train,SNLI-NEUTRAL,264483970.jpg#2,264483970.jpg#2r1n,SNLI
+"11 cheerleaders in yellow and white on a football field, 8 of which are doing a lift.",There are no cheerleaders on the field this afternoon.,1,SNLI-train,SNLI-CONTRADICTION,264483970.jpg#2,264483970.jpg#2r1c,SNLI
+This young girl is enjoying the innocence of childhood and warm weather.,The girl is outside.,4,SNLI-train,SNLI-ENTAILMENT,2676292940.jpg#2,2676292940.jpg#2r1e,SNLI
+This young girl is enjoying the innocence of childhood and warm weather.,The girl is playing in a field.,3,SNLI-train,SNLI-NEUTRAL,2676292940.jpg#2,2676292940.jpg#2r1n,SNLI
+This young girl is enjoying the innocence of childhood and warm weather.,The girl is watching tv.,2,SNLI-train,SNLI-CONTRADICTION,2676292940.jpg#2,2676292940.jpg#2r1c,SNLI
+A boy plays within the path of a large outdoor meditation labyrinth.,"A boy was outside, by the labyrinth.",5,SNLI-train,SNLI-ENTAILMENT,2786242106.jpg#1,2786242106.jpg#1r1e,SNLI
+A boy plays within the path of a large outdoor meditation labyrinth.,The boy was near the meditation center.,4,SNLI-train,SNLI-NEUTRAL,2786242106.jpg#1,2786242106.jpg#1r1n,SNLI
+A boy plays within the path of a large outdoor meditation labyrinth.,The little boy was stuck indoors because of rain.,1,SNLI-train,SNLI-CONTRADICTION,2786242106.jpg#1,2786242106.jpg#1r1c,SNLI
+Greyhound running on track with blue vest with a white numeral two.,A dog is racing.,5,SNLI-train,SNLI-ENTAILMENT,2833582518.jpg#0,2833582518.jpg#0r1e,SNLI
+Greyhound running on track with blue vest with a white numeral two.,A greyhound is running in a race on an outdoor track.,5,SNLI-train,SNLI-NEUTRAL,2833582518.jpg#0,2833582518.jpg#0r1n,SNLI
+Greyhound running on track with blue vest with a white numeral two.,A dog is sleeping on the floor.,1,SNLI-train,SNLI-CONTRADICTION,2833582518.jpg#0,2833582518.jpg#0r1c,SNLI
+A man working at a lathe in a woodworking shop.,A man is working on a machine.,5,SNLI-train,SNLI-ENTAILMENT,290629328.jpg#3,290629328.jpg#3r1e,SNLI
+A man working at a lathe in a woodworking shop.,The man is an artist that works with wood.,5,SNLI-train,SNLI-NEUTRAL,290629328.jpg#3,290629328.jpg#3r1n,SNLI
+A man working at a lathe in a woodworking shop.,A man is stranded on a deserted island.,1,SNLI-train,SNLI-CONTRADICTION,290629328.jpg#3,290629328.jpg#3r1c,SNLI
+A man hunts for treasure on the beach using his metal detector.,A man is using a metal detector on the beach,5,SNLI-train,SNLI-ENTAILMENT,2916251587.jpg#1,2916251587.jpg#1r1e,SNLI
+A man hunts for treasure on the beach using his metal detector.,A man found treasure on the beach,3,SNLI-train,SNLI-NEUTRAL,2916251587.jpg#1,2916251587.jpg#1r1n,SNLI
+A man hunts for treasure on the beach using his metal detector.,A man is swimming in his pool,2,SNLI-train,SNLI-CONTRADICTION,2916251587.jpg#1,2916251587.jpg#1r1c,SNLI
+Cops asking a tow truck man some questions.,The tow truck man is being asked question from the cops,5,SNLI-train,SNLI-ENTAILMENT,2941340576.jpg#4,2941340576.jpg#4r1e,SNLI
+Cops asking a tow truck man some questions.,The tow truck man is being asked question from the cops while eating a sandwhich,2,SNLI-train,SNLI-NEUTRAL,2941340576.jpg#4,2941340576.jpg#4r1n,SNLI
+Cops asking a tow truck man some questions.,The cops is just driving by.,1,SNLI-train,SNLI-CONTRADICTION,2941340576.jpg#4,2941340576.jpg#4r1c,SNLI
+Closeup of a white bunny with another white bunny and black horse in the background.,A closeup of some animals.,5,SNLI-train,SNLI-ENTAILMENT,294709836.jpg#0,294709836.jpg#0r1e,SNLI
+Closeup of a white bunny with another white bunny and black horse in the background.,The bunnies are running away from the horse.,3,SNLI-train,SNLI-NEUTRAL,294709836.jpg#0,294709836.jpg#0r1n,SNLI
+Closeup of a white bunny with another white bunny and black horse in the background.,The rabbits are eating Trix ceral.,2,SNLI-train,SNLI-CONTRADICTION,294709836.jpg#0,294709836.jpg#0r1c,SNLI
+A soldier getting an award for his long commitment as a captain in the united states arm.,The soldier is receiving an award for retirement.,3,SNLI-train,SNLI-NEUTRAL,2956824677.jpg#0,2956824677.jpg#0r1n,SNLI
+A soldier getting an award for his long commitment as a captain in the united states arm.,The man is attending a stand up comedian event.,1,SNLI-train,SNLI-CONTRADICTION,2956824677.jpg#0,2956824677.jpg#0r1c,SNLI
+A woman in white blowing bubbles.,A woman blows bubbles.,5,SNLI-train,SNLI-ENTAILMENT,2977103313.jpg#4,2977103313.jpg#4r1e,SNLI
+A woman in white blowing bubbles.,Springtime brings white dresses and bubbles for this young mother.,3,SNLI-train,SNLI-NEUTRAL,2977103313.jpg#4,2977103313.jpg#4r1n,SNLI
+A woman in white blowing bubbles.,A fugitive was arrested with bubble gum and cocaine.,1,SNLI-train,SNLI-CONTRADICTION,2977103313.jpg#4,2977103313.jpg#4r1c,SNLI
+A person bungee jumping with the coordinator watching from above.,A person bungee jumps,5,SNLI-train,SNLI-ENTAILMENT,3009383694.jpg#1,3009383694.jpg#1r1e,SNLI
+A person bungee jumping with the coordinator watching from above.,A person bungee jumps from a tall bridge,2,SNLI-train,SNLI-NEUTRAL,3009383694.jpg#1,3009383694.jpg#1r1n,SNLI
+A person bungee jumping with the coordinator watching from above.,A person is bungee jumping off their bed.,2,SNLI-train,SNLI-CONTRADICTION,3009383694.jpg#1,3009383694.jpg#1r1c,SNLI
+"A man dressed as ""Teen Wolf"" hugs a woman made up like a vampire.",A couple of people are in costumes,5,SNLI-train,SNLI-ENTAILMENT,3047264346.jpg#1,3047264346.jpg#1r1e,SNLI
+"A man dressed as ""Teen Wolf"" hugs a woman made up like a vampire.",A couple is an a costume party,3,SNLI-train,SNLI-NEUTRAL,3047264346.jpg#1,3047264346.jpg#1r1n,SNLI
+"A man dressed as ""Teen Wolf"" hugs a woman made up like a vampire.",A couple are dressed as romeo and juliet.,1,SNLI-train,SNLI-CONTRADICTION,3047264346.jpg#1,3047264346.jpg#1r1c,SNLI
+The skateboarder prepares to wipeout.,The skateboarder is ready to fall.,4,SNLI-train,SNLI-ENTAILMENT,3055716848.jpg#2,3055716848.jpg#2r1e,SNLI
+The skateboarder prepares to wipeout.,The skateboarder is going to fall off the half pipe.,3,SNLI-train,SNLI-NEUTRAL,3055716848.jpg#2,3055716848.jpg#2r1n,SNLI
+The skateboarder prepares to wipeout.,The boy is riding a scooter.,1,SNLI-train,SNLI-CONTRADICTION,3055716848.jpg#2,3055716848.jpg#2r1c,SNLI
+A toddler wearing an Elmo t-shirt is standing in Santa's sleigh.,A baby is visiting santa and his sleigh,4,SNLI-train,SNLI-ENTAILMENT,3179231812.jpg#2,3179231812.jpg#2r1e,SNLI
+A toddler wearing an Elmo t-shirt is standing in Santa's sleigh.,The baby is at the mall taking a christmas picture.,3,SNLI-train,SNLI-NEUTRAL,3179231812.jpg#2,3179231812.jpg#2r1n,SNLI
+A toddler wearing an Elmo t-shirt is standing in Santa's sleigh.,The baby boy is running with a ball.,2,SNLI-train,SNLI-CONTRADICTION,3179231812.jpg#2,3179231812.jpg#2r1c,SNLI
+A young man in a yellow and orange bathing suit squatting on a rocky protuberance overlooking the water.,A young man is squatting down to get a better look deep into the water.,4,SNLI-train,SNLI-ENTAILMENT,3182485193.jpg#0,3182485193.jpg#0r1e,SNLI
+A young man in a yellow and orange bathing suit squatting on a rocky protuberance overlooking the water.,A man is squatting down on rocks to search for his keys that he dropped in the water.,3,SNLI-train,SNLI-NEUTRAL,3182485193.jpg#0,3182485193.jpg#0r1n,SNLI
+A young man in a yellow and orange bathing suit squatting on a rocky protuberance overlooking the water.,A man is kneeling down to feel how firm the ice on the lake is.,2,SNLI-train,SNLI-CONTRADICTION,3182485193.jpg#0,3182485193.jpg#0r1c,SNLI
+A man in a black shirt is cooking out of a cookbook in a cluttered kitchen.,man is cooking,5,SNLI-train,SNLI-ENTAILMENT,3186472721.jpg#2,3186472721.jpg#2r1e,SNLI
+A man in a black shirt is cooking out of a cookbook in a cluttered kitchen.,man tries new recipe,4,SNLI-train,SNLI-NEUTRAL,3186472721.jpg#2,3186472721.jpg#2r1n,SNLI
+A man in a black shirt is cooking out of a cookbook in a cluttered kitchen.,a dog runs far,1,SNLI-train,SNLI-CONTRADICTION,3186472721.jpg#2,3186472721.jpg#2r1c,SNLI
+A man scuba diving on a coral reef.,A man is scuba diving.,5,SNLI-train,SNLI-ENTAILMENT,3200958408.jpg#3,3200958408.jpg#3r1e,SNLI
+A man scuba diving on a coral reef.,A man was in the water.,5,SNLI-train,SNLI-NEUTRAL,3200958408.jpg#3,3200958408.jpg#3r1n,SNLI
+A man scuba diving on a coral reef.,The girls hiked up the mountain.,1,SNLI-train,SNLI-CONTRADICTION,3200958408.jpg#3,3200958408.jpg#3r1c,SNLI
+"A street market where goods of fruit and vegetables are being sold by three men, one wearing a long-sleeve white shirt and checked bottoms, the next wearing a yellow shirt with green checkered bottoms, and the last in red.",Men selling produce.,5,SNLI-train,SNLI-ENTAILMENT,3328852290.jpg#0,3328852290.jpg#0r1e,SNLI
+"A street market where goods of fruit and vegetables are being sold by three men, one wearing a long-sleeve white shirt and checked bottoms, the next wearing a yellow shirt with green checkered bottoms, and the last in red.",Three men selling oranges in the street.,5,SNLI-train,SNLI-NEUTRAL,3328852290.jpg#0,3328852290.jpg#0r1n,SNLI
+"A street market where goods of fruit and vegetables are being sold by three men, one wearing a long-sleeve white shirt and checked bottoms, the next wearing a yellow shirt with green checkered bottoms, and the last in red.",A shopper is squeezing fruit in a supermarket.,2,SNLI-train,SNLI-CONTRADICTION,3328852290.jpg#0,3328852290.jpg#0r1c,SNLI
+An asian man attempts to put out a wildfire with a small wooden bucket.,a man attempts to put out a wild fire,5,SNLI-train,SNLI-ENTAILMENT,3338082262.jpg#1,3338082262.jpg#1r1e,SNLI
+An asian man attempts to put out a wildfire with a small wooden bucket.,the wildfire is too far spread and he cant do anythign to help,5,SNLI-train,SNLI-NEUTRAL,3338082262.jpg#1,3338082262.jpg#1r1n,SNLI
+An asian man attempts to put out a wildfire with a small wooden bucket.,the whole forest burns down,3,SNLI-train,SNLI-CONTRADICTION,3338082262.jpg#1,3338082262.jpg#1r1c,SNLI
+A brown dog is lying on a grassy field as the wind blows through his fur.,There is a dog outdoors.,5,SNLI-train,SNLI-ENTAILMENT,3419916411.jpg#0,3419916411.jpg#0r1e,SNLI
+A brown dog is lying on a grassy field as the wind blows through his fur.,The dog is enjoying a day in the park.,4,SNLI-train,SNLI-NEUTRAL,3419916411.jpg#0,3419916411.jpg#0r1n,SNLI
+A brown dog is lying on a grassy field as the wind blows through his fur.,The dog is napping in my bed.,2,SNLI-train,SNLI-CONTRADICTION,3419916411.jpg#0,3419916411.jpg#0r1c,SNLI
+A girl wearing a white polka dotted pink bow in her hair squeezes a bubble in front of her face.,A girl squeezes a bubble.,5,SNLI-train,SNLI-ENTAILMENT,3549208986.jpg#0,3549208986.jpg#0r1e,SNLI
+A girl wearing a white polka dotted pink bow in her hair squeezes a bubble in front of her face.,A girl is playing with a bubble making machine.,3,SNLI-train,SNLI-NEUTRAL,3549208986.jpg#0,3549208986.jpg#0r1n,SNLI
+A girl wearing a white polka dotted pink bow in her hair squeezes a bubble in front of her face.,A girl is fast asleep on the bus going to the park.,1,SNLI-train,SNLI-CONTRADICTION,3549208986.jpg#0,3549208986.jpg#0r1c,SNLI
+A man is wearing a blue shirt that is rolled up above his abdomen.,A man has a rolled up shirt.,5,SNLI-train,SNLI-ENTAILMENT,3679407035.jpg#4,3679407035.jpg#4r1e,SNLI
+A man is wearing a blue shirt that is rolled up above his abdomen.,A man shows off his beer belly by rolling up his shirt.,3,SNLI-train,SNLI-NEUTRAL,3679407035.jpg#4,3679407035.jpg#4r1n,SNLI
+A man is wearing a blue shirt that is rolled up above his abdomen.,A man in only swim trunks puts sunscreen on his chest.,2,SNLI-train,SNLI-CONTRADICTION,3679407035.jpg#4,3679407035.jpg#4r1c,SNLI
+A woman holding a giant hotdog covered with mustard.,A female holds a ballpark drenched with condiments,1,SNLI-train,SNLI-ENTAILMENT,3713882697.jpg#4,3713882697.jpg#4r1e,SNLI
+A woman holding a giant hotdog covered with mustard.,A woman is eating a wiener with mustard.,5,SNLI-train,SNLI-NEUTRAL,3713882697.jpg#4,3713882697.jpg#4r1n,SNLI
+A woman holding a giant hotdog covered with mustard.,A woman is eating cotton candy.,3,SNLI-train,SNLI-CONTRADICTION,3713882697.jpg#4,3713882697.jpg#4r1c,SNLI
+Ladies attending a medical seminar.,Ladies attending seminar,5,SNLI-train,SNLI-ENTAILMENT,375489940.jpg#4,375489940.jpg#4r1e,SNLI
+Ladies attending a medical seminar.,Ladies are on the way to attend seminar,1,SNLI-train,SNLI-NEUTRAL,375489940.jpg#4,375489940.jpg#4r1n,SNLI
+Ladies attending a medical seminar.,Ladies attending for medical checkup,2,SNLI-train,SNLI-CONTRADICTION,375489940.jpg#4,375489940.jpg#4r1c,SNLI
+Three men in blue hard hats are on the tops of telephone poles working on the wires of one with a tall wedge topped skyscraper in the background.,Three men are sitting and working on top of telephone post.,4,SNLI-train,SNLI-ENTAILMENT,3909552008.jpg#0,3909552008.jpg#0r1e,SNLI
+Three men in blue hard hats are on the tops of telephone poles working on the wires of one with a tall wedge topped skyscraper in the background.,Three men are working on the possibly damaged telephone tower.,3,SNLI-train,SNLI-NEUTRAL,3909552008.jpg#0,3909552008.jpg#0r1n,SNLI
+Three men in blue hard hats are on the tops of telephone poles working on the wires of one with a tall wedge topped skyscraper in the background.,Three men are performing a robbery act.,2,SNLI-train,SNLI-CONTRADICTION,3909552008.jpg#0,3909552008.jpg#0r1c,SNLI
+"A group of children, with adult helpers, work together.",Adults helping children.,5,SNLI-train,SNLI-ENTAILMENT,392167806.jpg#1,392167806.jpg#1r1e,SNLI
+"A group of children, with adult helpers, work together.",Adults helping children with a school project.,3,SNLI-train,SNLI-NEUTRAL,392167806.jpg#1,392167806.jpg#1r1n,SNLI
+"A group of children, with adult helpers, work together.",A group of children in line at an amusement park.,1,SNLI-train,SNLI-CONTRADICTION,392167806.jpg#1,392167806.jpg#1r1c,SNLI
+"A man smiles, while clinking ale bottles, with an unseen person, at a public establishment.",A man smiles at a public establishment.,5,SNLI-train,SNLI-ENTAILMENT,39341489.jpg#0,39341489.jpg#0r1e,SNLI
+"A man smiles, while clinking ale bottles, with an unseen person, at a public establishment.","A man smiles, while clinking ale bottles, with an unseen person, at a bar.",5,SNLI-train,SNLI-NEUTRAL,39341489.jpg#0,39341489.jpg#0r1n,SNLI
+"A man smiles, while clinking ale bottles, with an unseen person, at a public establishment.",A man frowns.,2,SNLI-train,SNLI-CONTRADICTION,39341489.jpg#0,39341489.jpg#0r1c,SNLI
+A woman walking by two cardboard cowboy gunslingers outside of a building with Dave written on it.,A woman is walking by a building.,5,SNLI-train,SNLI-ENTAILMENT,3970199532.jpg#0,3970199532.jpg#0r1e,SNLI
+A woman walking by two cardboard cowboy gunslingers outside of a building with Dave written on it.,A woman is walking by a large building.,3,SNLI-train,SNLI-NEUTRAL,3970199532.jpg#0,3970199532.jpg#0r1n,SNLI
+A woman walking by two cardboard cowboy gunslingers outside of a building with Dave written on it.,A man is walking by a building.,3,SNLI-train,SNLI-CONTRADICTION,3970199532.jpg#0,3970199532.jpg#0r1c,SNLI
+A clergyman sits in an old-fashioned wooden confessional.,A person is sitting inside a wooden room.,5,SNLI-train,SNLI-ENTAILMENT,4082185154.jpg#1,4082185154.jpg#1r1e,SNLI
+A clergyman sits in an old-fashioned wooden confessional.,A person is sitting and praying.,3,SNLI-train,SNLI-NEUTRAL,4082185154.jpg#1,4082185154.jpg#1r1n,SNLI
+A clergyman sits in an old-fashioned wooden confessional.,A person is sleeping.,2,SNLI-train,SNLI-CONTRADICTION,4082185154.jpg#1,4082185154.jpg#1r1c,SNLI
+Businesswoman and man speaking together in front of awaiting army personnel.,Two people are having a conversation.,4,SNLI-train,SNLI-ENTAILMENT,4088598675.jpg#2,4088598675.jpg#2r1e,SNLI
+Businesswoman and man speaking together in front of awaiting army personnel.,Two people are having a very important discussion.,4,SNLI-train,SNLI-NEUTRAL,4088598675.jpg#2,4088598675.jpg#2r1n,SNLI
+Businesswoman and man speaking together in front of awaiting army personnel.,The businesswoman and man are mutes.,1,SNLI-train,SNLI-CONTRADICTION,4088598675.jpg#2,4088598675.jpg#2r1c,SNLI
+He jumped into the pile of leaves we just finished raking.,A man jumps into a freshly-raked pile of leaves.,5,SNLI-train,SNLI-ENTAILMENT,429043637.jpg#2,429043637.jpg#2r3e,SNLI
+He jumped into the pile of leaves we just finished raking.,A man jumps into a pile of leaves hoping to catch a squirrel that had run into them.,2,SNLI-train,SNLI-NEUTRAL,429043637.jpg#2,429043637.jpg#2r3n,SNLI
+He jumped into the pile of leaves we just finished raking.,A girl plays basketball.,1,SNLI-train,SNLI-CONTRADICTION,429043637.jpg#2,429043637.jpg#2r3c,SNLI
+"An Indian man, wearing his underclothes, pours water over himself.",An Indian man is washing.,5,SNLI-train,SNLI-ENTAILMENT,4295263796.jpg#2,4295263796.jpg#2r1e,SNLI
+"An Indian man, wearing his underclothes, pours water over himself.",An Indian man is pouring water over himself near a river.,3,SNLI-train,SNLI-NEUTRAL,4295263796.jpg#2,4295263796.jpg#2r1n,SNLI
+"An Indian man, wearing his underclothes, pours water over himself.",An Indian man is cooking food.,2,SNLI-train,SNLI-CONTRADICTION,4295263796.jpg#2,4295263796.jpg#2r1c,SNLI
+A male and a female looking at snippets of paper.,A male and female looking at similar images.,5,SNLI-train,SNLI-ENTAILMENT,4328538175.jpg#1,4328538175.jpg#1r1e,SNLI
+A male and a female looking at snippets of paper.,A husband and wife looking at snippets of paper.,3,SNLI-train,SNLI-NEUTRAL,4328538175.jpg#1,4328538175.jpg#1r1n,SNLI
+A male and a female looking at snippets of paper.,A brother and sister playing at the park.,1,SNLI-train,SNLI-CONTRADICTION,4328538175.jpg#1,4328538175.jpg#1r1c,SNLI
+A man in high rubber boots and a plaid shirt is pushing a broom over the mossy blacktop.,A man is cleaning the driveway,3,SNLI-train,SNLI-ENTAILMENT,4334767542.jpg#1,4334767542.jpg#1r1e,SNLI
+A man in high rubber boots and a plaid shirt is pushing a broom over the mossy blacktop.,The man is wearing a hat,3,SNLI-train,SNLI-NEUTRAL,4334767542.jpg#1,4334767542.jpg#1r1n,SNLI
+A man in high rubber boots and a plaid shirt is pushing a broom over the mossy blacktop.,The man is wearing an orange shirt,3,SNLI-train,SNLI-CONTRADICTION,4334767542.jpg#1,4334767542.jpg#1r1c,SNLI
+girl in red and black raising her leg,A girl raises her leg,5,SNLI-train,SNLI-ENTAILMENT,4379493825.jpg#4,4379493825.jpg#4r1e,SNLI
+girl in red and black raising her leg,A girl stretches her leg,4,SNLI-train,SNLI-NEUTRAL,4379493825.jpg#4,4379493825.jpg#4r1n,SNLI
+girl in red and black raising her leg,A girl in blue and yellow stretches her leg,2,SNLI-train,SNLI-CONTRADICTION,4379493825.jpg#4,4379493825.jpg#4r1c,SNLI
+"Two girls in white sitting next to man in tan shirt, with two boys who are facing away from camera, all sitting around a table with blue top and blue and white dinnerware.",The two girls in white are sitting next to a man not facing the camera but are sitting around a table.,3,SNLI-train,SNLI-ENTAILMENT,4400684369.jpg#0,4400684369.jpg#0r1e,SNLI
+"Two girls in white sitting next to man in tan shirt, with two boys who are facing away from camera, all sitting around a table with blue top and blue and white dinnerware.",The girls and boys are all friends sitting around the table.,3,SNLI-train,SNLI-NEUTRAL,4400684369.jpg#0,4400684369.jpg#0r1n,SNLI
+"Two girls in white sitting next to man in tan shirt, with two boys who are facing away from camera, all sitting around a table with blue top and blue and white dinnerware.",The people have clothes on but are not eating peanut butter.,3,SNLI-train,SNLI-CONTRADICTION,4400684369.jpg#0,4400684369.jpg#0r1c,SNLI
+A man and a woman stare at the entrance-way to some catacombs.,There are people near catacombs.,5,SNLI-train,SNLI-ENTAILMENT,4452450137.jpg#2,4452450137.jpg#2r1e,SNLI
+A man and a woman stare at the entrance-way to some catacombs.,These catacombs stretch for miles.,3,SNLI-train,SNLI-NEUTRAL,4452450137.jpg#2,4452450137.jpg#2r1n,SNLI
+A man and a woman stare at the entrance-way to some catacombs.,A man and a woman are dancing in the park.,1,SNLI-train,SNLI-CONTRADICTION,4452450137.jpg#2,4452450137.jpg#2r1c,SNLI
+A platinum blond young woman wearing heavy makeup is carrying a pink clutch and talking on her mobile phone.,A female is talking on the phone.,5,SNLI-train,SNLI-ENTAILMENT,4526144395.jpg#0,4526144395.jpg#0r1e,SNLI
+A platinum blond young woman wearing heavy makeup is carrying a pink clutch and talking on her mobile phone.,A female is talking to a friend.,3,SNLI-train,SNLI-NEUTRAL,4526144395.jpg#0,4526144395.jpg#0r1n,SNLI
+A platinum blond young woman wearing heavy makeup is carrying a pink clutch and talking on her mobile phone.,A female that is nnot wearing makeup.,1,SNLI-train,SNLI-CONTRADICTION,4526144395.jpg#0,4526144395.jpg#0r1c,SNLI
+A middle-aged woman with a pink satchel purse walking along a breakwater in a European coastal town.,A woman is walking on the road.,3,SNLI-train,SNLI-ENTAILMENT,4586247564.jpg#0,4586247564.jpg#0r1e,SNLI
+A middle-aged woman with a pink satchel purse walking along a breakwater in a European coastal town.,A middle aged woman with pink satchel purse is running.,2,SNLI-train,SNLI-NEUTRAL,4586247564.jpg#0,4586247564.jpg#0r1n,SNLI
+A middle-aged woman with a pink satchel purse walking along a breakwater in a European coastal town.,European coastal town are only for middle aged woman.,1,SNLI-train,SNLI-CONTRADICTION,4586247564.jpg#0,4586247564.jpg#0r1c,SNLI
+A blond woman in a yellow shirt lifts up her arm ands furrows her brow.,A blond woman in a yellow shirt,5,SNLI-train,SNLI-ENTAILMENT,4603099757.jpg#1,4603099757.jpg#1r1e,SNLI
+A blond woman in a yellow shirt lifts up her arm ands furrows her brow.,A blond woman in a pretty yellow shirt,3,SNLI-train,SNLI-NEUTRAL,4603099757.jpg#1,4603099757.jpg#1r1n,SNLI
+A blond woman in a yellow shirt lifts up her arm ands furrows her brow.,A blond woman in a yellow clown car,2,SNLI-train,SNLI-CONTRADICTION,4603099757.jpg#1,4603099757.jpg#1r1c,SNLI
+A statue with slight chipping on the face and delicate features.,A statue with with a bit of wear.,5,SNLI-train,SNLI-ENTAILMENT,4615629011.jpg#0,4615629011.jpg#0r1e,SNLI
+A statue with slight chipping on the face and delicate features.,A statue of a woman with slight chipping on the face and delicate features.,5,SNLI-train,SNLI-NEUTRAL,4615629011.jpg#0,4615629011.jpg#0r1n,SNLI
+A statue with slight chipping on the face and delicate features.,A statue of a lion.,2,SNLI-train,SNLI-CONTRADICTION,4615629011.jpg#0,4615629011.jpg#0r1c,SNLI
+Soldiers march carrying bayonets while a crowd looks on.,Soldiers march in front of a crowd.,5,SNLI-train,SNLI-ENTAILMENT,4710499155.jpg#3,4710499155.jpg#3r1e,SNLI
+Soldiers march carrying bayonets while a crowd looks on.,Soldiers march through a crowd carrying bayonets and severed heads.,2,SNLI-train,SNLI-NEUTRAL,4710499155.jpg#3,4710499155.jpg#3r1n,SNLI
+Soldiers march carrying bayonets while a crowd looks on.,Soldiers attack a fleeing crowd.,2,SNLI-train,SNLI-CONTRADICTION,4710499155.jpg#3,4710499155.jpg#3r1c,SNLI
+Women dress in a blue shirt standing next to a man holding a pitchfork he used to spread the hay around as the crowd looks on.,A woman in a blue shirt,5,SNLI-train,SNLI-ENTAILMENT,4823789426.jpg#0,4823789426.jpg#0r1e,SNLI
+Women dress in a blue shirt standing next to a man holding a pitchfork he used to spread the hay around as the crowd looks on.,A husband and wife entertaining a crowd,3,SNLI-train,SNLI-NEUTRAL,4823789426.jpg#0,4823789426.jpg#0r1n,SNLI
+Women dress in a blue shirt standing next to a man holding a pitchfork he used to spread the hay around as the crowd looks on.,The woman is naked,2,SNLI-train,SNLI-CONTRADICTION,4823789426.jpg#0,4823789426.jpg#0r1c,SNLI
+Two women share gossip while waiting for a bus.,Two women gossip while waiting,5,SNLI-train,SNLI-ENTAILMENT,4827589646.jpg#4,4827589646.jpg#4r1e,SNLI
+Two women share gossip while waiting for a bus.,Two women resting,3,SNLI-train,SNLI-NEUTRAL,4827589646.jpg#4,4827589646.jpg#4r1n,SNLI
+Two women share gossip while waiting for a bus.,Two women exercising,2,SNLI-train,SNLI-CONTRADICTION,4827589646.jpg#4,4827589646.jpg#4r1c,SNLI
+The little girl looked in awe at the sight.,The child gazed in adminiration at the view.,5,SNLI-train,SNLI-ENTAILMENT,4862788297.jpg#3,4862788297.jpg#3r1e,SNLI
+The little girl looked in awe at the sight.,The young girl stared in confustion at the vision.,2,SNLI-train,SNLI-NEUTRAL,4862788297.jpg#3,4862788297.jpg#3r1n,SNLI
+The little girl looked in awe at the sight.,The girl is asleep.,1,SNLI-train,SNLI-CONTRADICTION,4862788297.jpg#3,4862788297.jpg#3r1c,SNLI
+Strolling down path to nowhere.,Some humans strolling,4,SNLI-train,SNLI-ENTAILMENT,4870785283.jpg#4,4870785283.jpg#4r1e,SNLI
+Strolling down path to nowhere.,Tall humans strolling.,3,SNLI-train,SNLI-NEUTRAL,4870785283.jpg#4,4870785283.jpg#4r1n,SNLI
+Strolling down path to nowhere.,Nobody is strolling.,1,SNLI-train,SNLI-CONTRADICTION,4870785283.jpg#4,4870785283.jpg#4r1c,SNLI
+"An elderly oriental looking woman, in a black jacket with flower print, is holding up a smiling baby in a brown hooded outfit with flower print.",The woman is with a baby.,5,SNLI-train,SNLI-ENTAILMENT,4889441439.jpg#0,4889441439.jpg#0r1e,SNLI
+"An elderly oriental looking woman, in a black jacket with flower print, is holding up a smiling baby in a brown hooded outfit with flower print.",The woman is holding up her grandchild.,3,SNLI-train,SNLI-NEUTRAL,4889441439.jpg#0,4889441439.jpg#0r1n,SNLI
+"An elderly oriental looking woman, in a black jacket with flower print, is holding up a smiling baby in a brown hooded outfit with flower print.",The baby is crying.,2,SNLI-train,SNLI-CONTRADICTION,4889441439.jpg#0,4889441439.jpg#0r1c,SNLI
+"A woman wearing a red scarf, blue sweater and jeans is sitting alone, cross legged amidst a series of stone or concrete blocks."," A woman is sitting alone, cross legged amidst a series of stone or concrete blocks.",5,SNLI-train,SNLI-ENTAILMENT,4920339166.jpg#0,4920339166.jpg#0r1e,SNLI
+"A woman wearing a red scarf, blue sweater and jeans is sitting alone, cross legged amidst a series of stone or concrete blocks."," A woman wearing a red scarf, blue sweater and jeans is sitting alone awaiting something exciting to happen.",3,SNLI-train,SNLI-NEUTRAL,4920339166.jpg#0,4920339166.jpg#0r1n,SNLI
+"A woman wearing a red scarf, blue sweater and jeans is sitting alone, cross legged amidst a series of stone or concrete blocks.",A girl smiles as she's playing on a swing.,2,SNLI-train,SNLI-CONTRADICTION,4920339166.jpg#0,4920339166.jpg#0r1c,SNLI
+A man empties a bag of white crystals into a swimming pool.,A male is pouring a chemical into the pool.,5,SNLI-train,SNLI-ENTAILMENT,5142873217.jpg#4,5142873217.jpg#4r1e,SNLI
+A man empties a bag of white crystals into a swimming pool.,The male is adding chlorine to the pool.,4,SNLI-train,SNLI-NEUTRAL,5142873217.jpg#4,5142873217.jpg#4r1n,SNLI
+A man empties a bag of white crystals into a swimming pool.,The male is swimming in the pool.,3,SNLI-train,SNLI-CONTRADICTION,5142873217.jpg#4,5142873217.jpg#4r1c,SNLI
+"A brunette female in her early twenties wearing modern, rectangular glasses with black rims, points at some faintly visible scribbling on what looks like either a dry-erase board or a museum display of children's scribbles.","A brunette female in her early twenties wearing modern, rectangular glasses with black rims, points at some faintly visible scribbling on what looks like either a dry-erase board or a museum display of children's scribbles.",5,SNLI-train,SNLI-ENTAILMENT,5335780437.jpg#0,5335780437.jpg#0r1e,SNLI
+"A brunette female in her early twenties wearing modern, rectangular glasses with black rims, points at some faintly visible scribbling on what looks like either a dry-erase board or a museum display of children's scribbles.",the female was teaching her class something,3,SNLI-train,SNLI-NEUTRAL,5335780437.jpg#0,5335780437.jpg#0r1n,SNLI
+"A brunette female in her early twenties wearing modern, rectangular glasses with black rims, points at some faintly visible scribbling on what looks like either a dry-erase board or a museum display of children's scribbles.",The female was chasing the kids around the museum,2,SNLI-train,SNLI-CONTRADICTION,5335780437.jpg#0,5335780437.jpg#0r1c,SNLI
+Young boy getting into a box of trivial pursuit.,A boy getting into a box of trivial pursuit.,5,SNLI-train,SNLI-ENTAILMENT,5377361.jpg#3,5377361.jpg#3r1e,SNLI
+Young boy getting into a box of trivial pursuit.,Fat boy getting into a box of trivial pursuit.,3,SNLI-train,SNLI-NEUTRAL,5377361.jpg#3,5377361.jpg#3r1n,SNLI
+Young boy getting into a box of trivial pursuit.,Young girl getting into a box of trivial pursuit.,1,SNLI-train,SNLI-CONTRADICTION,5377361.jpg#3,5377361.jpg#3r1c,SNLI
+A body modifier enjoys a beer while relaxing on a nice sunny day.,A person enjoys a beer.,5,SNLI-train,SNLI-ENTAILMENT,541537091.jpg#1,541537091.jpg#1r1e,SNLI
+A body modifier enjoys a beer while relaxing on a nice sunny day.,A person is relaxing.,5,SNLI-train,SNLI-NEUTRAL,541537091.jpg#1,541537091.jpg#1r1n,SNLI
+A body modifier enjoys a beer while relaxing on a nice sunny day.,A lady is drinking wine.,3,SNLI-train,SNLI-CONTRADICTION,541537091.jpg#1,541537091.jpg#1r1c,SNLI
+Staff and youth sitting on the floor crafting posters.,Staff and youth sitting on the floor doing some art work,5,SNLI-train,SNLI-ENTAILMENT,5615077255.jpg#4,5615077255.jpg#4r1e,SNLI
+Staff and youth sitting on the floor crafting posters.,Staff and youth sitting on the floor crafting posters and using lots of different colors,4,SNLI-train,SNLI-NEUTRAL,5615077255.jpg#4,5615077255.jpg#4r1n,SNLI
+Staff and youth sitting on the floor crafting posters.,Staff and youth are selling crafting posters,2,SNLI-train,SNLI-CONTRADICTION,5615077255.jpg#4,5615077255.jpg#4r1c,SNLI
+"A man riding a four-wheel ATV in the dessert, kicking up sand in his wake.",The man is riding his four wheeler.,5,SNLI-train,SNLI-ENTAILMENT,5701726173.jpg#1,5701726173.jpg#1r1e,SNLI
+"A man riding a four-wheel ATV in the dessert, kicking up sand in his wake.",The man is part of a race.,3,SNLI-train,SNLI-NEUTRAL,5701726173.jpg#1,5701726173.jpg#1r1n,SNLI
+"A man riding a four-wheel ATV in the dessert, kicking up sand in his wake.",The man is riding his atv on the city road.,1,SNLI-train,SNLI-CONTRADICTION,5701726173.jpg#1,5701726173.jpg#1r1c,SNLI
+the band is getting ready for tonight's show with a pre-show run through.,The band is preparing for the show.,5,SNLI-train,SNLI-ENTAILMENT,5745120660.jpg#1,5745120660.jpg#1r1e,SNLI
+the band is getting ready for tonight's show with a pre-show run through.,The band is going to play classical music.,3,SNLI-train,SNLI-NEUTRAL,5745120660.jpg#1,5745120660.jpg#1r1n,SNLI
+the band is getting ready for tonight's show with a pre-show run through.,The swimmers are getting ready.,1,SNLI-train,SNLI-CONTRADICTION,5745120660.jpg#1,5745120660.jpg#1r1c,SNLI
+A young blond woman looking into a small compact applying face paint outdoors.,A blonde woman applying face paint.,5,SNLI-train,SNLI-ENTAILMENT,5858406299.jpg#2,5858406299.jpg#2r1e,SNLI
+A young blond woman looking into a small compact applying face paint outdoors.,A clown getting ready for work.,2,SNLI-train,SNLI-NEUTRAL,5858406299.jpg#2,5858406299.jpg#2r1n,SNLI
+A young blond woman looking into a small compact applying face paint outdoors.,A woman washing her face.,2,SNLI-train,SNLI-CONTRADICTION,5858406299.jpg#2,5858406299.jpg#2r1c,SNLI
+Two gondolas passing in a canal.,Two boats are in a canal.,5,SNLI-train,SNLI-ENTAILMENT,6031795624.jpg#4,6031795624.jpg#4r1e,SNLI
+Two gondolas passing in a canal.,Some gondalas sail with tourists taking pictures.,3,SNLI-train,SNLI-NEUTRAL,6031795624.jpg#4,6031795624.jpg#4r1n,SNLI
+Two gondolas passing in a canal.,Two gondolas are sinking in the water.,2,SNLI-train,SNLI-CONTRADICTION,6031795624.jpg#4,6031795624.jpg#4r1c,SNLI
+A young woman sits in a salon in front of a mirror while another woman braids her brown hair.,woman braids hair,5,SNLI-train,SNLI-ENTAILMENT,6131156900.jpg#0,6131156900.jpg#0r1e,SNLI
+A young woman sits in a salon in front of a mirror while another woman braids her brown hair.,women talk about boys,3,SNLI-train,SNLI-NEUTRAL,6131156900.jpg#0,6131156900.jpg#0r1n,SNLI
+A young woman sits in a salon in front of a mirror while another woman braids her brown hair.,man doing laundry,1,SNLI-train,SNLI-CONTRADICTION,6131156900.jpg#0,6131156900.jpg#0r1c,SNLI
+"One man in a blue coat is doing an ice sculpture, while a second man dressed in tan is raking up ice shavings.",Two men are busy with ice.,5,SNLI-train,SNLI-ENTAILMENT,616237861.jpg#0,616237861.jpg#0r1e,SNLI
+"One man in a blue coat is doing an ice sculpture, while a second man dressed in tan is raking up ice shavings.",The men are busy with ice and cold.,5,SNLI-train,SNLI-NEUTRAL,616237861.jpg#0,616237861.jpg#0r1n,SNLI
+"One man in a blue coat is doing an ice sculpture, while a second man dressed in tan is raking up ice shavings.",The man throws ice at the other man.,3,SNLI-train,SNLI-CONTRADICTION,616237861.jpg#0,616237861.jpg#0r1c,SNLI
+A medical professional operating a microscope and viewed on a computer.,A person operates a microscope.,5,SNLI-train,SNLI-ENTAILMENT,6194677011.jpg#1,6194677011.jpg#1r1e,SNLI
+A medical professional operating a microscope and viewed on a computer.,A professional looks at blood slides under the microscope.,3,SNLI-train,SNLI-NEUTRAL,6194677011.jpg#1,6194677011.jpg#1r1n,SNLI
+A medical professional operating a microscope and viewed on a computer.,A professional talks with his patient.,3,SNLI-train,SNLI-CONTRADICTION,6194677011.jpg#1,6194677011.jpg#1r1c,SNLI
+A line of men in white uniforms with pale blue flaps on their shoulders as well as some type of gold badge on their chest being scolded by a drill sergeant.,Several men in white uniforms are being spoken to by the sergeant.,5,SNLI-train,SNLI-ENTAILMENT,62353372.jpg#0,62353372.jpg#0r1e,SNLI
+A line of men in white uniforms with pale blue flaps on their shoulders as well as some type of gold badge on their chest being scolded by a drill sergeant.,The men in the uniforms are part of a drill team that plays drums in parades.,3,SNLI-train,SNLI-NEUTRAL,62353372.jpg#0,62353372.jpg#0r1n,SNLI
+A line of men in white uniforms with pale blue flaps on their shoulders as well as some type of gold badge on their chest being scolded by a drill sergeant.,The men in the white uniforms are running across the field.,2,SNLI-train,SNLI-CONTRADICTION,62353372.jpg#0,62353372.jpg#0r1c,SNLI
+A church choir is performing a Christmas carol while a projector in the background displays the lyrics.,A church choir is performing a Christmas carol.,5,SNLI-train,SNLI-ENTAILMENT,6563243819.jpg#2,6563243819.jpg#2r1e,SNLI
+A church choir is performing a Christmas carol while a projector in the background displays the lyrics.,A church choir is happily performing a Christmas carol.,4,SNLI-train,SNLI-NEUTRAL,6563243819.jpg#2,6563243819.jpg#2r1n,SNLI
+A church choir is performing a Christmas carol while a projector in the background displays the lyrics.,A Jewish choir is performing a Christmas carol.,1,SNLI-train,SNLI-CONTRADICTION,6563243819.jpg#2,6563243819.jpg#2r1c,SNLI
+A woman reacts to something unseen as she prepares to line up her pool shot.,A person playing billiards.,5,SNLI-train,SNLI-ENTAILMENT,7252197964.jpg#1,7252197964.jpg#1r1e,SNLI
+A woman reacts to something unseen as she prepares to line up her pool shot.,A woman gets startled by someone yelling while she is trying to make her shot.,3,SNLI-train,SNLI-NEUTRAL,7252197964.jpg#1,7252197964.jpg#1r1n,SNLI
+A woman reacts to something unseen as she prepares to line up her pool shot.,A woman takes her pool shot without any issues.,1,SNLI-train,SNLI-CONTRADICTION,7252197964.jpg#1,7252197964.jpg#1r1c,SNLI
+A shoe shiner waits for customers.,a person shining shoes waiting for a new customer to come,5,SNLI-train,SNLI-ENTAILMENT,733964952.jpg#3,733964952.jpg#3r2e,SNLI
+A shoe shiner waits for customers.,A boy waits to shine shoes.,3,SNLI-train,SNLI-NEUTRAL,733964952.jpg#3,733964952.jpg#3r5n,SNLI
+A shoe shiner waits for customers.,The shoe shiner died.,2,SNLI-train,SNLI-CONTRADICTION,733964952.jpg#3,733964952.jpg#3r5c,SNLI
+Jockey riding a racehorse on a racetrack.,Jocky riding a racehorse.,5,SNLI-train,SNLI-ENTAILMENT,7654089948.jpg#2,7654089948.jpg#2r1e,SNLI
+Jockey riding a racehorse on a racetrack.,Jocky riding a animal on a racetrack.,5,SNLI-train,SNLI-NEUTRAL,7654089948.jpg#2,7654089948.jpg#2r1n,SNLI
+Jockey riding a racehorse on a racetrack.,Jocky is sleeping while riding a horse.,1,SNLI-train,SNLI-CONTRADICTION,7654089948.jpg#2,7654089948.jpg#2r1c,SNLI
+Beautiful woman in black doing a low twist like a 1980's breakdancer.,The women are dancing.,5,SNLI-train,SNLI-ENTAILMENT,7796487260.jpg#1,7796487260.jpg#1r1e,SNLI
+Beautiful woman in black doing a low twist like a 1980's breakdancer.,The women are performing on stage.,3,SNLI-train,SNLI-NEUTRAL,7796487260.jpg#1,7796487260.jpg#1r1n,SNLI
+Beautiful woman in black doing a low twist like a 1980's breakdancer.,The women are sitting still.,1,SNLI-train,SNLI-CONTRADICTION,7796487260.jpg#1,7796487260.jpg#1r1c,SNLI
+A man about to get into an argument at a local pub.,A man is at the bar,5,SNLI-train,SNLI-ENTAILMENT,82679989.jpg#1,82679989.jpg#1r1e,SNLI
+A man about to get into an argument at a local pub.,The man is going to get into an argument at a local pub with a woman,3,SNLI-train,SNLI-NEUTRAL,82679989.jpg#1,82679989.jpg#1r1n,SNLI
+A man about to get into an argument at a local pub.,A man is going to a ball game.,1,SNLI-train,SNLI-CONTRADICTION,82679989.jpg#1,82679989.jpg#1r1c,SNLI
+A female reporter is interviewing a lady on a crowded street.,a reporter is talking to a woman,5,SNLI-train,SNLI-ENTAILMENT,86120741.jpg#1,86120741.jpg#1r1e,SNLI
+A female reporter is interviewing a lady on a crowded street.,a reporter is interviewing a woman that just finished a marathon,3,SNLI-train,SNLI-NEUTRAL,86120741.jpg#1,86120741.jpg#1r1n,SNLI
+A female reporter is interviewing a lady on a crowded street.,a woman is wearing a banana costume,2,SNLI-train,SNLI-CONTRADICTION,86120741.jpg#1,86120741.jpg#1r1c,SNLI
+A woman walks hand-in-hand with a little boy who looks like he's pulling out a wedgie,A little boy and a woman walk hand-in-hand.,5,SNLI-train,SNLI-ENTAILMENT,887108308.jpg#0,887108308.jpg#0r1e,SNLI
+A woman walks hand-in-hand with a little boy who looks like he's pulling out a wedgie,A woman walks hand-in-hand with her young son.,4,SNLI-train,SNLI-NEUTRAL,887108308.jpg#0,887108308.jpg#0r1n,SNLI
+A woman walks hand-in-hand with a little boy who looks like he's pulling out a wedgie,This woman never touched the little boy who looked like he had a wedgie.,1,SNLI-train,SNLI-CONTRADICTION,887108308.jpg#0,887108308.jpg#0r1c,SNLI
+Ice sculptures take on a whole new meaning in Alaska.,Ice sculptures in Alaska.,5,SNLI-train,SNLI-ENTAILMENT,92732320.jpg#4,92732320.jpg#4r1e,SNLI
+Ice sculptures take on a whole new meaning in Alaska.,Ice sculptures in Juneu.,3,SNLI-train,SNLI-NEUTRAL,92732320.jpg#4,92732320.jpg#4r1n,SNLI
+Ice sculptures take on a whole new meaning in Alaska.,Ice sculptures in Japan.,0,SNLI-train,SNLI-CONTRADICTION,92732320.jpg#4,92732320.jpg#4r1c,SNLI

@@ -11,6 +11,7 @@ import numpy as np
 random.seed(42)
 np.random.seed(42)
 
+# previous mixed up
 def convert_JOCI(in_path, mtl_common_path, mtl_specific_path, lm_p_path, lm_both_path):
 	with open(in_path) as f, open(mtl_common_path, 'w') as m1, open(mtl_specific_path, 'w') as m2, open(lm_p_path, 'w') as lm1, open(lm_both_path, 'w') as lm2 :
 		f = csv.reader(f, delimiter=',')
@@ -33,6 +34,153 @@ def convert_JOCI(in_path, mtl_common_path, mtl_specific_path, lm_p_path, lm_both
 					lm1.write("[BOS] {} [SEP] {} [EOS]\n".format(premise, hypothesis))
 				else:
 					lm2.write("[BOS] {} [SEP] {} [EOS]\n".format(premise, hypothesis))
+
+def create_context_dict(a):
+	i=0
+	context_dict = {}
+	for row in a:
+		if i==0:
+			i+=1
+			continue
+		
+		premise = row[0].strip().lower()
+		hypothesis = row[1].strip().lower()
+		label = int(row[2].strip())
+		if premise not in context_dict:
+			context_dict[premise] = []
+
+		context_dict[premise].append((hypothesis,label))
+	return context_dict
+
+def create_context_dict_j(j, a_dict, b_dict):
+	i=0
+	context_dict_j = {}
+	for row in j:
+		if i==0:
+			i+=1
+			continue
+		if row[5].strip() !='COPA':
+			premise = row[0].strip().lower()
+			hypothesis = row[1].strip().lower()
+			label = int(row[2].strip())
+			if premise in a_dict or premise in b_dict:
+				if premise not in context_dict_j:
+					context_dict_j[premise]=[]
+				context_dict_j[premise].append((hypothesis,label))
+
+	return context_dict_j
+
+def create_remaining_dict(j, context_dict_j):
+	remaining_dict = {}
+	i=0
+	for row in j:
+		if i==0:
+			i+=1
+			continue
+		premise = row[0].strip().lower()
+		# print(premise)
+		if row[5].strip() !='COPA' and premise not in context_dict_j["train"] and premise not in context_dict_j["test"] and premise not in context_dict_j["dev"]:
+			hypothesis = row[1].strip().lower()
+			label = int(row[2].strip())
+			if premise not in remaining_dict:
+				remaining_dict[premise]=[]
+
+			remaining_dict[premise].append((hypothesis,label))
+
+	return remaining_dict
+
+# A and B split train in train, joci-anb is split into train dev and test based on context such that same context appears in one split
+def segregate_JOCI_context(in_path):
+	# in path is the directory in this case
+	with open(in_path + '/' + 'A.train.csv') as a_train, open(in_path + '/' + 'B.train.csv') as b_train, open(in_path + '/' + 'A.test.csv') as a_test, open(in_path + '/' + 'B.test.csv') as b_test, open(in_path + '/' + 'A.dev.csv') as a_dev, open(in_path + '/' + 'B.dev.csv') as b_dev, open(in_path + '/joci-AnB.csv' ) as j:
+		a_train = csv.reader(a_train, delimiter=',')
+		b_train= csv.reader(b_train, delimiter=',')
+		a_test = csv.reader(a_test, delimiter=',')
+		b_test= csv.reader(b_test, delimiter=',')
+		a_dev = csv.reader(a_dev, delimiter=',')
+		b_dev= csv.reader(b_dev, delimiter=',')
+		jo = csv.reader(j, delimiter=',')
+
+		context_dict_a = {}
+		context_dict_a['train'] = {}
+		context_dict_a['test'] = {}
+		context_dict_a['dev'] = {}
+		context_dict_b = {}
+		context_dict_b['train'] = {}
+		context_dict_b['test'] = {}
+		context_dict_b['dev'] = {}
+		context_dict_j = {}
+		context_dict_j['train'] = {}
+		context_dict_j['test'] = {}
+		context_dict_j['dev'] = {}
+
+		remaining_dict = {}
+
+		context_dict_a["train"] = create_context_dict(a_train)
+		context_dict_a["test"] = create_context_dict(a_test)
+		context_dict_a["dev"] = create_context_dict(a_dev)
+
+		context_dict_b["train"] = create_context_dict(b_train)
+		context_dict_b["test"] = create_context_dict(b_test)
+		context_dict_b["dev"] = create_context_dict(b_dev)
+
+
+		context_dict_j["train"] = create_context_dict_j(jo, context_dict_a["train"], context_dict_b["train"])
+		context_dict_j["test"] = create_context_dict_j(jo, context_dict_a["test"], context_dict_b["test"])
+		context_dict_j["dev"] = create_context_dict_j(jo, context_dict_a["dev"], context_dict_b["dev"])
+
+		jo = csv.reader(open(in_path + '/joci-AnB.csv' ), delimiter=',')
+		remaining_dict = create_remaining_dict(jo, context_dict_j)
+
+	with open(in_path+ '/context_a.json', 'w') as f:
+		json.dump(context_dict_a,f)
+
+	with open(in_path+ '/context_b.json', 'w') as f:
+		json.dump(context_dict_b,f)
+
+	with open(in_path+ '/context_j.json', 'w') as f:
+		json.dump(context_dict_j,f)
+
+	with open(in_path + '/remaining_context.json', 'w') as f:
+		json.dump(remaining_dict,f)
+
+def write_phase_file(context_dict, m1, m2):
+	for premise in context_dict:
+		hypotheses = context_dict[premise]
+		hypotheses.sort(key = lambda x: x[1], reverse=True) 
+		hyps = [h[0] for h in hypotheses]
+		labels = [h[1] for h in hypotheses]
+		for i in range(len(hyps)):
+			lab = labels[i]
+			if lab>=1 and lab<=2:
+				lab= 0
+			else:
+				lab= 1
+			m1.write("{} </s> {} {}\n".format(premise, hyps[i], lab))
+			for j in range(i+1, len(hyps)):
+				if labels[i] > labels[j] and labels[i]!=0 and labels[j]!=0:
+					lab = np.random.randint(0,2)
+					if lab ==0:
+						m2.write("{} </s> {} </s> {} {}\n".format(premise, hyps[i], hyps[j], 0))
+					else:
+						m2.write("{} </s> {} </s> {} {}\n".format(premise, hyps[j], hyps[i], 1))
+
+
+def convert_JOCI_context(in_path, mtl_common_path, mtl_specific_path, phase='train'):
+	with open(in_path + '/remaining_context.json', 'rb') as f, open(mtl_common_path, 'w') as m1, open(mtl_specific_path, 'w') as m2, open(in_path+ '/context_a.json', 'rb') as a, open(in_path+ '/context_b.json', 'rb') as b, open(in_path+ '/context_j.json', 'rb') as j:
+		remaining_dict = json.loads(f.read())
+		context_dict_a = json.loads(a.read())
+		context_dict_b = json.loads(b.read())
+		context_dict_j = json.loads(j.read())
+
+
+		write_phase_file(context_dict_a[phase],m1,m2)
+		write_phase_file(context_dict_b[phase],m1,m2)
+		write_phase_file(context_dict_j[phase],m1,m2)
+		if phase=="train":
+			write_phase_file(remaining_dict,m1,m2)
+
+		
 
 
 def convert_HellaSwag(f, mtl_common_path, mtl_specific_path, lm_p_path, lm_both_path):
@@ -263,7 +411,13 @@ def remove_labels(in_path, out_path):
 # add_labels("./HellaSwag/mtl_common_hellaswag_val.txt", "./HellaSwag/mtl_common_hellaswag_val_ti.txt", label='[HELLA]')
 
 # remove labels to run without labell multi-task model
-remove_labels( "../allCommon/mtl_common_all_train_ti.txt", "../allCommon/mtl_common_all_train.txt")
-remove_labels( "../allCommon/mtl_common_all_val_ti.txt", "../allCommon/mtl_common_all_val.txt")
+# remove_labels( "../allCommon/mtl_common_all_train_ti.txt", "../allCommon/mtl_common_all_train.txt")
+# remove_labels( "../allCommon/mtl_common_all_val_ti.txt", "../allCommon/mtl_common_all_val.txt")
+
+# create correct joci data
+segregate_JOCI_context("./JOCI/data/")
+convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_train.txt", "./JOCI/mtl_specific_joci_train.txt", phase='train')
+convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_test.txt", "./JOCI/mtl_specific_joci_test.txt", phase='test')
+convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_val.txt", "./JOCI/mtl_specific_joci_val.txt", phase='dev')
 
 

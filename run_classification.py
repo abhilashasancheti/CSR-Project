@@ -27,9 +27,9 @@ from transformers import AutoTokenizer, AutoModel, BertModel, BertTokenizer, Rob
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
 
-np.random.seed(100)
-random.seed(100)
-torch.manual_seed(100)
+np.random.seed(42)
+random.seed(42)
+torch.manual_seed(42)
 
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
