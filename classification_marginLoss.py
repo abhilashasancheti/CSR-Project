@@ -22,8 +22,12 @@ import torch.nn.functional as F
 from sklearn.metrics import f1_score
 
 
-from transformers import AutoTokenizer, AutoModel, BertModel,BertTokenizer, RobertaTokenizer, RobertaModel,  BertForSequenceClassification, AutoModelForSequenceClassification, BertConfig
-from transformers.modeling_roberta import RobertaPreTrainedModel, RobertaClassificationHead
+# from transformers import AutoTokenizer, AutoModel, BertModel,BertTokenizer, RobertaTokenizer, RobertaModel,  BertForSequenceClassification, AutoModelForSequenceClassification, BertConfig
+# from transformers.modeling_roberta import RobertaPreTrainedModel, RobertaClassificationHead
+# from transformers.optimization import AdamW, get_linear_schedule_with_warmup
+
+from transformers import AutoTokenizer, AutoModel, BertModel, BertTokenizer, RobertaTokenizer, RobertaModel, BertForSequenceClassification, RobertaForSequenceClassification, AutoModelForSequenceClassification, BertConfig, XLNetForSequenceClassification, XLNetTokenizer
+
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
 
@@ -42,71 +46,71 @@ else:
 
 
 
-class RobertaForSequenceClassification(RobertaPreTrainedModel):
-    authorized_missing_keys = [r"position_ids"]
+# class RobertaForSequenceClassification(RobertaPreTrainedModel):
+#     authorized_missing_keys = [r"position_ids"]
 
-    def __init__(self, config):
-        super().__init__(config)
-        self.num_labels = config.num_labels
+#     def __init__(self, config):
+#         super().__init__(config)
+#         self.num_labels = config.num_labels
 
-        self.roberta = RobertaModel(config, add_pooling_layer=False)
-        self.classifier = RobertaClassificationHead(config)
-        self.specific_classifier = RobertaClassificationHead(config)
+#         self.roberta = RobertaModel(config, add_pooling_layer=False)
+#         self.classifier = RobertaClassificationHead(config)
+#         self.specific_classifier = RobertaClassificationHead(config)
 
-        self.init_weights()
+#         self.init_weights()
 
-    def forward(
-        self,
-        input_ids=None,
-        attention_mask=None,
-        token_type_ids=None,
-        position_ids=None,
-        head_mask=None,
-        inputs_embeds=None,
-        labels=None,
-        output_attentions=None,
-        output_hidden_states=None,
-        return_dict=None,
-        dataset_type=None,
-    ):
-        r"""
-        labels (:obj:`torch.LongTensor` of shape :obj:`(batch_size,)`, `optional`):
-            Labels for computing the sequence classification/regression loss. Indices should be in :obj:`[0, ...,
-            config.num_labels - 1]`. If :obj:`config.num_labels == 1` a regression loss is computed (Mean-Square loss),
-            If :obj:`config.num_labels > 1` a classification loss is computed (Cross-Entropy).
-        """
-        return_dict = return_dict if return_dict is not None else self.config.use_return_dict
+#     def forward(
+#         self,
+#         input_ids=None,
+#         attention_mask=None,
+#         token_type_ids=None,
+#         position_ids=None,
+#         head_mask=None,
+#         inputs_embeds=None,
+#         labels=None,
+#         output_attentions=None,
+#         output_hidden_states=None,
+#         return_dict=None,
+#         dataset_type=None,
+#     ):
+#         r"""
+#         labels (:obj:`torch.LongTensor` of shape :obj:`(batch_size,)`, `optional`):
+#             Labels for computing the sequence classification/regression loss. Indices should be in :obj:`[0, ...,
+#             config.num_labels - 1]`. If :obj:`config.num_labels == 1` a regression loss is computed (Mean-Square loss),
+#             If :obj:`config.num_labels > 1` a classification loss is computed (Cross-Entropy).
+#         """
+#         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
-        outputs = self.roberta(
-            input_ids,
-            attention_mask=attention_mask,
-            token_type_ids=token_type_ids,
-            position_ids=position_ids,
-            head_mask=head_mask,
-            inputs_embeds=inputs_embeds,
-            output_attentions=output_attentions,
-            output_hidden_states=output_hidden_states,
-            return_dict=return_dict,
-        )
-        sequence_output = outputs[0]
-        if dataset_type[0] =='absolute':
-            logits = self.classifier(sequence_output)
-        else:
-            logits = self.specific_classifier(sequence_output)
+#         outputs = self.roberta(
+#             input_ids,
+#             attention_mask=attention_mask,
+#             token_type_ids=token_type_ids,
+#             position_ids=position_ids,
+#             head_mask=head_mask,
+#             inputs_embeds=inputs_embeds,
+#             output_attentions=output_attentions,
+#             output_hidden_states=output_hidden_states,
+#             return_dict=return_dict,
+#         )
+#         sequence_output = outputs[0]
+#         if dataset_type[0] =='absolute':
+#             logits = self.classifier(sequence_output)
+#         else:
+#             logits = self.specific_classifier(sequence_output)
 
-        loss = None
+#         loss = None
 
 
-        if not return_dict:
-            output = (logits,) + outputs[2:]
-            return ((loss,) + output) if loss is not None else output
+#         if not return_dict:
+#             output = (logits,) + outputs[2:]
+#             return ((loss,) + output) if loss is not None else output
 
-        return SequenceClassifierOutput(
-            loss=loss,
-            logits=logits,
-            hidden_states=outputs.hidden_states,
-            attentions=outputs.attentions,
-        )
+#         return SequenceClassifierOutput(
+#             loss=loss,
+#             logits=logits,
+#             hidden_states=outputs.hidden_states,
+#             attentions=outputs.attentions,
+#         )
 
 MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
                  "roberta": (RobertaForSequenceClassification, RobertaTokenizer)}
@@ -293,8 +297,10 @@ def train_epoch(
         targets = d["targets"].to(device)
         dataset_type = d["type"]
 
-        outputs_pos = model(input_ids=input_ids_pos, attention_mask=attention_mask_pos, dataset_type=dataset_type)
-        outputs_neg = model(input_ids=input_ids_neg, attention_mask=attention_mask_neg, dataset_type=dataset_type)
+        # outputs_pos = model(input_ids=input_ids_pos, attention_mask=attention_mask_pos, dataset_type=dataset_type)
+        # outputs_neg = model(input_ids=input_ids_neg, attention_mask=attention_mask_neg, dataset_type=dataset_type)
+        outputs_pos = model(input_ids=input_ids_pos, attention_mask=attention_mask_pos)
+        outputs_neg = model(input_ids=input_ids_neg, attention_mask=attention_mask_neg)
         outputs_pos = outputs_pos[0]
         outputs_neg = outputs_neg[0]
         outputs_diff = outputs_neg-outputs_pos
@@ -355,7 +361,7 @@ def eval_model(model, data_loader,
             # loss = torch.max(torch.tensor([0]).to(device), torch.tensor([margin]).to(device)-outputs_pos[0][targets]+outputs_neg[0][targets])
             # loss = torch.sum(loss)
             
-            outputs = model(input_ids=input_ids, attention_mask=attention_mask, dataset_type=dataset_type)
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
             outputs = outputs[0]
             # print(outputs)
             _, preds = torch.max(outputs, dim=1) #logits in first position of outputs
@@ -386,7 +392,7 @@ def get_predictions(model, data_loader, output_dir, split):
             targets = d["targets"].to(device)
             dataset_type = d["type"]
 #                 f.write("{}, {}, {}\n".format(texts, input_ids.cpu().detach().numpy(), targets.cpu().detach().numpy()))
-            outputs = model(input_ids=input_ids, attention_mask=attention_mask, dataset_type=dataset_type)
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
             outputs = outputs[0]
             _, preds = torch.max(outputs, dim=1) #logits in first position of outputs
             correct_predictions += torch.sum(preds == targets)
@@ -562,5 +568,4 @@ if __name__=="__main__":
         print(classification_report(test_test,test_pred))
         print(confusion_matrix(test_test, test_pred))
 
-    
-
+   
