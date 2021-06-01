@@ -27,10 +27,13 @@ from transformers import AutoTokenizer, AutoModel, BertModel,BertTokenizer, Robe
 from transformers.modeling_roberta import RobertaPreTrainedModel, RobertaClassificationHead
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
+def set_seed(seed):
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
-np.random.seed(123)
-random.seed(123)
-torch.manual_seed(123)
 
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
@@ -148,13 +151,13 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
         
         if len(seq_out['anli'])>0:
             logits = self.classifier_anli(seq_out['anli'])
-            print(logits)
+            # print(logits)
         if len(seq_out['atomic'])>0:
-            logits =  torch.cat([logits, self.classifier_atomic(torch.tensor(seq_out['atomic']))],dim=0)if logits is not None else self.classifier_atomic(torch.tensor(seq_out['atomic']))
+            logits =  torch.cat([logits, self.classifier_atomic(torch.tensor(seq_out['atomic']))],dim=0) if logits is not None else self.classifier_atomic(torch.tensor(seq_out['atomic']))
         if len(seq_out['copa'])>0:
             logits = torch.cat([logits, self.classifier_copa(torch.tensor(seq_out['copa']))],dim=0) if logits is not None else self.classifier_copa(torch.tensor(seq_out['copa']))
         if len(seq_out['hella'])>0:
-            logits = torch.cat([logits,self.classifier_hella(torch.tensor(seq_out['hella']))], dim=0)if logits is not None else self.classifier_hella(torch.tensor(seq_out['hella']))
+            logits = torch.cat([logits,self.classifier_hella(torch.tensor(seq_out['hella']))], dim=0) if logits is not None else self.classifier_hella(torch.tensor(seq_out['hella']))
         if len(seq_out['joci'])>0:
             logits = torch.cat([logits,self.classifier_joci(torch.tensor(seq_out['joci']))], dim=0) if logits is not None else self.classifier_joci(torch.tensor(seq_out['joci']))
         if len(seq_out['snli'])>0:
@@ -162,7 +165,7 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
         if len(seq_out['social'])>0:
             logits = torch.cat([logits,self.classifier_social(torch.tensor(seq_out['social']))], dim=0) if logits is not None else self.classifier_social(torch.tensor(seq_out['social']))
         
-        print(logits)
+        # print(logits)
         loss = None
 
 
@@ -179,88 +182,6 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
 
 MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
                  "roberta": (RobertaForSequenceClassification, RobertaTokenizer)}
-
-# class MultiTaskBatchSampler(BatchSampler):
-#     def __init__(self, datasets, batch_size,  bin_size=64, bin_on=False, bin_grow_ratio=0.5):
-#         self._datasets = datasets
-#         self._batch_size = batch_size
-#         # self._mix_opt = mix_opt
-#         # self._extra_task_ratio = extra_task_ratio
-#         # self.bin_size = bin_size
-#         # self.bin_on = bin_on
-#         # self.bin_grow_ratio = bin_grow_ratio
-#         train_data_list = []
-#         for i in range(len(list(datasets.keys()))):
-#             # if bin_on:
-#             #     train_data_list.append(self._get_shuffled_index_batches_bin(dataset, batch_size, bin_size=bin_size, bin_grow_ratio=bin_grow_ratio))
-#             # else:
-#             train_data_list.append(self._get_shuffled_index_batches(len(datasets[task_id_2_type[i]]), batch_size))
-#         self._train_data_list = train_data_list
-
-#     @staticmethod
-#     def _get_shuffled_index_batches(dataset_len, batch_size):
-#         index_batches = [list(range(i, min(i+batch_size, dataset_len))) for i in range(0, dataset_len, batch_size)]
-#         random.shuffle(index_batches)
-#         return index_batches
-
-#     # @staticmethod
-#     # def _get_shuffled_index_batches_bin(dataset, batch_size, bin_size, bin_grow_ratio):
-#     #     maxlen = dataset.maxlen
-#     #     bins = create_bins(bin_size, maxlen)
-#     #     data = [[] for i in range(0, len(bins))]
-        
-#     #     for idx, sample in enumerate(dataset):
-#     #         bin_idx = search_bin(bins, len(sample['sample']['token_id']))
-#     #         data[bin_idx].append(idx)
-#     #     index_batches = []
-
-#     #     for idx, sub_data in enumerate(data):
-#     #         if len(sub_data) < 1: continue
-#     #         batch_size = 1 if batch_size < 1 else batch_size
-#     #         sub_dataset_len = len(sub_data)
-#     #         sub_batches = [list(range(i, min(i+batch_size, sub_dataset_len))) for i in range(0, sub_dataset_len, batch_size)]
-#     #         index_batches.extend(sub_batches)
-#     #         batch_size = int(batch_size * bin_grow_ratio)
-#     #     random.shuffle(index_batches)
-#         # return index_batches
-
-#     def __len__(self):
-#         return sum(len(train_data) for train_data in self._train_data_list)
-
-#     def __iter__(self):
-#         all_iters = [iter(item) for item in self._train_data_list]
-#         all_indices = self._gen_task_indices(self._train_data_list)
-#         for local_task_idx in all_indices:
-#             task_id = task_id_2_type[local_task_idx]
-#             batch = next(all_iters[local_task_idx])
-#             yield [(task_id, sample_id) for sample_id in batch]
-
-#     @staticmethod
-#     def _gen_task_indices(train_data_list):
-#         all_indices = []
-#         for i in range(0, len(train_data_list)):
-#             all_indices += [i] * len(train_data_list[i])
-    
-#         random.shuffle(all_indices)
-#         return all_indices
-
-# class MultiTaskDataset(Dataset):
-#     def __init__(self, datasets):
-#         self._datasets = datasets
-#         task_id_2_data_set_dic = {}
-#         for dataset in datasets:
-#             task_id = dataset.get_task_id()
-#             assert task_id not in task_id_2_data_set_dic, "Duplicate task_id %s" % task_id
-#             task_id_2_data_set_dic[task_id] = dataset
-
-#         self._task_id_2_data_set_dic = task_id_2_data_set_dic
-
-#     def __len__(self):
-#         return sum(len(dataset) for dataset in self._datasets)
-
-#     def __getitem__(self, idx):
-#         task_id, sample_id = idx
-#         return self._task_id_2_data_set_dic[task_id][sample_id]
 
 
 class PlausibleDataset(Dataset):
@@ -302,7 +223,8 @@ class PlausibleDataset(Dataset):
         split_event = event.strip().split(' ')
         event = " ".join(split_event[1:])
         dataset_type = split_event[0].lstrip('[').rstrip(']').lower()
-        encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
+        events = event.strip().split('</s>')
+        encoding = self.tokenizer.encode_plus(events[0].strip(), events[1].strip(),add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, padding="max_length", truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
         
@@ -314,53 +236,7 @@ class PlausibleDataset(Dataset):
       'type': dataset_type
     }
 
-# class MultiPlausibleDataset(Dataset):
-    
-#     def __init__(self, events, targets, tokenizer, max_len):
-#         self.events = events #dictionary
-#         self.targets = targets #dictionary
-#         self.tokenizer = tokenizer
-#         self.max_len = max_len
-#         self.task_types = ['anli', 'hella', 'copa', 'joci', 'atomic', 'social', 'snli' ]
-        
-#     def __len__(self):
-#         return sum(len(self.events[task_id]) for task_id in self.task_types)
 
-#     def __getitem__(self, item):
-#         task_id, sample_id = item
-#         event = str(self.events[task_id][sample_id])
-#         target = self.targets[task_id][sample_id]
-        
-
-#         split_event = event.strip().split('</s>')
-#         dataset_type = task_id
-#                 # for absolute 
-#         if len(split_event)==4:
-#             # input from hellaswag negative datapoint randomly choose one negative answer
-#             hypo = np.random.choice(range(3),1)[0]
-#             event = split_event[0].strip() +  ' </s> ' + split_event[hypo].strip()
-#             target = 0
-#         elif len(split_event)==5:
-#             # input from hellaswag negative datapoint randomly choose one negative answer
-#             hypo =  np.random.choice([i for i in range(4) if i!=target],1)[0]
-#             label = np.random.choice([0,1], 1)[0]
-#             if label==0:
-#                 event = split_event[0].strip() +  ' </s> ' + split_event[target+1].strip() + ' </s> ' + split_event[1+hypo].strip()
-#                 target = 0
-#             else:
-#                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
-#                 target = 1
-#         encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
-#         input_ids = encoding['input_ids'].flatten()
-                
-        
-#         return {
-#       'event_description': event,
-#       'input_ids': input_ids,
-#       'attention_mask': encoding['attention_mask'].flatten(),
-#       'targets': torch.tensor(target, dtype=torch.long),
-#       'type': dataset_type
-#     }
 
 def read_data(data_path):
     with open(data_path, 'r') as f:
@@ -372,19 +248,7 @@ def read_data(data_path):
             labels.append(int(line.strip()[-1]))
     return inputs, labels    
 
-# def read_data_all(data_path, phase):
-#     events = {}
-#     targets = {}
-    
-#     events["anli"], targets["anli"] = read_data(data_path + '/aNLI/mtl_common_anli_'+ phase + '.txt')
-#     events["hella"], targets["hella"] = read_data(data_path + '/HellaSwag/mtl_common_hellaswag_'+ phase + '.txt')
-#     events["copa"], targets["copa"] = read_data(data_path + '/COPA/mtl_common_copa_'+ phase + '.txt')
-#     events["joci"], targets["joci"] = read_data(data_path + '/JOCI/mtl_common_joci_'+ phase + '.txt')
-#     events["atomic"], targets["atomic"] = read_data(data_path + '/defeasible/defeasible-atomic/mtl_common_atomic_'+ phase + '.txt')
-#     events["social"], targets["social"] = read_data(data_path + '/defeasible/defeasible-social/mtl_common_social_'+ phase + '.txt')
-#     events["snli"], targets["snli"] = read_data(data_path + '/defeasible/defeasible-snli/mtl_common_snli_'+ phase + '.txt')
 
-#     return events, targets
 
 def create_data_loader_test(events, targets, tokenizer, max_len, batch_size):
     
@@ -456,10 +320,9 @@ def train_epoch(
     f1score = []
     targets_all, preds_all = [], []
     correct_predictions = 0
+    model = model.train()
     i=0
     for d in data_loader:
-        if i > 1:
-            break
         d = permute_batch(d)
         #print(d['event_description'], d['targets'])
         optimizer.zero_grad()
@@ -581,6 +444,7 @@ if __name__=="__main__":
     parser.add_argument('-output_dir','--output_dir', type=str, default='./', help="output directory")
     parser.add_argument('--load', action='store_true', help="to load from trained-checkpoint")
 
+    parser.add_argument('-seed', '--seed', type=int, default=42, help="random seed")
     parser.add_argument('-dropout', '--dropout', type=float, default=0.1, help="dropout rate")
     parser.add_argument('-learning_rate', '--learning_rate', type=float, default=2e-5, help="learning rate")
     parser.add_argument('-decay', '--weight_decay', type=float, default=0.0, help="learning rate")
@@ -608,6 +472,8 @@ if __name__=="__main__":
     warmup_steps = args.warm_up
     dataset_type = args.type
     filename = args.filename
+    seed = args.seed
+    set_seed(seed)
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir,exist_ok=True)

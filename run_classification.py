@@ -27,9 +27,6 @@ from transformers import AutoTokenizer, AutoModel, BertModel, BertTokenizer, Rob
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
 
-np.random.seed(42)
-random.seed(42)
-torch.manual_seed(42)
 
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
@@ -45,14 +42,21 @@ if torch.cuda.is_available():
 else:
     device = torch.device('cpu')
 
+def set_seed(seed):
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
 class PlausibleDataset(Dataset):
     
-    def __init__(self, events, targets, tokenizer, max_len):
+    def __init__(self, events, targets, tokenizer, max_len, single):
         self.events = events
         self.targets = targets
         self.tokenizer = tokenizer
         self.max_len = max_len
+        self.single = single
         
     def __len__(self):
         return len(self.events)
@@ -80,8 +84,11 @@ class PlausibleDataset(Dataset):
             else:
                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
                 target = 1
-                
-        encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
+        if self.single:
+            encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, padding="max_length", truncation=True, return_attention_mask=True, return_tensors='pt')
+        else:
+            events = event.strip().split('</s>')
+            encoding = self.tokenizer.encode_plus(events[0].strip(),events[1].strip(), add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, padding="max_length", truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
         
@@ -103,13 +110,14 @@ def read_data(data_path):
     return inputs, labels    
 
         
-def create_data_loader(events, targets, tokenizer, max_len, batch_size):
+def create_data_loader(events, targets, tokenizer, max_len, single, batch_size):
     
     ds = PlausibleDataset(
     events=events,
     targets=targets,
     tokenizer=tokenizer,
-    max_len=max_len
+    max_len=max_len,
+    single=single
   )
 
     return DataLoader(
@@ -119,13 +127,14 @@ def create_data_loader(events, targets, tokenizer, max_len, batch_size):
     shuffle=True
   )
 
-def create_data_loader_test(events, targets, tokenizer, max_len, batch_size):
+def create_data_loader_test(events, targets, tokenizer, max_len, single, batch_size):
     
     ds = PlausibleDataset(
     events=events,
     targets=targets,
     tokenizer=tokenizer,
-    max_len=max_len
+    max_len=max_len,
+    single=single
   )
 
     return DataLoader(
@@ -148,6 +157,7 @@ def train_epoch(
     f1score = []
     targets_all, preds_all = [], []
     correct_predictions = 0
+    model= model.train()
     for d in data_loader:
         #print(d['event_description'], d['targets'])
         optimizer.zero_grad()
@@ -176,7 +186,7 @@ def train_epoch(
         
         learning_rate = scheduler.get_last_lr()[0] if version.parse(torch.__version__) >= version.parse("1.4") else scheduler.get_lr()[0]
         
-    return correct_predictions.double() / n_examples, np.mean(losses), f1_score(targets_all, preds_all), learning_rate
+    return correct_predictions.double() / n_examples, np.mean(losses), f1_score(targets_all, preds_all, average='weighted'), learning_rate
 
 def eval_model(model, data_loader, loss_fn, device, n_examples):
     model = model.eval()
@@ -203,7 +213,7 @@ def eval_model(model, data_loader, loss_fn, device, n_examples):
             targets_all += targets.cpu().numpy().tolist()
             preds_all += preds.cpu().numpy().tolist()
             
-    return correct_predictions.double() / n_examples, np.mean(losses), f1_score(targets_all, preds_all)
+    return correct_predictions.double() / n_examples, np.mean(losses), f1_score(targets_all, preds_all, average='weighted')
 
     
 def get_predictions(model, data_loader, output_dir, split):
@@ -262,16 +272,17 @@ if __name__=="__main__":
     parser.add_argument('--do_eval', action='store_true', help="to evaluate")
     parser.add_argument('--do_test', action='store_true', help="to test")
     parser.add_argument('--do_train',action='store_true', help="to train")
+    parser.add_argument('--single', action='store_true', help="single input format")
     parser.add_argument('--freeze', action='store_true', help="to train only last layer")
     parser.add_argument('-output_dir','--output_dir', type=str, default='./', help="output directory")
     parser.add_argument('--load', action='store_true', help="to load from trained-checkpoint")
     parser.add_argument('-load_dir','--load_dir', type=str, default='./', help="output directory")
 
-
+    parser.add_argument('-seed', '--seed', type=int, default=42, help="random seed")
     parser.add_argument('-dropout', '--dropout', type=float, default=0.1, help="dropout rate")
     parser.add_argument('-learning_rate', '--learning_rate', type=float, default=2e-5, help="learning rate")
     parser.add_argument('-decay', '--weight_decay', type=float, default=0.0, help="learning rate")
-    parser.add_argument('-warm_up', '--warm_up', type=float, default=0.01, help="lpercentage of warmup steps")
+    parser.add_argument('-warm_up', '--warm_up', type=float, default=0.01, help="percentage of warmup steps")
 
     args = parser.parse_args()
     train_data_path = args.train_data_path
@@ -295,7 +306,11 @@ if __name__=="__main__":
     filename = args.filename
     load_dir = args.load_dir
     freeze = args.freeze
+    seed = args.seed
+    single = args.single
     
+    set_seed(seed)
+    print("working with seed: ", seed)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir,exist_ok=True)
     
@@ -334,13 +349,13 @@ if __name__=="__main__":
         train_events, train_targets = read_data(train_data_path)
    
         # load data
-        train_data_loader = create_data_loader(train_events, train_targets, tokenizer, max_length, batch_size)
+        train_data_loader = create_data_loader(train_events, train_targets, tokenizer, max_length, single, batch_size)
          
     if do_eval:
         val_events, val_targets = read_data(val_data_path)
         
         # load data
-        val_data_loader = create_data_loader(val_events, val_targets, tokenizer, max_length, batch_size)
+        val_data_loader = create_data_loader(val_events, val_targets, tokenizer, max_length, single,batch_size)
    
 
     model = model.to(device)
@@ -366,7 +381,7 @@ if __name__=="__main__":
         ]
         optimizer = AdamW(optimizer_grouped_parameters, lr=learning_rate, eps=adam_epsilon)
         scheduler = get_linear_schedule_with_warmup(
-            optimizer, num_warmup_steps=total_steps*warmup_steps, num_training_steps=total_steps
+            optimizer, num_warmup_steps=int(total_steps*warmup_steps), num_training_steps=total_steps
         )
 
 
@@ -374,9 +389,9 @@ if __name__=="__main__":
         print("Training starts ....")
         history = defaultdict(list)
         best_score = -1
-
-        model.zero_grad()
+        
         model = model.train()
+        model.zero_grad()
         for epoch in range(epochs):
             print(f'Epoch {epoch + 1}/{epochs}')
             print('-' * 10)
@@ -403,7 +418,7 @@ if __name__=="__main__":
         test_events, test_targets = read_data(test_data_path)
 
         # load data
-        test_data_loader = create_data_loader_test(test_events, test_targets, tokenizer, max_length, batch_size)
+        test_data_loader = create_data_loader_test(test_events, test_targets, tokenizer, max_length, single, batch_size)
 
         test_event_texts, test_pred, test_pred_probs, test_test = get_predictions(model, test_data_loader, output_dir, filename)
 

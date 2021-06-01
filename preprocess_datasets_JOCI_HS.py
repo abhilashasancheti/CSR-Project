@@ -415,9 +415,9 @@ def remove_labels(in_path, out_path):
 # remove_labels( "../allCommon/mtl_common_all_val_ti.txt", "../allCommon/mtl_common_all_val.txt")
 
 # create correct joci data
-segregate_JOCI_context("./JOCI/data/")
-convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_train.txt", "./JOCI/mtl_specific_joci_train.txt", phase='train')
-convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_test.txt", "./JOCI/mtl_specific_joci_test.txt", phase='test')
-convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_val.txt", "./JOCI/mtl_specific_joci_val.txt", phase='dev')
+# segregate_JOCI_context("./JOCI/data/")
+# convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_train.txt", "./JOCI/mtl_specific_joci_train.txt", phase='train')
+# convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_test.txt", "./JOCI/mtl_specific_joci_test.txt", phase='test')
+# convert_JOCI_context("./JOCI/data/", "./JOCI/mtl_common_joci_val.txt", "./JOCI/mtl_specific_joci_val.txt", phase='dev')
 
 

@@ -26,9 +26,6 @@ from sklearn.metrics import f1_score
 from transformers import AutoTokenizer, AutoModel, BertModel, BertTokenizer, RobertaTokenizer, RobertaModel, BertForSequenceClassification, RobertaForSequenceClassification, AutoModelForSequenceClassification, BertConfig, XLNetForSequenceClassification, XLNetTokenizer
 from transformers.optimization import AdamW, get_linear_schedule_with_warmup
 
-np.random.seed(100)
-random.seed(100)
-torch.manual_seed(100)
 
 logging.basicConfig(level=logging.ERROR)
 np.set_printoptions(threshold=sys.maxsize)
@@ -57,6 +54,12 @@ task_type_2_id["atomic"] = 4
 task_type_2_id["social"] = 5
 task_type_2_id["snli"] = 6
 
+def set_seed(seed):
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
 
 MODEL_CLASSES = {"bert": (BertForSequenceClassification, BertTokenizer),
@@ -142,8 +145,8 @@ class PlausibleDataset(Dataset):
             else:
                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
                 target = 1
-                
-        encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
+        events = event.strip().split('</s>')
+        encoding = self.tokenizer.encode_plus(events[0].strip(), events[1].strip(), add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, padding="max_length", truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
         
@@ -191,7 +194,9 @@ class MultiPlausibleDataset(Dataset):
             else:
                 event = split_event[0].strip() +  ' </s> ' + split_event[1+hypo].strip() + ' </s> ' + split_event[target+1].strip()
                 target = 1
-        encoding = self.tokenizer.encode_plus(event, add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, pad_to_max_length=True, truncation=True, return_attention_mask=True, return_tensors='pt')
+        
+        events = event.strip().split("</s>")
+        encoding = self.tokenizer.encode_plus(events[0].strip(), events[1].strip(),add_special_tokens=True, max_length=self.max_len, return_token_type_ids=False, padding="max_length", truncation=True, return_attention_mask=True, return_tensors='pt')
         input_ids = encoding['input_ids'].flatten()
                 
         
@@ -272,6 +277,7 @@ def train_epoch(
     f1score = []
     targets_all, preds_all = [], []
     correct_predictions = 0
+    model = model.train()
     for d in data_loader:
         #print(d['event_description'], d['targets'])
         optimizer.zero_grad()
@@ -391,7 +397,8 @@ if __name__=="__main__":
     parser.add_argument('--do_train',action='store_true', help="to train")
     parser.add_argument('-output_dir','--output_dir', type=str, default='./', help="output directory")
     parser.add_argument('--load', action='store_true', help="to load from trained-checkpoint")
-
+    
+    parser.add_argument('-seed', '--seed', type=int, default=42, help="random seed")
     parser.add_argument('-dropout', '--dropout', type=float, default=0.1, help="dropout rate")
     parser.add_argument('-learning_rate', '--learning_rate', type=float, default=2e-5, help="learning rate")
     parser.add_argument('-decay', '--weight_decay', type=float, default=0.0, help="learning rate")
@@ -419,7 +426,9 @@ if __name__=="__main__":
     warmup_steps = args.warm_up
     filename = args.filename
     dataset_type = args.type
+    seed = args.seed
     
+    set_seed(seed)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir,exist_ok=True)
     

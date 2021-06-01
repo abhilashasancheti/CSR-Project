@@ -1,0 +1,7 @@
+working with seed:  12345
+Training starts ....
+Epoch 1/1
+----------
+Train loss 0.7041546440124512 accuracy 0.5025000000000001 f1score 0.44865800865800864 lr 0.0
+Val   loss 0.6942613904292767 accuracy 0.5 f1score 0.33333333333333326
+time taken to train 0:01:01.369509

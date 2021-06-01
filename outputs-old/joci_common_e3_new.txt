@@ -1,0 +1,98 @@
+tensor(0.5379, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.73      0.12      0.21      1532
+           1       0.52      0.96      0.67      1532
+
+    accuracy                           0.54      3064
+   macro avg       0.63      0.54      0.44      3064
+weighted avg       0.63      0.54      0.44      3064
+
+[[ 184 1348]
+ [  68 1464]]
+ tensor(0.3382, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.86      0.14      0.24     30126
+           1       0.27      0.93      0.41     10042
+
+    accuracy                           0.34     40168
+   macro avg       0.56      0.54      0.33     40168
+weighted avg       0.71      0.34      0.28     40168
+
+[[ 4236 25890]
+ [  693  9349]]
+tensor(0.7984, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.78      0.80      0.79      1771
+           1       0.82      0.80      0.81      2038
+
+    accuracy                           0.80      3809
+   macro avg       0.80      0.80      0.80      3809
+weighted avg       0.80      0.80      0.80      3809
+
+[[1409  362]
+ [ 406 1632]]
+tensor(0.5120, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.68      0.05      0.09       500
+           1       0.51      0.98      0.67       500
+
+    accuracy                           0.51      1000
+   macro avg       0.59      0.51      0.38      1000
+weighted avg       0.59      0.51      0.38      1000
+
+[[ 23 477]
+ [ 11 489]]
+tensor(0.5200, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.67      0.08      0.14      2047
+           1       0.51      0.96      0.67      2047
+
+    accuracy                           0.52      4094
+   macro avg       0.59      0.52      0.40      4094
+weighted avg       0.59      0.52      0.40      4094
+
+[[ 161 1886]
+ [  79 1968]]
+tensor(0.5043, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.60      0.03      0.05      4567
+           1       0.50      0.98      0.66      4567
+
+    accuracy                           0.50      9134
+   macro avg       0.55      0.50      0.36      9134
+weighted avg       0.55      0.50      0.36      9134
+
+[[ 118 4449]
+ [  79 4488]]
+tensor(0.5493, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.70      0.17      0.27       912
+           1       0.53      0.93      0.67       912
+
+    accuracy                           0.55      1824
+   macro avg       0.62      0.55      0.47      1824
+weighted avg       0.62      0.55      0.47      1824
+
+[[155 757]
+ [ 65 847]]

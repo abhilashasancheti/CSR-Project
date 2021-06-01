@@ -1,0 +1,4 @@
+working with seed:  1234
+Training starts ....
+Epoch 1/1
+----------

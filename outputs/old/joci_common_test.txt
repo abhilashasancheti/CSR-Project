@@ -1,0 +1,75 @@
+working with seed:  0
+tensor(0.5350, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      1771
+           1       0.54      1.00      0.70      2038
+
+    accuracy                           0.54      3809
+   macro avg       0.27      0.50      0.35      3809
+weighted avg       0.29      0.54      0.37      3809
+
+[[   0 1771]
+ [   0 2038]]
+working with seed:  1
+tensor(0.5350, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      1771
+           1       0.54      1.00      0.70      2038
+
+    accuracy                           0.54      3809
+   macro avg       0.27      0.50      0.35      3809
+weighted avg       0.29      0.54      0.37      3809
+
+[[   0 1771]
+ [   0 2038]]
+working with seed:  42
+tensor(0.5350, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      1771
+           1       0.54      1.00      0.70      2038
+
+    accuracy                           0.54      3809
+   macro avg       0.27      0.50      0.35      3809
+weighted avg       0.29      0.54      0.37      3809
+
+[[   0 1771]
+ [   0 2038]]
+working with seed:  123
+tensor(0.5350, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      1771
+           1       0.54      1.00      0.70      2038
+
+    accuracy                           0.54      3809
+   macro avg       0.27      0.50      0.35      3809
+weighted avg       0.29      0.54      0.37      3809
+
+[[   0 1771]
+ [   0 2038]]
+working with seed:  1234
+tensor(0.5350, device='cuda:0', dtype=torch.float64)
+--------------
+-----test report------
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00      1771
+           1       0.54      1.00      0.70      2038
+
+    accuracy                           0.54      3809
+   macro avg       0.27      0.50      0.35      3809
+weighted avg       0.29      0.54      0.37      3809
+
+[[   0 1771]
+ [   0 2038]]
